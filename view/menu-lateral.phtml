@@ -1,12 +1,12 @@
 <section>
     <div class="menu-lateral">
-        <h3 class="categoria-h3">Categorias</h3>
+        <h4 class="categoria-h3">Categorias</h4>
         <ul class="opcao">
-            <li class="opcao-li">brinquedos</liclass>
-            <li class="opcao-li">vestuário</liclass>
-            <li class="opcao-li">ferramentas</liclass>
-            <li class="opcao-li">móveis</liclass>
-            <li class="opcao-li">alimentação</liclass>
+            <li class="opcao-li"><a href="#">brinquedos</a></li>
+            <li class="opcao-li"><a href="#">vestuário</a></li>
+            <li class="opcao-li"><a href="#">ferramentas</a></li>
+            <li class="opcao-li"><a href="#">móveis</a></li>
+            <li class="opcao-li"><a href="#">alimentação</a></li>
         </ul>
     </div>
 </section>
@@ -16,14 +16,17 @@
       display: flex;
     }
     .menu-lateral {
-        display: grid;
+        display: block;
         justify-items: center;
-        width: 33%;
-        height: 600px;
+        width: 250px;
+        height: 500px;
 
         box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.45);
 
         background: white;
+
+        margin-top: 1rem;
+        margin-left: 1.5rem;
     }
 
     .categoria-h3, .opcao {
@@ -31,18 +34,34 @@
 
     }
     .categoria-h3, .opcao-li {
+        transition: 1s;
         padding-bottom: 5px;
         border-bottom: 1px solid burlywood;
     }
 
+    .categoria-h3 {
+        margin: auto;
+        margin-bottom: 2.5rem;
+        margin-top: 2rem;
+
+        text-align: center;
+        width: fit-content;
+    }
+
     .opcao {
-        display: grid;
+        display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
     .opcao-li {
+        margin: auto;
         margin-bottom: 20px;
+    }
+
+    ul.opcao {
+        padding: inherit;
+        margin: auto;
     }
 
 
