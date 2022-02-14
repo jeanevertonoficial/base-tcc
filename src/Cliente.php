@@ -9,7 +9,6 @@ class Cliente extends Pessoa
     public function __construct($nome, $sobrenome, $cpf, $rg, $numregistro, Endereco $endereco)
   {
       parent::__construct($nome, $sobrenome, $cpf, $rg, $endereco);
-      $this->numregistro = $numregistro;
 
       self::$numregistro++;
   }

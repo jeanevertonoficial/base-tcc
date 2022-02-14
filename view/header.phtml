@@ -1,0 +1,101 @@
+<section class="header-section">
+    <div><img src="#" alt="lgo"></div>
+    <div>
+        <div class="header-input">
+            <input name="pesquisa" type="search" placeholder="pesquisar">
+            <button>Q</button>
+        </div>
+    </div>
+    <div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Cadastre-se</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </div>
+</section>
+
+<style>
+
+    html,
+    body {
+        margin: auto;
+        font-family: Arial;
+
+        color: white;
+    }
+
+    .header-section {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 100px;
+
+        background: #EED9A3;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        width: 33%;
+        justify-content: center;
+    }
+
+    ul, li {
+        margin: auto;
+        display: flex;
+    }
+
+    li {
+        margin-left: 20px;
+    }
+
+    input {
+        width: 300px;
+        border: none;
+        padding: 5px;
+
+        text-align: center;
+
+        border-radius: 12px;
+        background: white;
+
+    }
+
+
+    button {
+        color: white;
+
+        background: burlywood !important;
+
+        border: none;
+
+        box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.29);
+
+        width: 15% !important;
+
+    }
+
+    .header-input, button {
+        width: 350px;
+        height: 25px;
+
+        border-radius: 12px;
+
+        background: white;
+
+
+    }
+
+    li>a {
+        text-decoration: none;
+        color: inherit;
+    }
+    li>a:hover {
+        color:burlywood;
+    }
+</style>
+
+
+

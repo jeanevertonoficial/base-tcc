@@ -1,0 +1,49 @@
+<section>
+    <div class="menu-lateral">
+        <h3 class="categoria-h3">Categorias</h3>
+        <ul class="opcao">
+            <li class="opcao-li">brinquedos</liclass>
+            <li class="opcao-li">vestuário</liclass>
+            <li class="opcao-li">ferramentas</liclass>
+            <li class="opcao-li">móveis</liclass>
+            <li class="opcao-li">alimentação</liclass>
+        </ul>
+    </div>
+</section>
+
+<style>
+    section {
+      display: flex;
+    }
+    .menu-lateral {
+        display: grid;
+        justify-items: center;
+        width: 33%;
+        height: 600px;
+
+        box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.45);
+
+        background: white;
+    }
+
+    .categoria-h3, .opcao {
+        color: #444;
+
+    }
+    .categoria-h3, .opcao-li {
+        padding-bottom: 5px;
+        border-bottom: 1px solid burlywood;
+    }
+
+    .opcao {
+        display: grid;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .opcao-li {
+        margin-bottom: 20px;
+    }
+
+
+</style>
