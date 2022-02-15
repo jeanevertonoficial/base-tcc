@@ -5,12 +5,6 @@
 <section class="header-section">
     <div><img src="#" alt="lgo"></div>
     <div>
-        <div class="header-input">
-            <input name="pesquisa" type="search" placeholder="pesquisar">
-            <button class="button-header">Q</button>
-        </div>
-    </div>
-    <div>
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/cadastrar-produtos.php">Cadastre-se</a></li>
@@ -26,7 +20,6 @@
         margin: auto;
         font-family: 'Roboto', sans-serif;
 
-        color: white;
     }
 
     .header-section {
@@ -35,15 +28,10 @@
         justify-content: space-around;
         width: 100%;
         height: 100px;
-
-        background: #EED9A3;
-    }
-
-    div {
-        display: flex;
         align-items: center;
-        width: 33%;
-        justify-content: center;
+
+        color: white;
+        background: #EED9A3;
     }
 
     ul, li {
@@ -55,42 +43,6 @@
         margin-left: 20px;
     }
 
-    input {
-        width: 300px;
-        border: none;
-        padding: 5px;
-
-        text-align: center;
-
-        border-radius: 12px;
-        background: white;
-
-    }
-
-
-    .button-header {
-        color: white;
-
-        background: burlywood !important;
-
-        border: none;
-
-        box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.29);
-
-        width: 15% !important;
-
-    }
-
-    .header-input, .button-header {
-        width: 350px;
-        height: 25px;
-
-        border-radius: 12px;
-
-        background: white;
-
-
-    }
 
     li>a {
         text-decoration: none;

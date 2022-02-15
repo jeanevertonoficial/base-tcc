@@ -1,0 +1,123 @@
+<?php
+
+// incluindo os arquivos
+require_once __DIR__. './../vendor/autoload.php';
+require_once __DIR__. './../src/Model/Produtos.php';
+require_once __DIR__. './../src/Pesistence/ConnectionFactory.php';
+
+
+if (($_SERVER['REQUEST_METHOD']) === 'POST')
+{
+  $cadastrar = new Produtos($mysql);
+  $cadastrar->adicionarProduto(
+          $_POST['nome'],
+          $_POST['descricao'],
+          $_POST['preco'],
+          $_POST['titulo_produto'],
+          $_POST['preco_desc'],
+          $_FILES['imagem_produto'],
+  );
+}
+
+?>
+<section class="section-cadastrar">
+    <div class="div-cadastra">
+        <form action="" method="post" class="cadastrar-formulario">
+            <div class="div-nome">
+                <label for="nome" class="div-label">nome</label>
+                <input type="text" name="nome" class="nome-cad">
+            </div>
+            <div class="div-nome">
+                <label class="div-label" for="descricao">descricao</label>
+                <textarea class="nome-cad text" name="descricao" placeholder="descrição do produto"></textarea>
+            </div>
+            <div class="div-nome">
+                <label class="div-label" for="preco">preco</label>
+                <input type="text" name="preco" class="nome-cad">
+            </div>
+            <div class="div-nome">
+                <label for='titulo_produto' class="div-label">titulo do produto</label>
+                <input type="text" name="titulo_produto" class="nome-cad">
+            </div>
+            <div class="div-nome">
+                <label for="preco_desc" class="div-label">Desconto</label>
+                <select name="preco_desc" class="nome-cad">
+                    <option value="0">selecione o desconto se houver</option>
+                    <option value="10">10%</option>
+                    <option value="20">20%</option>
+                    <option value="30">30%</option>
+                    <option value="40">40%</option>
+                    <option value="50">50%</option>
+                    <option value="60">60%</option>
+                    <option value="70">70%</option>
+                    <option value="80">80%</option>
+                </select>
+            </div>
+            <div class="div-nome">
+                <label for='imagem_produto' class="div-label">Imagem do produto</label>
+                <input type="file" name="imagem_produto" class="nome-cad">
+            </div>
+            <button class="button-cadastro">Cadastrar</button>
+        </form>
+    </div>
+</section>
+
+<style>
+
+    .section-cadastrar {
+        width: 500px;
+        height: auto;
+        margin: auto;
+        margin-top: 1rem;
+        font-family: 'Roboto', sans-serif;
+    }
+    .cadastrar-formulario{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+
+        box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.25);
+
+        border: none;
+    }
+    .div-nome {
+        display: flex;
+        flex-direction: column;
+
+        margin-bottom: 25px;
+    }
+    .div-cadastra {
+        display: flex;
+        flex-direction: column;
+    }
+    .nome-cad, .button-cadastro {
+        display: flex;
+        justify-items: center;
+
+    }
+
+    .nome-cad {
+        border: 0.5px solid rgba(0, 0, 0, 0.25);
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .button-cadastro {
+        display: inline;
+        justify-items: center;
+        padding: 10px;
+        background: bisque;
+        border: none;
+
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+
+        border-radius: 12px;
+        box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.25);
+    }
+    textarea {
+        height: 70px !important;
+    }
+</style>
