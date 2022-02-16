@@ -1,0 +1,19 @@
+<?php
+
+// incluindo os arquivos
+require_once __DIR__. './../../../vendor/autoload.php';
+require_once __DIR__. './../../Model/Produtos.php';
+require_once __DIR__. './../ConnectionFactory.php';
+
+if (($_SERVER['REQUEST_METHOD']) === 'POST') {
+
+        $cadastrar = new Produtos($mysql);
+        $cadastrar->adicionarProduto(
+           $nome = $_POST['nome'],
+           $descricao = $_POST['descricao'],
+           $preco = $_POST['preco'],
+           $titulo_produto = $_POST['titulo_produto'],
+           $preco_desc = $_POST['preco_desc'],
+           $imagem_produto = $_FILES['imagem_produto']
+        );
+}

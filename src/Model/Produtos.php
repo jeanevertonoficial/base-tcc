@@ -4,19 +4,36 @@ class Produtos
 {
     private mysqli $mysql;
 
+
     public function __construct(mysqli $mysql)
     {
         $this->mysql = $mysql;
     }
 
     public function adicionarProduto(
-        $nome,
-        $descricao,
-        $preco,
-        $preco_desc,
-        $titulo_produto,
-        $imagem_produto
-    ): void {
+        string $nome,
+        string $descricao,
+        float  $preco,
+        string $titulo_produto,
+        float  $preco_desc,
+        string $imagem_produto
+    ): void
+    {
+        /*
+                var_dump($nome);
+                var_dump($descricao);
+                var_dump($preco);
+                var_dump($preco_desc);
+                var_dump($titulo_produto);
+                var_dump($imagem_produto);
+                exit();*/
+
+        $nome = $_POST['nome'];
+        $descricao = $_POST['descricao'];
+        $preco = $_POST['preco'];
+        $titulo_produto = $_POST['titulo_produto'];
+        $preco_desc = $_POST['preco_desc'];
+        $imagem_produto = $_FILES['imagem_produto'];
 
         $preco_desc = $preco - ($preco * $preco_desc) / 100;
 
@@ -26,7 +43,7 @@ class Produtos
 
             if ($ext == true) {
 
-                $caminho_arquivo = "arquivos/" . $nome;
+                $caminho_arquivo = "arquivos/" . $titulo_produto;
 
                 move_uploaded_file($imagem_produto["tmp_name"], $caminho_arquivo);
 
@@ -35,9 +52,34 @@ class Produtos
                 if ($cadastro->execute()) {
                     echo 'Cadastro feito com sucesso!';
                 } else {
-                    echo 'Falha ao Cadastrar!';
+                    echo " 
+                            <script class='alerta' type=\"text/javascript\">
+                                alert(\"Extensão inválida.\");
+                            </script>
+                        ";
                 }
-            }
-    }
+                echo " 
+                            <script class='alerta' type=\"text/javascript\">
+                                alert(\"Imagem cadastrada com sucesso.\");
+                            </script>
+                        ";
+                header("Location: loja-itens-adm.php");
 
-} }
+            } else {
+                echo " 
+                        <script class='alerta' type=\"text/javascript\">
+                            alert(\"Não foi possivel salvar imagem.\");
+                        </script>
+                    ";
+            }
+
+        } else {
+            echo " 
+                    <script class='alerta' type=\"text/javascript\">
+                        alert(\"Não foi possivel salvar imagem, arquivo null.\");
+                    </script>
+                ";
+
+        }
+    }
+}

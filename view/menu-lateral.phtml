@@ -1,21 +1,29 @@
 <section class="section-menu">
     <div class="menu-lateral">
         <div class="categoria-h3">Categorias</div>
+            <hr style="margin: 0">
         <ul class="opcao">
             <li class="opcao-li"><a href="#">brinquedos</a></li>
+            <hr style="margin: 0">
             <li class="opcao-li"><a href="#">vestuário</a></li>
+            <hr style="margin: 0">
             <li class="opcao-li"><a href="#">ferramentas</a></li>
+            <hr style="margin: 0">
             <li class="opcao-li"><a href="#">móveis</a></li>
+            <hr style="margin: 0">
             <li class="opcao-li"><a href="#">alimentação</a></li>
+            <hr style="margin: 0">
         </ul>
     </div>
 </section>
 
 <style>
     .section-menu {
-      display: flex;
-        float: left;text-transform: uppercase;
+        display: flex;
+        float: left;
+        text-transform: uppercase;
     }
+
     .menu-lateral {
         display: block;
         justify-items: center;
@@ -34,16 +42,22 @@
         color: #444;
 
     }
-    .categoria-h3, .opcao-li {
-        transition: 1s;
-        padding-bottom: 5px;
-        border-bottom: 1px solid burlywood;
+
+    hr {
+        border: 0;
+        height: 1px;
+        color: burlywood;
+        background-image: -webkit-linear-gradient(left, transparent, #DBDBDB, transparent);
+        background-image: linear-gradient(to right, transparent, burlywood, transparent);
+        margin: 22px 0;
+
+
     }
 
     .categoria-h3 {
         font-weight: 300;
         margin: auto;
-        margin-bottom: 2.5rem;
+        margin-bottom: 0.75rem;
         margin-top: 2rem;
 
         text-align: center;
@@ -58,12 +72,15 @@
 
     .opcao-li {
         margin: auto;
-        margin-bottom: 20px;
+        margin-top: 15px;
+        margin-bottom: 5px;
     }
 
     ul.opcao {
         padding: inherit;
         margin: auto;
+        margin: 0 50px;
+        margin-top: 2rem;
     }
 
 
