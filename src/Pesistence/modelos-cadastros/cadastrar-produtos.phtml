@@ -14,6 +14,9 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
            $preco = $_POST['preco'],
            $titulo_produto = $_POST['titulo_produto'],
            $preco_desc = $_POST['preco_desc'],
-           $imagem_produto = $_FILES['imagem_produto']
+           $imagem_produto = $_FILES['imagemProduto'],
+           $categoria = $_POST['categoria'],
+           $subcategoria = $_POST['subcategoria'],
+           $marca = $_POST['marca']
         );
 }

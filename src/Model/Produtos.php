@@ -1,5 +1,6 @@
 <?php
 
+
 class Produtos
 {
     private mysqli $mysql;
@@ -16,24 +17,12 @@ class Produtos
         float  $preco,
         string $titulo_produto,
         float  $preco_desc,
-        string $imagem_produto
+        $imagem_produto,
+        string $categoria,
+        string $subcategoria,
+        string $marca
     ): void
     {
-        /*
-                var_dump($nome);
-                var_dump($descricao);
-                var_dump($preco);
-                var_dump($preco_desc);
-                var_dump($titulo_produto);
-                var_dump($imagem_produto);
-                exit();*/
-
-        $nome = $_POST['nome'];
-        $descricao = $_POST['descricao'];
-        $preco = $_POST['preco'];
-        $titulo_produto = $_POST['titulo_produto'];
-        $preco_desc = $_POST['preco_desc'];
-        $imagem_produto = $_FILES['imagem_produto'];
 
         $preco_desc = $preco - ($preco * $preco_desc) / 100;
 
@@ -43,12 +32,36 @@ class Produtos
 
             if ($ext == true) {
 
-                $caminho_arquivo = "arquivos/" . $titulo_produto;
+                $caminho_arquivo = "arquivos/" . $nome;
 
                 move_uploaded_file($imagem_produto["tmp_name"], $caminho_arquivo);
 
-                $cadastro = $this->mysql->prepare('INSERT INTO `produtos` (nome, descricao, preco, titulo_produto, preco_desc, imagem_produto) VALUES (?, ?, ?, ?, ?, ?)');
-                $cadastro->bind_param('ssssss', $nome, $descricao, $preco, $titulo_produto, $preco_desc, $imagem_produto);
+                $cadastro = $this
+                    ->mysql
+                    ->prepare(
+                        'INSERT INTO `produtos` (
+                        nome, 
+                        descricao, 
+                        preco, 
+                        titulo_produto, 
+                        preco_desc, 
+                        imagem_produto, 
+                        categoria, 
+                        subcategoria, 
+                        marca
+                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                $cadastro->bind_param(
+                    'ssdsdssss',
+                    $nome,
+                    $descricao,
+                    $preco,
+                    $titulo_produto,
+                    $preco_desc,
+                    $imagem_produto,
+                    $categoria,
+                    $subcategoria,
+                    $marca
+                );
                 if ($cadastro->execute()) {
                     echo 'Cadastro feito com sucesso!';
                 } else {

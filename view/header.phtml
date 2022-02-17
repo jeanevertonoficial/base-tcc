@@ -1,20 +1,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <section class="header-section">
     <div class="header-div"><img src="#" alt="lgo"></div>
     <div class="header-div">
         <div class="header-input">
             <input name="pesquisa" type="search" placeholder="pesquisar">
-            <button class="button-header">Q</button>
+            <button class="button-header"><span class="material-icons">search</span></button>
         </div>
     </div>
     <div class="header-div">
         <ul>
-            <li><a href="/">Home</a></li>
+            <li><a href="/"><span class="material-icons">home</span></a></li>
             <li><a href="/cadastrar-produtos.php">Cadastre-se</a></li>
-            <li><a href="/logar.php">Login</a></li>
+            <li><a href="/logar.php"><span class="material-icons">login</span></a></li>
         </ul>
     </div>
 </section>
@@ -66,8 +67,6 @@
         background: white;
 
     }
-
-
     .button-header {
         color: white;
 
@@ -78,9 +77,6 @@
         box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.29);
 
         width: 15% !important;
-
-
-
     }
 
     .header-input, .button-header {
@@ -93,8 +89,6 @@
         border-radius: 12px;
 
         background: white;
-
-
     }
 
     li>a {

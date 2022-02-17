@@ -1,14 +1,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <section class="header-section">
-    <div><img src="#" alt="lgo"></div>
-    <div>
+    <div class="div-header"><img src="#" alt="lgo"></div>
+    <div class="div-header">
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/cadastrar-produtos.php">Cadastre-se</a></li>
-            <li><a href="/logar.php">Login</a></li>
+            <li><a class="links-menu" href="/"><span class="material-icons">home</span></a></li>
+            <li><a class="links-menu" href="/cadastrar-produtos.php">Cadastre-se</a></li>
+            <li><a class="links-menu" href="/logar.php"><span class="material-icons">logout</span></a></li>
         </ul>
     </div>
 </section>
@@ -21,7 +22,6 @@
         font-family: 'Roboto', sans-serif;
 
     }
-
     .header-section {
         position: relative;
         display: flex;
@@ -50,6 +50,11 @@
     }
     li>a:hover {
         color:burlywood;
+    }
+    .div-header {
+        display: flex;
+        width: 50%;
+        justify-content: center;
     }
 </style>
 
