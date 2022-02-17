@@ -3,14 +3,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
 
 <section class="header-section">
-    <div><img src="#" alt="lgo"></div>
-    <div>
+    <div class="header-div"><img src="#" alt="lgo"></div>
+    <div class="header-div">
         <div class="header-input">
             <input name="pesquisa" type="search" placeholder="pesquisar">
             <button class="button-header">Q</button>
         </div>
     </div>
-    <div>
+    <div class="header-div">
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/cadastrar-produtos.php">Cadastre-se</a></li>
@@ -39,7 +39,7 @@
         background: #EED9A3;
     }
 
-    div {
+     .header-div {
         display: flex;
         align-items: center;
         width: 33%;
@@ -79,11 +79,16 @@
 
         width: 15% !important;
 
+
+
     }
 
     .header-input, .button-header {
         width: 350px;
         height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         border-radius: 12px;
 

@@ -1,20 +1,156 @@
 <section class="footer-base">
     <div class="parte-cima">
-        <div class="conteudo-links">
-            <h4 class="footer-sub-titulo">Categorias e Subs</h4>
-            <ul class="footer-ul">
-                <li class="footer-li">acessórios</li>
-                <li class="footer-li">bicicletas</li>
-                <li class="footer-li">Eletrodoméstico</li>
-                <li class="footer-li">Móveis</li>
-            </ul>
-        </div>
-    </div>
-    <div class="parte-baixo">
+        <section class="section-cima">
+            <div class="conteudo-links">
+                <h2 class="footer-sub-titulo">Categorias e Subs</h2>
+                <ul class="footer-ul">
+                    <li class="footer-li">acessórios</li>
+                    <li class="footer-li">bicicletas</li>
+                    <li class="footer-li">Eletrodoméstico</li>
+                    <li class="footer-li">Móveis</li>
+                </ul>
+                <hr class="linha-categoria" style="margin: 0">
+            </div>
+            <div class="conteudo-links">
+                <h2 class="footer-sub-titulo">Marcas Ofíciais</h2>
+                <ul class="footer-ul">
+                    <li class="footer-li">Makita</li>
+                    <li class="footer-li">Broch</li>
+                    <li class="footer-li">Eletrolux</li>
+                    <li class="footer-li">samsung</li>
+                </ul>
+                <hr class="linha-categoria" style="margin: 0">
+            </div>
+            <div class="conteudo-links">
+                <h2 class="footer-sub-titulo">Ferramentas</h2>
+                <ul class="footer-ul">
+                    <li class="footer-li">acessórios</li>
+                    <li class="footer-li">Serra-eletrica</li>
+                    <li class="footer-li">Serra-Corte</li>
+                    <li class="footer-li">Ferramentas</li>
+                </ul>
+                <hr class="linha-categoria" style="margin: 0">
+            </div>
+        </section>
+        <section class="section-meio">
+            <div class="contato">
+                <section class="contato-contato">
+                    <div class="footer-contato">
+                        <h2 class="footer-sub-contato">Contato</h2>
+                        <ul class="ul-contato">
+                            <li class="li-contato">(00) 0000-0000</li>
+                        </ul>
+                    </div>
+                    <div class="footer-contato">
+                        <h2 class="footer-sub-contato">Email</h2>
+                        <ul class="ul-contato">
+                            <li class="li-contato">jeanbassone39@gmail.com</li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="contato-newsletter">
+                    <div class="footer-contato">
+                        <h2 class="footer-sub-contato">receber newsletter</h2>
+                        <input type="email" name="newsletter" placeholder="Digíte seu email aqui">
+                    </div>
+            </div>
+        </section>
+</section>
+</div>
+<div class="parte-baixo">
 
-    </div>
+</div>
 </section>
 
 <style>
+    .footer-base {
+        position: relative;
+        height: 1000px;
+        background: #444;
 
+    }
+
+    .parte-cima {
+
+        background: #999;
+        height: 500px;
+        align-items: flex-start;
+        text-transform: uppercase;
+
+        margin-top: 3rem;
+    }
+
+    .conteudo-links {
+        width: 33%;
+    }
+
+    .conteudo-links {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .footer-ul {
+        display: flex;
+        padding: 0;
+        flex-direction: column;
+        margin-bottom: 25px;
+
+    }
+
+    .footer-li {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+
+    .linha-categoria {
+        border: 0;
+        height: 1px;
+        color: #131313;
+        background-image: -webkit-linear-gradient(left, transparent, #DBDBDB, transparent);
+        background-image: linear-gradient(to right, transparent, #151515, transparent);
+        margin: 22px 0;
+    }
+    .section-cima {
+        width: 100%;
+    }
+    .section-meio {
+        margin-top: 7rem;
+        margin-bottom: 3rem;
+    }
+    .section-cima, .section-meio {
+        display: flex;
+    }
+
+    .contato {
+        width: 100%;
+        display: flex;
+
+    }
+    .ul-contato, .li-contato {
+
+        padding: 0;
+        margin: 0 auto;
+    }
+    .li-contato {
+        font-size: 0.85rem;
+    }
+    .footer-sub-contato, .footer-sub-titulo {
+        text-align: center;
+        font-weight: 100;
+    }
+    .footer-contato {
+        margin-left: 50px;
+    }
+
+    .contato-contato {
+        width: 40%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .contato-newsletter {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+    }
 </style>
