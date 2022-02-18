@@ -1,31 +1,51 @@
 <section class="card-section">
     <div class="card">
-        <img  class="imagem-produto" src="../public/img/images.jpg" alt="carrinho">
+        <img class="imagem-produto" src="../public/img/images.jpg" alt="carrinho">
         <h2 class="titulo-produto">CARRINHO AUTO 2.0</h2>
-        <div class="preco">Preço $<div class="valor">259,59</div>
+        <div class="preco">Preço $
+            <div class="valor">259,59</div>
         </div>
-        <button class="button-produto">Comprar</button>
+        <a class="link-compra" href="/loja-compra.php">
+            <button class="button-produto">
+                Comprar
+            </button>
+        </a>
     </div>
     <div class="card">
-        <img  class="imagem-produto" src="./../public/img/images.jpg" alt="carrinho">
+        <img class="imagem-produto" src="./../public/img/images.jpg" alt="carrinho">
         <h2 class="titulo-produto">CARRINHO AUTO 2.0</h2>
-        <div class="preco">Preço $<div class="valor">259,59</div>
+        <div class="preco">Preço $
+            <div class="valor">259,59</div>
         </div>
-        <button class="button-produto">Comprar</button>
+        <a class="link-compra" href="/loja-compra.php">
+            <button class="button-produto">
+                Comprar
+            </button>
+        </a>
     </div>
     <div class="card">
-        <img  class="imagem-produto" src="./../public/img/images.jpg" alt="carrinho">
+        <img class="imagem-produto" src="./../public/img/images.jpg" alt="carrinho">
         <h2 class="titulo-produto">CARRINHO AUTO 2.0</h2>
-        <div class="preco">Preço $<div class="valor">259,59</div>
+        <div class="preco">Preço $
+            <div class="valor">259,59</div>
         </div>
-        <button class="button-produto">Comprar</button>
+        <a class="link-compra" href="/loja-compra.php">
+            <button class="button-produto">
+                Comprar
+            </button>
+        </a>
     </div>
     <div class="card">
-        <img  class="imagem-produto" src="./../public/img/images.jpg" alt="carrinho">
+        <img class="imagem-produto" src="./../public/img/images.jpg" alt="carrinho">
         <h2 class="titulo-produto">CARRINHO AUTO 2.0</h2>
-        <div class="preco">Preço $<div class="valor">259,59</div>
+        <div class="preco">Preço $
+            <div class="valor">259,59</div>
         </div>
-        <button class="button-produto">Comprar</button>
+        <a class="link-compra" href="/loja-compra.php">
+            <button class="button-produto">
+                Comprar
+            </button>
+        </a>
     </div>
 </section>
 
@@ -41,6 +61,7 @@
 
         height: 70vh;
     }
+
     .card {
         display: flex;
         flex-direction: column;
@@ -50,14 +71,15 @@
         width: 202px;
         height: 323px;
     }
+
     .imagem-produto {
         width: 202px;
         height: 199px;
 
 
-
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
     }
+
     .titulo-produto {
         margin: auto;
 
@@ -74,9 +96,11 @@
         width: auto;
         display: flex;
     }
+
     .preco {
         color: #000;
     }
+
     .valor {
         color: #6a6a6a;
     }
@@ -102,6 +126,11 @@
     .button-produto:hover {
         transition: 0.8s;
         background: bisque !important;
+    }
+
+    .link-compra {
+        color: inherit;
+        text-decoration: inherit;
     }
 
 </style>

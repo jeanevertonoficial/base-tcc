@@ -51,7 +51,8 @@
                 <section class="contato-newsletter">
                     <div class="footer-contato">
                         <h2 class="footer-sub-contato">receber newsletter</h2>
-                        <input type="email" name="newsletter" placeholder="Digíte seu email aqui">
+                        <input type="email" class="input-newsletter" name="newsletter" placeholder="Digíte seu email aqui">
+                        <button class="newsletter-btn">Enviar</button>
                     </div>
             </div>
         </section>
@@ -152,5 +153,18 @@
         width: 60%;
         display: flex;
         justify-content: center;
+    }
+    .newsletter-btn {
+        background: #EED9A3;
+        color: white;
+
+        border: none;
+        border-radius: 12px 0;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.26);
+        padding: 7px;
+    }
+    .input-newsletter {
+        padding: 7px;
+        border-radius: 0 12px;
     }
 </style>

@@ -28,14 +28,13 @@ class Produtos
 
         if ($imagem_produto != null) {
 
-            preg_match("/\.(jpg|png|jpeg|jfif){1}$/i", $imagem_produto['name'], $ext);
+            preg_match("/\.(jpg|png|jpeg){1}$/i", $imagem_produto['name'], $ext);
 
             if ($ext == true) {
 
                 $caminho_arquivo = "arquivos/" . $nome;
 
                 move_uploaded_file($imagem_produto["tmp_name"], $caminho_arquivo);
-
                 $cadastro = $this
                     ->mysql
                     ->prepare(
@@ -62,6 +61,7 @@ class Produtos
                     $subcategoria,
                     $marca
                 );
+
                 if ($cadastro->execute()) {
                     echo 'Cadastro feito com sucesso!';
                 } else {
