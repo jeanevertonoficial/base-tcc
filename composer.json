@@ -1,18 +1,20 @@
 {
-    "name": "src/arquitetura",
-    "description": "Criando meu primeiro web site com MVC doctrine etc.",
+    "name": "src/caminho",
+    "description": "Desenvolvimento web ecommerce em casa",
+    "require": {
+        "doctrine/orm": "^2.10",
+        "symfony/cache": "^6.0",
+        "doctrine/migrations": "^3.3"
+    },
     "autoload": {
         "psr-4": {
-            "Src\\Arquitetura\\": "Src/Arquitetura/"
+            "src\\doctrine\\": "src/"
         }
     },
     "authors": [
         {
             "name": "Jean Everton",
-            "email": "sistemas2@leiloesjudiciais.com.br"
+            "email": "jeanever39@gmail.com"
         }
-    ],
-    "require": {
-
-    }
+    ]
 }

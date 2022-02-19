@@ -1,98 +1,212 @@
 <?php
 
+namespace src\doctrine\Model;
+
+use Doctrine\Common\Collections\ArrayCollection;
 
 class Produtos
 {
-    private mysqli $mysql;
+    /**
+     * @column(type="string")
+     */
+    private $nome;
+    /**
+     * @column(type="string")
+     */
+    private $descricao;
+    /**
+     * @column(type="float")
+     */
+    private $preco;
+    /**
+     * @column(type="string")
+     */
+    private $titulo_produto;
+    /**
+     * @column(type="string")
+     */
+    private $imagem_produto;
+    /**
+     * @column(type="string")
+     */
+    private $categoria;
+    /**
+     * @column(type="string")
+     */
+    private $subcategoria;
+    /**
+     * @column(type="string")
+     */
+    private $marca;
 
+    /**
+     * @column(type="float")
+     */
+    private $desconto;
 
-    public function __construct(mysqli $mysql)
+    /**
+     * @return mixed
+     */
+    public function getDesconto()
     {
-        $this->mysql = $mysql;
+        return $this->desconto;
     }
 
-    public function adicionarProduto(
-        string $nome,
-        string $descricao,
-        float  $preco,
-        string $titulo_produto,
-        float  $preco_desc,
-        $imagem_produto,
-        string $categoria,
-        string $subcategoria,
-        string $marca
-    ): void
+    /**
+     * @param mixed $desconto
+     */
+    public function setDesconto($desconto): void
     {
+        $this->desconto = $desconto;
+    }
 
-        $preco_desc = $preco - ($preco * $preco_desc) / 100;
 
-        if ($imagem_produto != null) {
+    public function __construct()
+    {
+        $this->produtos = new ArrayCollection();
+    }
 
-            preg_match("/\.(jpg|png|jpeg){1}$/i", $imagem_produto['name'], $ext);
+    /**
+     * @return mixed
+     */
+    public function getNome()
+    {
+        return $this->nome;
+    }
 
-            if ($ext == true) {
+    /**
+     * @param mixed $nome
+     */
+    public function setNome($nome): void
+    {
+        $this->nome = $nome;
+    }
 
-                $caminho_arquivo = "arquivos/" . $nome;
+    /**
+     * @return mixed
+     */
+    public function getDescricao()
+    {
+        return $this->descricao;
+    }
 
-                move_uploaded_file($imagem_produto["tmp_name"], $caminho_arquivo);
-                $cadastro = $this
-                    ->mysql
-                    ->prepare(
-                        'INSERT INTO `produtos` (
-                        nome, 
-                        descricao, 
-                        preco, 
-                        titulo_produto, 
-                        preco_desc, 
-                        imagem_produto, 
-                        categoria, 
-                        subcategoria, 
-                        marca
-                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
-                $cadastro->bind_param(
-                    'ssdsdssss',
-                    $nome,
-                    $descricao,
-                    $preco,
-                    $titulo_produto,
-                    $preco_desc,
-                    $imagem_produto,
-                    $categoria,
-                    $subcategoria,
-                    $marca
-                );
+    /**
+     * @param mixed $descricao
+     */
+    public function setDescricao($descricao): void
+    {
+        $this->descricao = $descricao;
+    }
 
-                if ($cadastro->execute()) {
-                    echo 'Cadastro feito com sucesso!';
-                } else {
-                    echo " 
-                            <script class='alerta' type=\"text/javascript\">
-                                alert(\"Extensão inválida.\");
-                            </script>
-                        ";
-                }
-                echo " 
-                            <script class='alerta' type=\"text/javascript\">
-                                alert(\"Imagem cadastrada com sucesso.\");
-                            </script>
-                        ";
-                header("Location: loja-itens-adm.php");
+    /**
+     * @return mixed
+     */
+    public function getPreco()
+    {
+        return $this->preco;
+    }
 
-            } else {
-                echo " 
-                        <script class='alerta' type=\"text/javascript\">
-                            alert(\"Não foi possivel salvar imagem.\");
-                        </script>
-                    ";
-            }
+    /**
+     * @param mixed $preco
+     */
+    public function setPreco($preco): void
+    {
+        $this->preco = $preco;
+    }
 
-        } else {
-            echo " 
-                    <script class='alerta' type=\"text/javascript\">
-                        alert(\"Não foi possivel salvar imagem, arquivo null.\");
-                    </script>
-                ";
+    /**
+     * @return mixed
+     */
+    public function getTituloProduto()
+    {
+        return $this->titulo_produto;
+    }
 
-        }
+    /**
+     * @param mixed $titulo_produto
+     */
+    public function setTituloProduto($titulo_produto): void
+    {
+        $this->titulo_produto = $titulo_produto;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrecoDesc()
+    {
+        return $this->preco_desc;
+    }
+
+    /**
+     * @param mixed $preco_desc
+     */
+    public function setPrecoDesc($preco_desc): void
+    {
+        $this->preco_desc = $preco_desc;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImagemProduto()
+    {
+        return $this->imagem_produto;
+    }
+
+    /**
+     * @param mixed $imagem_produto
+     */
+    public function setImagemProduto($imagem_produto): void
+    {
+        $this->imagem_produto = $imagem_produto;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategoria()
+    {
+        return $this->categoria;
+    }
+
+    /**
+     * @param mixed $categoria
+     */
+    public function setCategoria($categoria): void
+    {
+        $this->categoria = $categoria;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSubcategoria()
+    {
+        return $this->subcategoria;
+    }
+
+    /**
+     * @param mixed $subcategoria
+     */
+    public function setSubcategoria($subcategoria): void
+    {
+        $this->subcategoria = $subcategoria;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMarca()
+    {
+        return $this->marca;
+    }
+
+    /**
+     * @param mixed $marca
+     */
+    public function setMarca($marca): void
+    {
+        $this->marca = $marca;
     }
 }
