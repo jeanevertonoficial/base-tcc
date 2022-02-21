@@ -1,5 +1,5 @@
 <?php
 
-require_once __DIR__. './../view/header.phtml';
-require_once __DIR__. './../view/menu-lateral.phtml';
-require_once __DIR__. './../view/comprar-produto.phtml';
+require_once __DIR__ . './../application/layouts/header/header.phtml';
+require_once __DIR__ . './../application/layouts/menu/menu-lateral.phtml';
+require_once __DIR__ . './../application/layouts/components/comprar-produto.phtml';
