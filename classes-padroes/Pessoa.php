@@ -2,14 +2,31 @@
 
 namespace Src\Arquitetura;
 
+/**
+ * @Entity(repositoryClass="src\doctrine\Pessoa)
+ */
 
 abstract class  Pessoa
 {
+    /**
+     * @column (type="string")
+     */
     private string $nome;
+    /**
+     * @column (type="string")
+     */
     private string $sobrenome;
+    /**
+     * @column (type="string")
+     */
     private string $rg;
+    /**
+     * @column (type="string")
+     */
     private string $cpf;
-    private static $numeroDePessoas = 0;
+    /**
+     * @var Endereco
+     */
     private Endereco $endereco;
 
     public function __construct($nome, $sobrenome, $cpf, $rg, Endereco $endereco)

@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Arquitetura;
+namespace src\doctrine;
 
 class Cliente extends Pessoa
 {

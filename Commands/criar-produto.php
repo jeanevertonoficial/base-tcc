@@ -1,7 +1,7 @@
 <?php
 
-use src\doctrine\Model\Produtos;
-use src\doctrine\Persistence\EntityManegeFactory;
+use src\doctrine\Entity\Produtos;
+use src\doctrine\Helper\EntityManegeFactory;
 
 require_once __DIR__.'./../vendor/autoload.php';
 

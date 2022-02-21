@@ -1,8 +1,10 @@
 <?php
 
 // incluindo os arquivos
+use src\doctrine\Entity\Produtos;
+
 require_once __DIR__. './../../../vendor/autoload.php';
-require_once __DIR__. './../../Model/Produtos.php';
+require_once __DIR__ . './../../Entity/Produtos.php';
 require_once __DIR__ . './../EntityManegeFactory.php';
 
 if (($_SERVER['REQUEST_METHOD']) === 'POST') {
@@ -17,6 +19,6 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
            $imagem_produto = $_FILES['imagemProduto'],
            $categoria = $_POST['categoria'],
            $subcategoria = $_POST['subcategoria'],
-           $marca = $_POST['marca']
+           $marcas = $_POST['marca']
         );
 }

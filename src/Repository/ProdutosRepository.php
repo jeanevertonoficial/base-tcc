@@ -3,9 +3,9 @@
 namespace src\doctrine\Repository;
 
 
-use src\doctrine\Model\Produtos;
+use src\doctrine\Entity\Produtos;
 
-class ProdutosRepository extends Produtos
+class ProdutosRepository
 {
     private $pdo;
 
@@ -21,11 +21,11 @@ class ProdutosRepository extends Produtos
                       descricao, 
                       preco, 
                       titulo_produto, 
-                      categotia, 
-                      subcategoria, 
-                      marca, 
+                      preco_desc,
                       imagem_produto, 
-                      desconto
+                      categoria, 
+                      subcategoria, 
+                      marcas, 
                       ) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?)';
         $stm = $this->pdo->prepare($sql);
         $stm->bindValue(1, ':nome');

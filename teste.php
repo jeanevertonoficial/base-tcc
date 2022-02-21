@@ -1,6 +1,6 @@
 <?php
 
-use src\doctrine\Persistence\EntityManegeFactory;
+use src\doctrine\Helper\EntityManegeFactory;
 
 require_once __DIR__. '/vendor/autoload.php';
 

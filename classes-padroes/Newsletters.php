@@ -1,9 +1,21 @@
 <?php
 
-namespace Src\Arquitetura\Model;
+namespace Src\Arquitetura;
 
+/**
+ * @Entity
+ */
 class Newsletters
 {
+    /**
+     * @id
+     * @GeneratedValue
+     * @column(type= "integer")
+     */
+    private int $id;
+    /**
+     * @column (type= "string")
+     */
     private string $email;
 
     public function __construct($email)
@@ -14,7 +26,7 @@ class Newsletters
     /**
      * @return string
      */
-    public function recueraEmail(): string
+    public function recuperaEmail(): string
     {
         return $this->email;
     }

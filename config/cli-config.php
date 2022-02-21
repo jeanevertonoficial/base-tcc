@@ -1,9 +1,9 @@
 <?php
 
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
-use src\doctrine\Persistence\EntityManegeFactory;
+use src\doctrine\Helper\EntityManegeFactory;
 
-// replace with file to your own project bootstrap
+// Require o autoload
 require_once './vendor/autoload.php';
 
 // replace with mechanism to retrieve EntityManager in your app
