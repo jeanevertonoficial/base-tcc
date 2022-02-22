@@ -4,7 +4,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <section class="header-section">
-    <div class="header-div"><img src="#" alt="lgo"></div>
+    <div class="header-div"><a class="link-home" href="/home"><img src="#" alt="lgo"></a></div>
     <div class="header-div">
         <div class="header-input">
             <input name="pesquisa" type="search" placeholder="pesquisar">
@@ -27,7 +27,10 @@
         margin: auto;
         font-family: 'Roboto', sans-serif;
     }
-
+    .link-home {
+        text-decoration: none;
+        color: inherit;
+    }
     .header-section {
         position: relative;
         display: flex;
@@ -62,7 +65,8 @@
 
         text-align: center;
 
-        border-radius: 12px;
+        height: 40px;
+        border-radius: 30px;
         background: white;
 
     }
@@ -80,12 +84,12 @@
 
     .header-input, .button-header {
         width: 350px;
-        height: 25px;
+        height: 40px;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        border-radius: 12px;
+        border-radius: 30px;
 
         background: white;
     }

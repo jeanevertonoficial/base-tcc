@@ -53,8 +53,8 @@ class Produtos
     private string $marcas;
 
 
-     public function __construct($nome, $descricao, $preco, $titulo_produto, $imagem_produto, $categoria, $subcategoria, $desconto, $marcas
-    ){
+     public function __construct($nome, $descricao, $preco, $titulo_produto, $imagem_produto, $categoria, $subcategoria, $desconto, $marcas)
+     {
         $this->nome = $nome;
         $this->descricao = $descricao;
         $this->preco = $preco;

@@ -16,13 +16,17 @@ class EntityManegeFactory
             [$rootDir . '/src'],
             true
         );
-
+      /*  $connection = [
+            'driver' => 'pdo_mysql',
+            'path' =>  'var/data/banco.sqlite'
+        ];
+*/
         $connection = [
             'driver' => 'pdo_mysql',
             'rost' => 'localhost',
             'dbname' => 'lojaBase',
             'user' => 'root',
-            'password' => ''
+            'password' => 'Donmisterjan10'
         ];
         return EntityManager::create($connection, $config);
     }
