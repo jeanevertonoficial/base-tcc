@@ -1,14 +1,41 @@
 <?php
 
-namespace Src\Arquitetura;
+namespace src\doctrine\Entity;
 
+/**
+ * @Entity
+ */
 class Endereco
 {
+    /**
+     * @Id
+     * @GeneratedValue
+     *@column (type="integer")
+     */
+    private int $id;
+    /**
+     * @column (type="string")
+     */
     private string $numero;
+    /**
+     * @column (type="string")
+     */
     private string $cidade;
+    /**
+     * @column (type="string")
+     */
     private string $rua;
+    /**
+     * @column (type="string")
+     */
     private string $bairro;
-    private $estado;
+    /**
+     * @column (type="string")
+     */
+    private string $estado;
+    /**
+     * @column (type="string")
+     */
     private string $ceep;
 
     public function __construct($numero, $cidade, $rua, $bairro, $estado, $ceep)
@@ -33,50 +60,31 @@ class Endereco
         $this->estado = $estado;
     }
 
-    /**
-     * @return string
-     */
     public function recuperaNumero()
     {
         return $this->numero;
     }
 
-    /**
-     * @return string
-     */
     public function recuperaCidade()
     {
         return $this->cidade;
     }
 
-
-    /**
-     * @return string
-     */
     public function recuperaRua()
     {
         return $this->rua;
     }
 
-    /**
-     * @return string
-     */
     public function recuperaBairro()
     {
         return $this->bairro;
     }
 
-    /**
-     * @return string
-     */
     public function recuperaCeep()
     {
         return $this->ceep;
     }
 
-    /**
-     * @return mixed
-     */
     public function recuperaEstado()
     {
         return $this->estado;

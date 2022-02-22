@@ -1,6 +1,7 @@
+<?php include_once __DIR__. './../../../src/Persistence/Cadastro-produto.php'?>
 <section class="section-cadastrar">
     <div class="div-cadastra">
-        <form action="" method="post" enctype="multipart/form-data" class="cadastrar-formulario">
+        <form action="" method="POST" enctype="multipart/form-data" class="cadastrar-formulario">
             <div class="div-nome">
                 <label for="nome" class="div-label">nome</label>
                 <input type="text" name="nome" class="nome-cad" required>
@@ -19,7 +20,7 @@
             </div>
             <div class="div-nome">
                 <label for="preco_desc" class="div-label">Desconto</label>
-                <select name="preco_desc" class="nome-cad">
+                <select name="desconto" class="nome-cad">
                     <option value="0">selecione o desconto se houver</option>
                     <option value="10">10%</option>
                     <option value="15">15%</option>
@@ -86,7 +87,7 @@
             </div>
             <div class="div-nome">
                 <label for='imagem_produto' class="div-label">Imagem do produto</label>
-                <input type="file" name="imagemProduto" class="nome-cad" required>
+                <input type="file" name="imagem_produto" class="nome-cad" required>
             </div>
             <button class="button-cadastro">Cadastrar</button>
         </form>

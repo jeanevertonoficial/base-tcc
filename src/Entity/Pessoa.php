@@ -1,13 +1,19 @@
 <?php
 
-namespace Src\Arquitetura;
+namespace src\doctrine\Entity;
 
 /**
- * @Entity(repositoryClass="src\doctrine\Pessoa)
+ * @Entity
  */
 
 abstract class  Pessoa
 {
+    /**
+     * @Id
+     * @GeneratedValue
+     *@column (type="integer")
+     */
+    private int $id;
     /**
      * @column (type="string")
      */

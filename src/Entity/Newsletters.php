@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Arquitetura;
+namespace src\doctrine\Entity;
 
 /**
  * @Entity
