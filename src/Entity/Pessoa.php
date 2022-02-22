@@ -11,7 +11,7 @@ abstract class  Pessoa
     /**
      * @Id
      * @GeneratedValue
-     *@column (type="integer")
+     * @column (type="integer")
      */
     private int $id;
     /**

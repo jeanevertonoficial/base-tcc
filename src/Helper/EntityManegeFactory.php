@@ -16,11 +16,8 @@ class EntityManegeFactory
             [$rootDir . '/src'],
             true
         );
-      /*  $connection = [
-            'driver' => 'pdo_mysql',
-            'path' =>  'var/data/banco.sqlite'
-        ];
-*/
+
+        // Dados para a conexão do banco
         $connection = [
             'driver' => 'pdo_mysql',
             'rost' => 'localhost',

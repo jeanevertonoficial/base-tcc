@@ -2,7 +2,6 @@
 
 namespace src\doctrine\Entity;
 
-
 /**
  * @Entity
  */
@@ -76,19 +75,15 @@ class Produtos
         return $this->descricao;
     }
 
-
     public function getPreco(): float
     {
         return $this->preco;
     }
 
-
-
     public function getTituloProduto(): string
     {
         return $this->titulo_produto;
     }
-
 
     public function getImagemProduto()
     {
@@ -100,11 +95,11 @@ class Produtos
         return $this->categoria;
     }
 
-
     public function getSubcategoria(): string
     {
         return $this->subcategoria;
     }
+
     public function getDesconto(): float
     {
         return $this->desconto;

@@ -1,0 +1,117 @@
+<section class="section-cadastrar" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <div class="div-cadastra">
+        <form action="" method="POST" enctype="multipart/form-data" class="cadastrar-formulario">
+        <h1 class="cadastro-cliente">Cadastre-se</h1>
+            <div class="div-nome">
+                <label for="nome" class="div-label">nome</label>
+                <input type="text" name="nome" class="nome-cad" required placeholder="Digíte seu nome e sobrenome">
+            </div>
+            <div class="div-nome">
+                <label class="div-label" for="email">email</label>
+                <input class="nome-cad text" type="email" name="email" placeholder="seuemail@gmail.com" required>
+            </div>
+            <div class="div-nome">
+                <label class="div-label" for="celular">celular</label>
+                <input type="text" name="celular" class="nome-cad" placeholder="( ## ) ##### - ####" required>
+            </div>
+            <div class="div-nome">
+                <label class="div-label" for="senha">senha</label>
+                <input type="password" name="senha" class="nome-cad" placeholder="Digite sua senha" required>
+                <small>*Senha maior que 6 caracteres</small>
+            </div>
+            <div class="div-nome">
+                <label for='imagem' class="div-label">Foto do perfil</label>
+                <input type="file" name="imagem" class="nome-cad">
+            </div>
+            <button class="button-cadastro">Cadastrar</button>
+        </form>
+    </div>
+</section>
+
+
+<style>
+    .cadastro-cliente {
+        text-align: center;
+    }
+    .cadastro-cliente {
+        width: auto;
+        transition: 0.5s ;
+        font-family: 'Roboto', sans-serif;
+
+        color: white;
+
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 1px 5px 10px black;
+
+        cursor: pointer;
+    }
+    .cadastro-cliente:hover, .cadastro-cliente:hover{
+        cursor: pointer;
+        color: rgb(227, 206, 103);
+        transition: 1s ;
+        text-shadow: 20px 10px 0px rgba(0, 0, 0, 0.1);
+    }
+    .section-cadastrar {
+        width: 500px;
+        height: auto;
+        margin: auto;
+        margin-top: 1rem;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .cadastrar-formulario {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+
+        box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.25);
+
+        border: none;
+    }
+
+    .div-nome {
+        display: flex;
+        flex-direction: column;
+
+        margin-bottom: 25px;
+    }
+
+    .div-cadastra {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nome-cad, .button-cadastro {
+        display: flex;
+        justify-items: center;
+
+    }
+
+    .nome-cad {
+        border: 0.5px solid rgba(0, 0, 0, 0.25);
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .button-cadastro {
+        display: inline;
+        justify-items: center;
+        padding: 10px;
+        background: bisque;
+        border: none;
+
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+
+        border-radius: 12px;
+        box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    textarea {
+        height: 70px !important;
+    }
+</style>
