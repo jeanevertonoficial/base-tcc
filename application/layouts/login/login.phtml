@@ -1,0 +1,107 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<section class="section-login">
+    <section class="cadastro-login">
+        <form action="" class="formularioLogin">
+        <h2 class="login-h2">Loja Ecommerce Dígital</h2>
+            <label for="email" class="label-login">Usuário</label>
+                <input type="text" class="input-login" name="usuario" placeholder="Insira o usuário">
+            <label for="senha" class="label-login">Senha </label>
+                <input type="password" class="input-login" name="senha" placeholder="digite sua senha">
+            <button class="button-login">Entrar</button>
+        <a href="index.php" class="icon-login"><span class="material-icons">home</span></a>
+        </form>
+    </section>
+</section>
+
+<style>
+
+    .cadastro-login{
+        width: 500px;
+        height: 600px;
+        display: flex;
+        margin: auto;
+        margin-top: 10rem;
+        background: #EED9A3;
+        box-shadow: 10px 25px 25px rgba(0, 0, 0, 0.09);
+
+        border-radius: 5px;
+    }
+
+    .formularioLogin {
+        display: flex;
+        flex-direction: column;
+
+        margin: auto;
+        width: 80%;
+
+    }
+
+    .input-login {
+        padding: 10px;
+        margin-bottom: 10px;
+
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.17);
+    }
+    .button-login {
+        padding: 15px;
+        border: none;
+        color: white;
+        background: #363636;
+        border-radius: 5px;
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.17);
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+    }
+    .button-login:hover {
+        border: 1px solid rgba(0, 0, 0, 0.41);
+        background: white;
+        color: #444444;
+    }
+
+    .label-login {
+        color: #444444;
+        font-family: 'Roboto', sans-serif;
+
+    }
+    .login-h2 {
+        width: auto;
+        transition: 0.5s ;
+        font-family: 'Roboto', sans-serif;
+
+        color: white;
+
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 1px 5px 10px black;
+
+        cursor: pointer;
+    }
+    .login-h2:hover, .icon-login:hover{
+        cursor: pointer;
+
+        transition: 1s ;
+        text-shadow: 5px 5px 0px rgb(238, 217, 163);
+    }
+    .icon-login {
+        text-decoration: inherit;
+        margin: auto;
+        margin-top: 2rem;
+        transition: 0.5s;
+        display: flex;
+        justify-content: center;
+        color: white;
+
+        cursor: pointer;
+        text-shadow: 0px 15px 20px rgba(0, 0, 0, 0.34);
+
+        width: 15px;
+    }
+
+</style>
+
