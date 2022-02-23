@@ -12,23 +12,23 @@ class Produtos
      * @GeneratedValue
      * @column(type="integer")
      */
-    private int $id;
+    private $id;
     /**
      * @column(type="string")
      */
-    private string $nome;
+    private $nome;
     /**
      * @column(type="string")
      */
-    private string $descricao;
+    private $descricao;
     /**
      * @column(type="float")
      */
-    private float $preco;
+    private  $preco;
     /**
      * @column(type="string")
      */
-    private string $titulo_produto;
+    private $titulo_produto;
     /**
      * @column(type="string")
      */
@@ -36,41 +36,38 @@ class Produtos
     /**
      * @column(type="string")
      */
-    private string $categoria;
+    private $categoria;
     /**
      * @column(type="string")
      */
-    private string $subcategoria;
+    private $subcategoria;
     /**
      * @column(type="float")
      */
-    private float $desconto;
+    private $desconto;
     /**
      * @column (type="string")
      */
-    private string $marcas;
+    private $marcas;
 
-    /**
-     * @return string
-     */
+
     public function getNome(): string
     {
         return $this->nome;
     }
 
-    public function setNome(string $nome)
+    public function setNome(string $nome): void
     {
         $this->nome = $nome;
 
     }
-
 
     public function getDescricao(): string
     {
         return $this->descricao;
     }
 
-    public function setDescricao(string $descricao)
+    public function setDescricao(string $descricao): void
     {
         $this->descricao = $descricao;
     }
@@ -80,7 +77,7 @@ class Produtos
         return $this->preco;
     }
 
-    public function setPreco(float $preco)
+    public function setPreco(float $preco): void
     {
         $this->preco = $preco;
     }
@@ -90,7 +87,7 @@ class Produtos
         return $this->titulo_produto;
     }
 
-    public function setTituloProduto(string $titulo_produto)
+    public function setTituloProduto(string $titulo_produto): void
     {
         $this->titulo_produto = $titulo_produto;
     }
@@ -100,7 +97,7 @@ class Produtos
         return $this->imagem_produto;
     }
 
-    public function setImagemProduto($imagem_produto)
+    public function setImagemProduto($imagem_produto): void
     {
         $this->imagem_produto = $imagem_produto;
     }
@@ -110,7 +107,7 @@ class Produtos
         return $this->categoria;
     }
 
-    public function setCategoria(string $categoria)
+    public function setCategoria(string $categoria): void
     {
         $this->categoria = $categoria;
     }
@@ -120,7 +117,7 @@ class Produtos
         return $this->subcategoria;
     }
 
-    public function setSubcategoria(string $subcategoria)
+    public function setSubcategoria(string $subcategoria): void
     {
         $this->subcategoria = $subcategoria;
     }
@@ -130,7 +127,7 @@ class Produtos
         return $this->desconto;
     }
 
-    public function setDesconto(float $desconto)
+    public function setDesconto(float $desconto): void
     {
         $this->desconto = $desconto;
     }
@@ -140,7 +137,7 @@ class Produtos
         return $this->marcas;
     }
 
-    public function setMarcas(string $marcas)
+    public function setMarcas(string $marcas): void
     {
         $this->marcas = $marcas;
     }
