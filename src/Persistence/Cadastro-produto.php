@@ -10,7 +10,7 @@ use src\doctrine\Helper\EntityManegeFactory;
 $entitymanegerFactory = new EntityManegeFactory();
 $entityManeger = $entitymanegerFactory->getEntityManege();
 
-/*
+
 $nome = $_POST['nome'];
 $descricao = $_POST['descricao'];
 $preco = $_POST['preco'];
@@ -20,7 +20,7 @@ $categoria = $_POST['categoria'];
 $subcategoria = $_POST['subcategoria'];
 $desconto = $_POST['desconto'];
 $marcas = $_POST['marca'];
-*/
+
 
 $produto = new Produtos(
     $argv[1] = 'nome',

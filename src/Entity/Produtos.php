@@ -41,7 +41,6 @@ class Produtos
      * @column(type="string")
      */
     private string $subcategoria;
-
     /**
      * @column(type="float")
      */
@@ -65,94 +64,89 @@ class Produtos
         $this->marcas = $marcas;
     }
 
+    /**
+     * @return string
+     */
     public function getNome(): string
     {
         return $this->nome;
     }
 
-    public function getDescricao(): string
-    {
-        return $this->descricao;
-    }
-
-    public function getPreco(): float
-    {
-        return $this->preco;
-    }
-
-    public function getTituloProduto(): string
-    {
-        return $this->titulo_produto;
-    }
-
-    public function getImagemProduto()
-    {
-        return $this->imagem_produto;
-    }
-
-    public function getCategoria(): string
-    {
-        return $this->categoria;
-    }
-
-    public function getSubcategoria(): string
-    {
-        return $this->subcategoria;
-    }
-
-    public function getDesconto(): float
-    {
-        return $this->desconto;
-    }
-
-    public function getMarcas(): string
-    {
-        return $this->marcas;
-    }
-
     /**
      * @param string $nome
-     * @return Produtos
+     * @return string
      */
-    public function setNome(string $nome): Produtos
+    public function setNome(string $nome)
     {
         $this->nome = $nome;
         return $this;
     }
 
     /**
-     * @param string $descricao
-     * @return Produtos
+     * @return string
      */
-    public function setDescricao(string $descricao): Produtos
+    public function getDescricao(): string
+    {
+        return $this->descricao;
+    }
+
+    /**
+     * @param string $descricao
+     * @return string
+     */
+    public function setDescricao(string $descricao)
     {
         $this->descricao = $descricao;
         return $this;
     }
 
     /**
-     * @param float $preco
-     * @return Produtos
+     * @return float
      */
-    public function setPreco(float $preco): Produtos
+    public function getPreco(): float
+    {
+        return $this->preco;
+    }
+
+    /**
+     * @param float $preco
+     * @return string
+     */
+    public function setPreco(float $preco)
     {
         $this->preco = $preco;
         return $this;
     }
 
     /**
-     * @param string $titulo_produto
-     * @return Produtos
+     * @return string
      */
-    public function setTituloProduto(string $titulo_produto): Produtos
+    public function getTituloProduto(): string
+    {
+        return $this->titulo_produto;
+    }
+
+    /**
+     * @param string $titulo_produto
+     * @return string
+     */
+    public function setTituloProduto(string $titulo_produto)
     {
         $this->titulo_produto = $titulo_produto;
         return $this;
     }
 
     /**
-     * @param mixed $imagem_produto
-     * @return Produtos
+     * @return string
+     */
+    public function getImagemProduto()
+    {
+        return $this->imagem_produto;
+    }
+
+    /**
+     * @param  $imagem_produto
+     * @return self
      */
     public function setImagemProduto($imagem_produto)
     {
@@ -161,40 +155,72 @@ class Produtos
     }
 
     /**
-     * @param string $categoria
-     * @return Produtos
+     * @return string
      */
-    public function setCategoria(string $categoria): Produtos
+    public function getCategoria(): string
+    {
+        return $this->categoria;
+    }
+
+    /**
+     * @param string $categoria
+     * @return string
+     */
+    public function setCategoria(string $categoria)
     {
         $this->categoria = $categoria;
         return $this;
     }
 
     /**
-     * @param string $subcategoria
-     * @return Produtos
+     * @return string
      */
-    public function setSubcategoria(string $subcategoria): Produtos
+    public function getSubcategoria(): string
+    {
+        return $this->subcategoria;
+    }
+
+    /**
+     * @param string $subcategoria
+     * @return string
+     */
+    public function setSubcategoria(string $subcategoria)
     {
         $this->subcategoria = $subcategoria;
         return $this;
     }
 
     /**
-     * @param float $desconto
-     * @return Produtos
+     * @return float
      */
-    public function setDesconto(float $desconto): Produtos
+    public function getDesconto(): float
+    {
+        return $this->desconto;
+    }
+
+    /**
+     * @param float $desconto
+     * @return float
+     */
+    public function setDesconto(float $desconto)
     {
         $this->desconto = $desconto;
         return $this;
     }
 
     /**
-     * @param string $marcas
-     * @return Produtos
+     * @return string
      */
-    public function setMarcas(string $marcas): Produtos
+    public function getMarcas(): string
+    {
+        return $this->marcas;
+    }
+
+    /**
+     * @param string $marcas
+     * @return string
+     */
+    public function setMarcas(string $marcas)
     {
         $this->marcas = $marcas;
         return $this;

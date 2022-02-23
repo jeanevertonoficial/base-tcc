@@ -1,3 +1,4 @@
+<?php require_once __DIR__.'./../../../src/Persistence/newsletters.php'?>
 <section class="footer-base">
     <div class="parte-cima">
         <section class="section-cima">
@@ -49,11 +50,11 @@
                     </div>
                 </section>
                 <section class="contato-newsletter">
-                    <div class="footer-contato">
+                    <form method="post" action="src/Persistence/newsletters.php" class="footer-contato">
                         <h2 class="footer-sub-contato">receber newsletter</h2>
                         <input type="email" class="input-newsletter" name="newsletter" placeholder="Digíte seu email aqui">
                         <button class="newsletter-btn">Enviar</button>
-                    </div>
+                    </form>
             </div>
         </section>
 </section>
@@ -165,7 +166,7 @@
         border-radius: 0px 15px;
         box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.26);
         padding: 7px;
-        padding:0 1rem ;
+        padding:0 1rem;
     }
     .newsletter-btn:hover {
         transition: 0.8s;

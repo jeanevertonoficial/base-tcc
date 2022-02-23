@@ -10,7 +10,6 @@ $entityManeger = $entitymanegerFactory->getEntityManege();
 
 $produtosRepository = $entityManeger->getRepository(Produtos::class);
 
-
 $produtos = $produtosRepository->findAll();
 
 foreach ($produtos as $produto):
