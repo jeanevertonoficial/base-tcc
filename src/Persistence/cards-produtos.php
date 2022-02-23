@@ -3,7 +3,7 @@
 require_once __DIR__ . './../../vendor/autoload.php';
 
 use src\doctrine\Entity\Produtos;
-use src\doctrine\Helper\EntityManegeFactory;
+use src\doctrine\infra\EntityManegeFactory;
 
 $entitymanegerFactory = new EntityManegeFactory();
 $entityManeger = $entitymanegerFactory->getEntityManege();

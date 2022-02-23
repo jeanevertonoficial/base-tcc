@@ -1,2 +1,2 @@
 <?php
-require_once __DIR__. './../application/layouts/login/login.phtml';
+require_once __DIR__ . './../Application/layouts/login/login.phtml';

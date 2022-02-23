@@ -1,6 +1,6 @@
 <?php
 
-namespace  src\doctrine\Helper;
+namespace  src\doctrine\infra;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
@@ -17,13 +17,13 @@ class EntityManegeFactory
             true
         );
 
-        // Dados para a conexão do banco
+        // Dados para a conexão do lojabase
         $connection = [
             'driver' => 'pdo_mysql',
             'rost' => 'localhost',
             'dbname' => 'lojaBase',
             'user' => 'root',
-            'password' => ''
+            'password' => 'Donmisterjan10'
         ];
         return EntityManager::create($connection, $config);
     }

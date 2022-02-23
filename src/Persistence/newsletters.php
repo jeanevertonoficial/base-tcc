@@ -1,7 +1,7 @@
 <?php
 
 use src\doctrine\Entity\Newsletters;
-use src\doctrine\Helper\EntityManegeFactory;
+use src\doctrine\infra\EntityManegeFactory;
 
 require_once __DIR__. './../../vendor/autoload.php';
 

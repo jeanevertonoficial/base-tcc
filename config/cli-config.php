@@ -1,7 +1,7 @@
 <?php
 
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
-use src\doctrine\Helper\EntityManegeFactory;
+use src\doctrine\infra\EntityManegeFactory;
 
 // Require o autoload
 require_once './vendor/autoload.php';

@@ -1,6 +1,20 @@
 <?php
 
-require_once __DIR__ . '/../application/layouts/header/header.phtml';
-require_once __DIR__ . '/../application/layouts/menu/menu-lateral.phtml';
-require_once __DIR__ . '/../application/layouts/components/card-produto.phtml';
-require_once __DIR__ . '/../application/layouts/footer/FooterBase.phtml';
+use src\doctrine\Controller\CadastrarProdutos;
+use src\doctrine\Entity\Produtos;
+
+require_once __DIR__. './../vendor/autoload.php';
+
+switch ($_SERVER['PATH_INFO']) {
+    case '/cadastrar-produtos':
+        $controlador = new CadastrarProdutos();
+        $controlador->processaRequisicao();
+        break;
+    case '/novo-curso':
+        $controlador = new FormularioDeInsercao();
+        $controlador->processaRequisicao();
+        break;
+    default:
+        echo "Erro 404";
+        break;
+}

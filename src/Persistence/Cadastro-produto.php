@@ -5,7 +5,7 @@ require_once __DIR__ . './../../vendor/autoload.php';
 // Entity gerenciador de entidades
 
 use src\doctrine\Entity\Produtos;
-use src\doctrine\Helper\EntityManegeFactory;
+use src\doctrine\infra\EntityManegeFactory;
 
 $entitymanegerFactory = new EntityManegeFactory();
 $entityManeger = $entitymanegerFactory->getEntityManege();
