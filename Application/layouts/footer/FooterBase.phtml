@@ -1,4 +1,4 @@
-<?php require_once __DIR__.'./../../../src/Persistence/newsletters.php'?>
+<?php require_once __DIR__.'./../../../src/Entity/Newsletters.php'?>
 <section class="footer-base">
     <div class="parte-cima">
         <section class="section-cima">
@@ -50,7 +50,7 @@
                     </div>
                 </section>
                 <section class="contato-newsletter">
-                    <form method="post" action="src/Persistence/newsletters.php" class="footer-contato">
+                    <form method="post" action="/home" class="footer-contato" enctype="multipart/form-data">
                         <h2 class="footer-sub-contato">receber newsletter</h2>
                         <input type="email" class="input-newsletter" name="newsletter" placeholder="Digíte seu email aqui">
                         <button class="newsletter-btn">Enviar</button>

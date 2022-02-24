@@ -1,10 +1,17 @@
 <?php
-include_once __DIR__. './../Application/layouts/header';
-include_once __DIR__. './../Application/layouts/menu/menu-lateral.phtml';
-?>
 
-    <?php foreach ($produtos as $produto): ?>
-    <div class="card">
+use src\doctrine\Entity\Produtos;
+use src\doctrine\infra\EntityManegeFactory;
+
+$entityManeger = (new EntityManegeFactory())
+    ->getEntityManege();
+$this->repositorioDeProdutos = $entityManeger
+    ->getRepository(Produtos::class);
+
+$produtoslist = $this->repositorioDeProdutos->findAll();
+
+foreach ($produtoslist as $produto): ?>
+        <div class="card">
                   <img class="imagem-produto" src="" alt="carrinho">
              <h2 class="titulo-produto"><?= $produto->getTituloProduto()?></h2>
               <div class="preco">Preço $
@@ -15,7 +22,5 @@ include_once __DIR__. './../Application/layouts/menu/menu-lateral.phtml';
                 Comprar
              </button>
              </a>
-            </div>';
-    <?php endforeach; ?>
-
-<?php include_once __DIR__. './../Application/layouts/footer/FooterBase.phtml'?>
+            </div>
+ <?php endforeach; ?>

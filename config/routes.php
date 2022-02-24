@@ -1,7 +1,10 @@
 <?php
 
-use src\doctrine\Entity\{Produtos};
+use src\doctrine\Controller\{
+    ListarProdutos,
+    Loja};
 
 return [
-    '/cadastrar-produtos' => Produtos::class,
+    '/cadastrar-produtos' => ListarProdutos::class,
+    '/home' => Loja::class
 ];

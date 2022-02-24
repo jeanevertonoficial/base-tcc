@@ -1,3 +1,28 @@
+<?php
+
+use src\doctrine\Entity\Produtos;
+use src\doctrine\infra\EntityManegeFactory;
+
+$this->entityManeger = (new EntityManegeFactory())
+    ->getEntityManege();
+
+$produto = new Produtos();
+$produto->setNome($_POST['nome']);
+$produto->setDescricao($_POST['descricao']);
+$produto->setPreco($_POST['preco']);
+$produto->setTituloProduto($_POST['titulo_produto']);
+$produto->setImagemProduto($_POST['imagem_produto']);
+$produto->setCategoria($_POST['categoria']);
+$produto->setSubcategoria($_POST['subcategoria']);
+$produto->setDesconto($_POST['desconto']);
+$produto->setMarcas($_POST['marcas']);
+
+
+$this->entityManeger->persist($produto);
+$this->entityManeger->flush();
+
+
+?>
 <section class="section-cadastrar">
     <div class="div-cadastra">
         <form action="" method="POST" enctype="multipart/form-data" class="cadastrar-formulario">
@@ -159,3 +184,5 @@
         height: 70px !important;
     }
 </style>
+
+<?php include_once __DIR__.'./../../layouts/footer/FooterBase.phtml'?>

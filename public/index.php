@@ -1,6 +1,9 @@
 <?php
 
-use src\doctrine\Controller\CadastrarProdutos;
+use src\doctrine\Controller\{
+    CadastrarProdutos,
+    Loja
+};
 
 require_once __DIR__. './../vendor/autoload.php';
 
@@ -9,7 +12,11 @@ switch ($_SERVER['PATH_INFO']) {
         $controlador = new CadastrarProdutos();
         $controlador->processaRequisicao();
         break;
+    case '/dashboard':
+        $controlador = new Loja();
+        $controlador->processaRequisicao();
     default:
-        echo "Erro 404";
+        $controlador = new Loja();
+        $controlador->processaRequisicao();
         break;
 }

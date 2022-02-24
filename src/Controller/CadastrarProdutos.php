@@ -7,15 +7,12 @@ use src\doctrine\infra\EntityManegeFactory;
 
 class CadastrarProdutos implements InterfaceProcessaRequisicao
 {
+
     public function __construct()
     {
         $this->entityManeger = (new EntityManegeFactory())
             ->getEntityManege();
 
-    }
-
-    public function processaRequisicao():void
-    {
         $produto = new Produtos();
         $produto->setNome($_POST['nome']);
         $produto->setDescricao($_POST['descricao']);
@@ -27,10 +24,14 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
         $produto->setDesconto($_POST['desconto']);
         $produto->setMarcas($_POST['marcas']);
 
+
+    }
+
+    public function processaRequisicao():void
+    {
         $this->entityManeger->persist($produto);
         $this->entityManeger->flush();
-
-        require_once __DIR__ . './../../Application/layouts/components/cadastrar-produtos.phtml';
+        require_once __DIR__ . './../../view/cadastrar-produto.php';
     }
 
 }
