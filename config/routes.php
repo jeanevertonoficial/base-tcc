@@ -6,5 +6,7 @@ use src\doctrine\Controller\{
 
 return [
     '/cadastrar-produtos' => ListarProdutos::class,
-    '/home' => Loja::class
+    '/home' => Loja::class,
+    '/dashborad' => Loja::class,
+
 ];

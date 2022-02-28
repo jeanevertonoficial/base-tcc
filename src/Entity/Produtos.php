@@ -142,5 +142,11 @@ class Produtos
         $this->marcas = $marcas;
     }
 
-
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

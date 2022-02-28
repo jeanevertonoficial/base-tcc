@@ -1,4 +1,6 @@
- <section class="section-cadastrar">
+<?php require_once __DIR__.' ./../Application/layouts/header/header-adm.phtml'; ?>
+
+<section class="section-cadastrar">
         <div class="div-cadastra">
             <form action="/realiza-cadastro" method="POST" enctype="multipart/form-data" class="cadastrar-formulario">
                 <div class="div-nome">
@@ -160,4 +162,4 @@
         }
     </style>
 
-<?php include_once __DIR__.'./../../layouts/footer/FooterBase.phtml'?>
+ <?php require_once __DIR__.' ./../Application/layouts/footer/FooterBase.phtml'; ?>

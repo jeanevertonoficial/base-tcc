@@ -8,10 +8,10 @@ require_once __DIR__. './../../vendor/autoload.php';
 $entitymanege = new EntityManegeFactory();
 $entitymaneger = $entitymanege->getEntityManege();
 
-$newslatter = new Newsletters();
-$newslatter->setEmail($argv[1]);
+//$newslatter = new Newsletters();
+//$newslatter->setEmail($argv[1]);
 
-$entitymaneger->persist($newslatter);
+//$entitymaneger->persist($newslatter);
 
 $entitymaneger->flush();
 

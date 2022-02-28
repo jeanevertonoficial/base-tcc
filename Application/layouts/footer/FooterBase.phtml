@@ -1,4 +1,3 @@
-<?php require_once __DIR__.'./../../../src/Entity/Newsletters.php'?>
 <section class="footer-base">
     <div class="parte-cima">
         <section class="section-cima">
@@ -50,7 +49,7 @@
                     </div>
                 </section>
                 <section class="contato-newsletter">
-                    <form method="post" action="/home" class="footer-contato" enctype="multipart/form-data">
+                    <form method="post" action="/salvar-newsletters" class="footer-contato" enctype="multipart/form-data">
                         <h2 class="footer-sub-contato">receber newsletter</h2>
                         <input type="email" class="input-newsletter" name="newsletter" placeholder="Digíte seu email aqui">
                         <button class="newsletter-btn">Enviar</button>
@@ -79,7 +78,7 @@
         align-items: flex-start;
         text-transform: uppercase;
 
-        margin-top: 70rem;
+        margin-top: 10rem;
     }
 
     .conteudo-links {
@@ -175,7 +174,10 @@
         background: #ff9120;
     }
     .input-newsletter {
+        width: inherit !important;
         padding: 7px;
         border-radius: 0 12px;
+        border: none;
+        height: 40px;
     }
 </style>

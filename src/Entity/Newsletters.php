@@ -2,9 +2,7 @@
 
 namespace src\doctrine\Entity;
 
-/**
- * @Entity
- */
+
 class Newsletters
 {
     /**
@@ -12,20 +10,19 @@ class Newsletters
      * @GeneratedValue
      * @column(type= "integer")
      */
-    private int $id;
+   /* private int $id;
     /**
      * @column (type= "string")
      */
-    private string $email;
+   /* private string $email;
 
-
-    public function getEmail(): string
+    public function getEmail():string
     {
         return $this->email;
     }
-
-    public function setEmail(string $email): void
+/*
+    public function setEmail(string $email)
     {
         $this->email = $email;
-    }
+    } */
 }

@@ -10,28 +10,65 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
 
     public function __construct()
     {
+
         $this->entityManeger = (new EntityManegeFactory())
             ->getEntityManege();
 
-        $produto = new Produtos();
-        $produto->setNome($_POST['nome']);
-        $produto->setDescricao($_POST['descricao']);
-        $produto->setPreco($_POST['preco']);
-        $produto->setTituloProduto($_POST['titulo_produto']);
-        $produto->setImagemProduto($_POST['imagem_produto']);
-        $produto->setCategoria($_POST['categoria']);
-        $produto->setSubcategoria($_POST['subcategoria']);
-        $produto->setDesconto($_POST['desconto']);
-        $produto->setMarcas($_POST['marcas']);
+        $nome = $_POST['nome'];
+        $descricao = $_POST['descricao'];
+        $preco = $_POST['preco'];
+        $titulo = $_POST['titulo_produto'];
+        $imagem = $_FILES['imagem_produto'];
+        $categoria = $_POST['categoria'];
+        $subcat = $_POST['subcategoria'];
+        $desc = $_POST['desconto'];
+        $marcas = $_POST['marca'];
+
+        if ($imagem != null) {
+
+            preg_match("/\.(jpg|png|jpeg|jiff){1}$/i", $imagem['name'], $ext);
+
+            if ($ext == true) {
+
+                //   $caminho_arquivo = "arquivos/" . $nome;
+
+                move_uploaded_file($imagem["tmp_name"], 'C:/Users/Jean Everton/Documents/tudoSobrePHP/loja-ecommerce-digital/src/arquivos/' . $nome);
 
 
+                $produto = new Produtos();
+
+                $produto->setNome($nome);
+                $produto->setDescricao($descricao);
+                $produto->setPreco($preco);
+                $produto->setTituloProduto($titulo);
+                $produto->setImagemProduto($imagem);
+                $produto->setCategoria($categoria);
+                $produto->setSubcategoria($subcat);
+                $produto->setDesconto($desc);
+                $produto->setMarcas($marcas);
+
+                $this->entityManeger->persist($produto);
+
+            } else {
+                ?>
+                <script>
+                    alert("Extensão inválida.");
+                </script> <?php
+            }
+        } else {
+            ?>
+            <script>alert('Falha ao cadastrar Produto!.')</script>
+            <?php
+        }
     }
 
-    public function processaRequisicao():void
+    public function processaRequisicao(): void
     {
-        $this->entityManeger->persist($produto);
         $this->entityManeger->flush();
-        require_once __DIR__ . './../../view/cadastrar-produto.php';
+        ?>
+        <script>alert('Produto Cadastrado com Sucesso!.')</script>
+        <?php
+        header('Location: /cadastrar-produtos');
     }
 
 }
