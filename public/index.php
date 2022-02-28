@@ -1,13 +1,6 @@
 <?php
 
-use src\doctrine\Controller\{
-    cad_prod,
-    CadastrarProdutos,
-    Login,
-    Loginadm,
-    Loja,
-    NewslettersCadastro
-};
+use src\doctrine\Controller\{cad_newsletters, cad_prod, CadastrarProdutos, Login, Loginadm, Loja, NewslettersCadastro};
 
 require_once __DIR__. './../vendor/autoload.php';
 
@@ -20,12 +13,16 @@ switch ($_SERVER['PATH_INFO']) {
         $controlador = new cad_prod();
         $controlador->processaRequisicao();
         break;
-    case '/dashboard':
-        $controlador = new Loja();
+    case '/cadastrar-newsletters':
+        $controlador = new cad_newsletters();
         $controlador->processaRequisicao();
         break;
     case '/salvar-newsletters':
         $controlador = new NewslettersCadastro();
+        $controlador->processaRequisicao();
+        break;
+    case '/dashboard':
+        $controlador = new Loja();
         $controlador->processaRequisicao();
         break;
     case '/logar':
