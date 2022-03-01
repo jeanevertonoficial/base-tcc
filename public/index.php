@@ -1,6 +1,14 @@
 <?php
 
-use src\doctrine\Controller\{cad_newsletters, cad_prod, CadastrarProdutos, Login, Loginadm, Loja, NewslettersCadastro};
+use src\doctrine\Controller\{
+    cad_newsletters,
+    cad_prod,
+    CadastrarProdutos,
+    Login,
+    Loginadm,
+    Loja,
+    NewslettersCadastro
+};
 
 require_once __DIR__. './../vendor/autoload.php';
 
@@ -13,12 +21,12 @@ switch ($_SERVER['PATH_INFO']) {
         $controlador = new cad_prod();
         $controlador->processaRequisicao();
         break;
-    case '/cadastrar-newsletters':
-        $controlador = new cad_newsletters();
-        $controlador->processaRequisicao();
-        break;
     case '/salvar-newsletters':
         $controlador = new NewslettersCadastro();
+        $controlador->processaRequisicao();
+        break;
+    case '/cadastrar-newsletters':
+        $controlador = new cad_newsletters();
         $controlador->processaRequisicao();
         break;
     case '/dashboard':
@@ -38,3 +46,14 @@ switch ($_SERVER['PATH_INFO']) {
         $controlador->processaRequisicao();
         break;
 }
+/*
+session_start();
+
+$ehRotaDeLogin = stripos($caminho, 'login');
+if (!isset($_SESSION['logado']) && $ehRotaDeLogin === false) {
+    header('Location: /login');
+    exit();
+}
+
+
+*/
