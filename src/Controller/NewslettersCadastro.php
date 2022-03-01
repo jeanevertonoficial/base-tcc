@@ -11,8 +11,10 @@ class NewslettersCadastro implements InterfaceProcessaRequisicao
     public function __construct()
     {
         // Entity gerenciador de entidades
-        $this->entityManeger = (new EntityManegeFactory())
+        $this->entityManeger = (
+        new EntityManegeFactory())
             ->getEntityManege();
+        include_once '../../view/newsletters.php';
 
         $news = $_POST['newsletters'];
 
@@ -31,8 +33,10 @@ class NewslettersCadastro implements InterfaceProcessaRequisicao
             ->entityManeger
             ->flush();
         ?>
-            <script> alert('Email cadastrado com sucesso!.')</script>
+        <script> alert('Email cadastrado com sucesso!.')</script>
         <?php
+        header('Location: /dashboard');
+
 
     }
 }
