@@ -4,7 +4,11 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <section class="header-section">
-    <div class="header-div"><a class="link-home" href="/home"><img src="#" alt="lgo"></a></div>
+    <div class="header-div">
+        <a class="link-home" href="/home">
+            <img src="C:\Users\Jean Everton\Documents\tudoSobrePHP\loja-ecommerce-digital\Application\layouts\img\logo.jpg" width="300" height="60" alt="logo">
+        </a>
+    </div>
     <div class="header-div">
         <form method="post" action="/busca-produtos" class="header-input">
             <input name="pesquisa" id="pesquisa" type="search" placeholder="pesquisar">
@@ -27,10 +31,12 @@
         margin: auto;
         font-family: 'Roboto', sans-serif;
     }
+
     .link-home {
         text-decoration: none;
         color: inherit;
     }
+
     .header-section {
         position: fixed;
         display: flex;
@@ -47,7 +53,7 @@
         margin-bottom: 2rem;
     }
 
-     .header-div {
+    .header-div {
         display: flex;
         align-items: center;
         width: 33%;
@@ -75,6 +81,7 @@
         background: white;
 
     }
+
     .button-header {
         color: white;
 
@@ -99,11 +106,12 @@
         background: white;
     }
 
-    li>a {
+    li > a {
         text-decoration: none;
         color: inherit;
     }
-    li>a:hover {
-        color:burlywood;
+
+    li > a:hover {
+        color: burlywood;
     }
 </style>
