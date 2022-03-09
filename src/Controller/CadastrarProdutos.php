@@ -2,6 +2,7 @@
 
 namespace src\doctrine\Controller;
 
+use Aws\Resource\Aws;
 use src\doctrine\Entity\Produtos;
 use src\doctrine\infra\EntityManegeFactory;
 
@@ -31,13 +32,15 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
             if ($ext == true) {
 
                 $nomeFinal = date('d.m.Y.H.i.s').'.jpg';
-
-
-                $caminho_arquivo = "C:/Users/Jean Everton/Documents/tudoSobrePHP/loja-ecommerce-digital/view/arquivos/" . $nome. '-'. $nomeFinal;
+                $caminho_arquivo =
+                    "C:/Users/jean/Documents/TudoSobrePHP/loja-ecommerce-digital/src/arquivos/"
+                    . $nome
+                    . ' - '
+                    .$nomeFinal;
 
                 move_uploaded_file($_FILES['imagem_produto']["tmp_name"], $caminho_arquivo);
 
-                $nome = $nome .'-'. $nomeFinal;
+                $nome = $nome .'- '. $nomeFinal;
                 $produto = new Produtos();
 
                 $produto->setNome($nome);
@@ -68,10 +71,11 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
     public function processaRequisicao(): void
     {
         $this->entityManeger->flush();
-        header('Location: /cadastrar-produtos');
+
         ?>
         <script>alert('Produto Cadastrado com Sucesso!.')</script>
         <?php
+        header('Location: /cadastrar-produtos');
     }
 
 }

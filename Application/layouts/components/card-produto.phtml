@@ -3,6 +3,39 @@
 </section>
 
 <style>
+    .span-descricao{
+        opacity: 0;
+        margin: 0;
+        height: 0;
+
+        transition: 0.3s;
+    }
+
+    .span-descricao:hover {
+        height: auto;
+
+        transition: 0.8s;
+        opacity: 1;
+
+        color: white;
+
+        font-size: small;
+
+        background: rgb(54, 54, 54);
+
+        border-radius: 5px;
+
+        padding: 8px;
+
+        margin-top: 5px;
+
+        z-index: 200;
+
+    }
+    .descricao {
+        color: #ffd411;
+
+    }
     .card-section {
         display: flex;
         flex-wrap: wrap;
