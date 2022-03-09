@@ -32,17 +32,22 @@ if ($nome == 'undefined' || $nome == '') {
 foreach ($produtoslist as $produto):
 
     if ($produto->getDesconto() >= 5){
-        $mostrar = $produto->getDesconto();
+        $mostrar_desconto = $produto->getDesconto();
+        $mostrar = "block";
     } else {
-        $mostrar = '';
+        $mostrar_desconto = '';
+        $mostrar = 'none';
     }
 
     ?>
 
     <div class="card">
         <div class="over-desconto">
-            <span class="span-desconto"><?= $mostrar ?> </span>
-        <img class="imagem-produto" src="<?= $caminho_arquivo . $produto->getNome() ?>" alt="imagem_produto">
+            <span class="span-desconto" style="display: <?= $mostrar ?>">
+                <div class="div-desc"> <?= $mostrar_desconto ?>%</div>
+                <div class="div-desc"> de <br>desconto</div>
+            </span>
+        <img class="imagem-produto" src="<?= $caminho_arquivo . $produto->getNome() ?>" alt="foto">
         </div>
         <h2 class="titulo-produto"><?= $produto->getTituloProduto() ?>
         </h2>
