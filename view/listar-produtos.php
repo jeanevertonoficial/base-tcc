@@ -9,7 +9,7 @@ $this->repositorioDeProdutos = $entityManeger
     ->getRepository(Produtos::class);
 
 
-$caminho_arquivo = 'C:/Users/jean/Documents/TudoSobrePHP/loja-ecommerce-digital/src/arquivos/';
+$caminho_arquivo = '/arquivos/';
 
 
 // filter para limpar e apontar para a variavel sem lixo
@@ -47,7 +47,7 @@ foreach ($produtoslist as $produto):
                 <div class="div-desc"> <?= $mostrar_desconto ?>%</div>
                 <div class="div-desc"> de <br>desconto</div>
             </span>
-            <img class="imagem-produto" src="<?= $caminho_arquivo . $produto->getNome() ?>" alt="foto">
+            <img class="imagem-produto" src="../arquivos/<?= $produto->getNome()?>.jpg" alt="foto">
         </div>
 
         <h2 class="titulo-produto"><?= $produto->getTituloProduto() ?>

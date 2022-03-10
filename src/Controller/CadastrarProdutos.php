@@ -31,16 +31,14 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
 
             if ($ext == true) {
 
-                $nomeFinal = date('d.m.Y.H.i.s').'.jpg';
+              //  $nomeFinal = date('d.m.Y.H.i.s').'.jpg';
                 $caminho_arquivo =
-                    "C:/Users/jean/Documents/TudoSobrePHP/loja-ecommerce-digital/src/arquivos/"
-                    . $nome
-                    . ' - '
-                    .$nomeFinal;
+                    "file:///C:/Users/Jean%20Everton/Documents/tudoSobrePHP/loja-e-commerce/loja-ecommerce-digital/arquivos/"
+                    . $nome. '.jpg';
 
                 move_uploaded_file($_FILES['imagem_produto']["tmp_name"], $caminho_arquivo);
 
-                $nome = $nome .'- '. $nomeFinal;
+              //  $nome = $nome .'- '. $nomeFinal;
                 $produto = new Produtos();
 
                 $produto->setNome($nome);
