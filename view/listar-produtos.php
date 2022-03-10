@@ -14,9 +14,9 @@ $caminho_arquivo = 'C:/Users/jean/Documents/TudoSobrePHP/loja-ecommerce-digital/
 
 // filter para limpar e apontar para a variavel sem lixo
 $nome = filter_input(
-        INPUT_GET,
-        'pesquisa',
-        FILTER_SANITIZE_STRING
+    INPUT_GET,
+    'pesquisa',
+    FILTER_SANITIZE_STRING
 );
 
 if ($nome == 'undefined' || $nome == '') {
@@ -31,7 +31,7 @@ if ($nome == 'undefined' || $nome == '') {
 
 foreach ($produtoslist as $produto):
 
-    if ($produto->getDesconto() >= 5){
+    if ($produto->getDesconto() >= 5) {
         $mostrar_desconto = $produto->getDesconto();
         $mostrar = "block";
     } else {
@@ -47,11 +47,14 @@ foreach ($produtoslist as $produto):
                 <div class="div-desc"> <?= $mostrar_desconto ?>%</div>
                 <div class="div-desc"> de <br>desconto</div>
             </span>
-        <img class="imagem-produto" src="<?= $caminho_arquivo . $produto->getNome() ?>" alt="foto">
+            <img class="imagem-produto" src="<?= $caminho_arquivo . $produto->getNome() ?>" alt="foto">
         </div>
+
         <h2 class="titulo-produto"><?= $produto->getTituloProduto() ?>
         </h2>
-        <span class="span-descricao"><b class="descricao"> Descrição do produto,</b> <?= $produto->getDescricao()?></span>
+            <span class="span-descricao">
+        <b class="descricao"> Descrição do produto,</b> <?= $produto->getDescricao() ?>
+        </span>
         <div class="preco">Preço $
             <div class="valor"><?= $produto->getPreco() ?></div>
         </div>
