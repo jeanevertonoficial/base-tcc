@@ -1,66 +1,89 @@
 <?php require_once __DIR__ . ' ./../Application/layouts/header/header-adm.phtml'; ?>
 
-    <section class="section-cadastrar">
-        <div class="div-cadastra">
-            <form action="/realiza-cadastro" method="POST" enctype="multipart/form-data" class="cadastrar-formulario">
-                <div class="cadastro-esquerdo">
-                    <div class="div-nome">
-                        <label for="nome" class="div-label">nome</label>
-                        <input type="text" name="nome" class="nome-cad" required>
-                    </div>
-                    <div class="div-nome">
-                        <label class="div-label" for="descricao">descricao</label>
-                        <textarea class="nome-cad text" name="descricao" placeholder="descrição do produto"></textarea>
-                    </div>
-                    <div class="div-nome">
-                        <label class="div-label" for="preco">preco</label>
-                        <input type="text" name="preco" class="nome-cad" required>
-                    </div>
-                    <div class="div-nome">
-                        <label for='titulo_produto' class="div-label">titulo do produto</label>
-                        <input type="text" name="titulo_produto" class="nome-cad" required>
+    <section class="principal">
+        <div class="cadastrar-formulario">
+            <div class="div-cadastra">
+                <section class="section-cadastrar">
+                    <form action="/realiza-cadastro" method="POST" enctype="multipart/form-data">
+                        <div class="cad-card"><a href="#cadastro-dois">Próximo</a>
+                            <div class="cadastro-um" id="cadastro-um">
+                                <div class="div-nome">
+                                    <label for="nome" class="div-label">nome</label>
+                                    <input type="text" name="nome" class="nome-cad" required>
+                                </div>
+                                <div class="div-nome">
+                                    <label class="div-label" for="descricao">descricao</label>
+                                    <textarea class="nome-cad text" name="descricao"
+                                              placeholder="descrição do produto"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+            </div>
+        </div>
+        <div class="cadastrar-formulario">
+            <section class="section-cadastrar">
+                <div class="cad-card"><a href="#cadastro-tres">Prómixo</a>
+                <div class="cad-card"><a href="#cadastro-um">voltar</a>
+                    <div class="cadastro-dois" id="cadastro-dois">
+                        <div class="div-nome">
+                            <label class="div-label" for="preco">preco</label>
+                            <input type="text" name="preco" class="nome-cad" required>
+                        </div>
+                        <div class="div-nome">
+                            <label for='titulo_produto' class="div-label">titulo do produto</label>
+                            <input type="text" name="titulo_produto" class="nome-cad" required>
+                        </div>
                     </div>
                 </div>
-                <div class="cadastrar-direito">
-                    <div class="div-nome">
-                        <label for="preco_desc" class="div-label">Desconto</label>
-                        <select name="desconto" class="nome-cad">
-                            <option value="0">selecione o desconto se houver</option>
-                            <option value="10">10%</option>
-                            <option value="15">15%</option>
-                            <option value="20">20%</option>
-                            <option value="25">25%</option>
-                            <option value="30">30%</option>
-                            <option value="35">35%</option>
-                            <option value="40">40%</option>
-                            <option value="45">45%</option>
-                            <option value="50">50%</option>
-                            <option value="55">55%</option>
-                            <option value="60">60%</option>
-                            <option value="65">65%</option>
-                            <option value="70">70%</option>
-                            <option value="75">75%</option>
-                            <option value="80">80%</option>
-                            <option value="85">85%</option>
-                        </select>
+            </section>
+        </div>
+        <div class="cadastrar-formulario">
+            <section class="section-cadastrar">
+                <div class="cad-card"><a href="#cadastro-quatro">Próximo</a>
+                <div class="cad-card"><a href="#cadastro-dois">voltar</a>
+                    <div id="cadastro-tres">
+                        <div class="div-nome">
+                            <label for="preco_desc" class="div-label">Desconto</label>
+                            <select name="desconto" class="nome-cad">
+                                <option value="0">selecione o desconto se houver</option>
+                                <option value="10">10%</option>
+                                <option value="15">15%</option>
+                                <option value="20">20%</option>
+                                <option value="25">25%</option>
+                                <option value="30">30%</option>
+                                <option value="35">35%</option>
+                                <option value="40">40%</option>
+                                <option value="45">45%</option>
+                                <option value="50">50%</option>
+                                <option value="55">55%</option>
+                                <option value="60">60%</option>
+                                <option value="65">65%</option>
+                                <option value="70">70%</option>
+                                <option value="75">75%</option>
+                                <option value="80">80%</option>
+                                <option value="85">85%</option>
+                            </select>
+                        </div>
+                        <div class="div-nome">
+                            <label for="categoria" class="div-label">Categoria</label>
+                            <select name="categoria" class="nome-cad">
+                                <option value="sem/categoria">selecione uma categoria</option>
+                                <option value="acessorio">Acessório</option>
+                                <option value="bicicleta">Bicicleta</option>
+                                <option value="celulares">celulares</option>
+                                <option value="eletronicos">eletronicos</option>
+                                <option value="carinho">Carrinho</option>
+                                <option value="cama">cama</option>
+                                <option value="sofa">sofa</option>
+                                <option value="quarto">quarto</option>
+                                <option value="banheiro">banheiro</option>
+                                <option value="cozinha">cozinha</option>
+                                <option value="vestuario">vestuário</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="div-nome">
-                        <label for="categoria" class="div-label">Categoria</label>
-                        <select name="categoria" class="nome-cad">
-                            <option value="sem/categoria">selecione uma categoria</option>
-                            <option value="acessorio">Acessório</option>
-                            <option value="bicicleta">Bicicleta</option>
-                            <option value="celulares">celulares</option>
-                            <option value="eletronicos">eletronicos</option>
-                            <option value="carinho">Carrinho</option>
-                            <option value="cama">cama</option>
-                            <option value="sofa">sofa</option>
-                            <option value="quarto">quarto</option>
-                            <option value="banheiro">banheiro</option>
-                            <option value="cozinha">cozinha</option>
-                            <option value="vestuario">vestuário</option>
-                        </select>
-                    </div>
+
                     <div class="div-nome">
                         <label for="subcategoria" class="div-label">Sub categoria</label>
                         <select name="subcategoria" class="nome-cad">
@@ -84,46 +107,72 @@
                             <option value="makita">makita</option>
                             <option value="broch">broch</option>
                             <option value="eletrolux">eletrolux</option>
-                            <option>-------- Vestuários -------- </option>
+                            <option>-------- Vestuários --------</option>
                             <option value="like">like</option>
                             <option value="adidas">adidas</option>
                             <option value="reserva">reserva</option>
-                            <option>-------- Celulares -------- </option>
+                            <option>-------- Celulares --------</option>
                             <option value="samsung">Samsung</option>
                             <option value="iphone">Iphone</option>
                             <option value="motorola">Motorola</option>
                         </select>
                     </div>
-                    <div class="div-nome">
-                        <label for='imagem_produto' class="div-label">Imagem do produto</label>
-                        <input type="file" name="imagem_produto" class="nome-cad" required>
-                    </div>
                 </div>
+            </section>
         </div>
+        </div>
+
+        <div class="cadastrar-formulario">
+            <section class="section-cadastrar">
+                <div class="cad-card"><a href="#cadastro-um">inicio</a>
+                    <div id="cadastro-quatro">
+                        <div class="div-nome">
+                            <label for='imagem_produto' class="div-label">Imagem do produto</label>
+                            <input type="file" name="imagem_produto" class="nome-cad" required>
+                        </div>
+                    </div>
                     <button class="button-cadastro">Cadastrar</button>
-            </form>
+                </div>
+            </section>
+        </div>
+        </form>
     </section>
-
-
     <style>
 
-        .section-cadastrar {
-            width: 1000px;
-            height: auto;
+        .principal {
             margin: auto;
-            margin-top: 2.75rem;
+            margin-top: 3.75rem;
+            display: flex;
+
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-content: center;
+        }
+        .section-cadastrar {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            height: auto;
             font-family: 'Roboto', sans-serif;
         }
 
         .cadastrar-formulario {
-            padding: 20px;
+            overflow: hidden;
+            margin-top: 4.75rem;
+            margin-bottom: 80rem;
             display: flex;
-            flex-direction: row;
-
+            flex-direction: column;
+            padding: 20px;
+            margin-left: 50px;
             box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.25);
             border: none;
         }
-
+        .cad-card {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 15px;
+        }
         .div-nome {
             display: flex;
             flex-direction: column;
@@ -166,9 +215,11 @@
             border-radius: 0 0 12px 12px;
             box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.25);
         }
+
         .button-cadastro:hover {
             background: #363636;
         }
+
         textarea {
             height: 110px !important;
         }

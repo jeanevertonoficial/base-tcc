@@ -9,8 +9,6 @@ $this->repositorioDeProdutos = $entityManeger
     ->getRepository(Produtos::class);
 
 
-$caminho_arquivo = '/arquivos/';
-
 
 // filter para limpar e apontar para a variavel sem lixo
 $nome = filter_input(
@@ -28,8 +26,9 @@ if ($nome == 'undefined' || $nome == '') {
 
 }
 
+$caminho = 'arquivos/';
 
-foreach ($produtoslist as $produto):
+foreach ($produtoslist as $produto): $img = $caminho.$produto->getNome();
 
     if ($produto->getDesconto() >= 5) {
         $mostrar_desconto = $produto->getDesconto();
@@ -39,6 +38,8 @@ foreach ($produtoslist as $produto):
         $mostrar = 'none';
     }
 
+   //  $preco_desc =  $produto->getPreco() * ($produto->getDesconto()  / 100);
+
     ?>
 
     <div class="card">
@@ -47,16 +48,16 @@ foreach ($produtoslist as $produto):
                 <div class="div-desc"> <?= $mostrar_desconto ?>%</div>
                 <div class="div-desc"> de <br>desconto</div>
             </span>
-            <img class="imagem-produto" src="../arquivos/<?= $produto->getNome()?>.jpg" alt="foto">
+            <div class="imagem">
+                <img class="imagem-produto" src="<?= $img?>" alt="foto">
+            </div>
         </div>
 
         <h2 class="titulo-produto"><?= $produto->getTituloProduto() ?>
         </h2>
-            <span class="span-descricao">
-        <b class="descricao"> Descrição do produto,</b> <?= $produto->getDescricao() ?>
-        </span>
         <div class="preco">Preço $
-            <div class="valor"><?= $produto->getPreco() ?></div>
+            <div class="valor"><br></div>
+            <div class="valor"><?= $produto->getPreco()?></div>
         </div>
 
         <a class="link-compra" href="/loja-compra?id=<?= $produto->getId() ?>">

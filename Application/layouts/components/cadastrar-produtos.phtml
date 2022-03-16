@@ -21,8 +21,8 @@ $produto->setMarcas($_POST['marcas']);
 $this->entityManeger->persist($produto);
 $this->entityManeger->flush();
 
-
 ?>
+
 <section class="section-cadastrar">
     <div class="div-cadastra">
         <form action="" method="POST" enctype="multipart/form-data" class="cadastrar-formulario">
@@ -113,11 +113,12 @@ $this->entityManeger->flush();
                 <label for='imagem_produto' class="div-label">Imagem do produto</label>
                 <input type="file" name="imagem_produto" class="nome-cad" required>
             </div>
+
+
             <button class="button-cadastro">Cadastrar</button>
         </form>
     </div>
 </section>
-
 
 <style>
 
@@ -184,5 +185,16 @@ $this->entityManeger->flush();
         height: 70px !important;
     }
 </style>
+    <script>
 
+        idwSDKWeb({
+            token: 'SEU_TOKEN_AQUI',
+            onRender: () => {
+                console.log('it renders!');
+            },
+            onComplete: ({ token }) => {
+                console.log('SDK Token', token);
+            }
+        });
+    </script>
 <?php include_once __DIR__.'./../../layouts/footer/FooterBase.phtml'?>
