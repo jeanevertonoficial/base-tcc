@@ -1,28 +1,42 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<?php $titulo = 'Dashboard' ?>
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+<head>
+    <meta charset=UTF-8>
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon"  href="../img/logo.jpg" type="image/x-icon">
+    <title><?php echo $titulo ?></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
 
-<section class="header-section">
-    <div class="header-div">
-        <a class="link-home" href="/home">
-            <img src="../img/logo.jpg" width="100" height="60" alt="logo">
-        </a>
-    </div>
-    <div class="header-div">
-        <form method="GET" class="header-input">
-            <input name="pesquisa" id="pesquisa" type="search" placeholder="pesquisar">
-            <button class="button-header"><span class="material-icons">search</span></button>
-        </form>
-    </div>
-    <div class="header-div">
-        <ul>
-            <li><a href="/home"><span class="material-icons">home</span></a></li>
-            <li><a href="/cadastrar-produtos">Cadastre-se</a></li>
-            <li><a href="/logar"><span class="material-icons">login</span></a></li>
-        </ul>
-    </div>
-</section>
+<header>
+
+    <section class="header-section">
+        <div class="header-div">
+            <a class="link-home" href="/home">
+                <img src="../img/logo.jpg" width="60" height="60" style="border-radius: 50px" alt="logo">
+            </a>
+        </div>
+        <div class="header-div">
+            <form method="GET" class="header-input">
+                <input name="pesquisa" id="pesquisa" type="search" placeholder="pesquisar">
+                <button class="button-header"><span class="material-icons">search</span></button>
+            </form>
+        </div>
+        <div class="header-div">
+            <ul>
+                <li><a href="/home"><span class="material-icons">home</span></a></li>
+                <li><a href="/cadastrar-produtos">Cadastre-se</a></li>
+                <li><a href="/logar"><span class="material-icons">login</span></a></li>
+            </ul>
+        </div>
+    </section>
+
+</header>
 <style>
 
     html,
