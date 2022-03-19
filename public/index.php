@@ -3,13 +3,12 @@
 use src\doctrine\Controller\{cad_newsletters,
     cad_prod,
     CadastrarProdutos,
-    CadastroPartDois,
-    CadastroPartQuatro,
-    CadastroPartTres,
+    CadastroSucesso,
     Login,
     Loginadm,
     Loja,
-    NewslettersCadastro};
+    NewslettersCadastro,
+    RemoveProduto};
 
 require_once __DIR__. './../vendor/autoload.php';
 
@@ -42,16 +41,12 @@ switch ($_SERVER['PATH_INFO']) {
         $controlador = new LoginAdm();
         $controlador->processaRequisicao();
         break;
-    case '/cadastrar-segunda':
-        $controlador = new CadastroPartDois();
+    case '/cadastrado-com-sucesso':
+        $controlador = new CadastroSucesso();
         $controlador->processaRequisicao();
         break;
-    case '/cadastrar-terceira':
-        $controlador = new CadastroPartTres();
-        $controlador->processaRequisicao();
-        break;
-    case '/cadastrar-quarta':
-        $controlador = new CadastroPartQuatro();
+    case '/excluir-produto':
+        $controlador = new RemoveProduto();
         $controlador->processaRequisicao();
         break;
     default:

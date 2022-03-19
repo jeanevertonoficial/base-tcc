@@ -24,6 +24,22 @@
         <div class="header-div">
             <form method="GET" class="header-input">
                 <input name="pesquisa" id="pesquisa" type="search" placeholder="pesquisar">
+                <div class="pesquisa-avancada">
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>por categoria</option>
+                        <option value="acessorio">Acessório</option>
+                        <option value="bicicleta">Bicicleta</option>
+                        <option value="celulares">celulares</option>
+                        <option value="eletronicos">eletronicos</option>
+                        <option value="carinho">Carrinho</option>
+                        <option value="cama">cama</option>
+                        <option value="sofa">sofa</option>
+                        <option value="quarto">quarto</option>
+                        <option value="banheiro">banheiro</option>
+                        <option value="cozinha">cozinha</option>
+                        <option value="vestuario">vestuário</option>
+                    </select>
+                </div>
                 <button class="button-header"><span class="material-icons">search</span></button>
             </form>
         </div>
@@ -43,6 +59,17 @@
     body {
         margin: auto;
         font-family: 'Roboto', sans-serif;
+    }
+
+    .pesquisa-avancada {
+        display: flex;
+    }
+
+    .pesquisa-avancada> select {
+        border: none !important;
+        background: transparent !important;
+        height: 40px;
+        border-left: 1px solid #d0d0d0 !important;
     }
 
     .link-home {
@@ -105,10 +132,11 @@
         box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.29);
 
         width: 15% !important;
+
+        margin-left: 10px;
     }
 
     .header-input, .button-header {
-        width: 350px;
         height: 40px;
         display: flex;
         justify-content: center;
