@@ -33,7 +33,7 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
 
                 $caminho_arquivo = "../arquivos/";
 
-                move_uploaded_file($_FILES['imagem_produto']["tmp_name"], $caminho_arquivo.$nome);
+                move_uploaded_file($_FILES['imagem_produto']["tmp_name"], $caminho_arquivo . $nome);
 
                 $produto = new Produtos();
 
@@ -48,6 +48,7 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
                 $produto->setMarcas($marcas);
 
                 $this->entityManeger->persist($produto);
+                $this->entityManeger->flush();
 
             } else {
                 ?>
@@ -64,12 +65,7 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
 
     public function processaRequisicao(): void
     {
-        $this->entityManeger->flush();
-
-        ?>
-        <script>alert('Produto Cadastrado com Sucesso!.')</script>
-        <?php
-        header('Location: /cadastrar-produtos');
+        header('Location: /excluir-produto');
     }
 
 }

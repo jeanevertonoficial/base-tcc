@@ -1,5 +1,6 @@
 <?php
 
+use Doctrine\ORM\QueryBuilder;
 use src\doctrine\Entity\Produtos;
 use src\doctrine\infra\EntityManegeFactory;
 
@@ -17,9 +18,25 @@ $nome = filter_input(
     FILTER_SANITIZE_STRING
 );
 
-$produtoslist = $this->repositorioDeProdutos->findAll();
+$nome_cat = filter_input(
+    INPUT_GET,
+    'pesquisa_cat',
+    FILTER_SANITIZE_STRING
+);
+
+$db = new QueryBuilder($entityManeger);
+$db->select('u.nome')
+    ->from('produtos', 'u');
 
 
+if ($nome == '') {
+    $produtoslist = $this->repositorioDeProdutos->findAll();
+} else {
+    $produtoslist = $this->repositorioDeProdutos->findByNome($nome);
+}
+
+
+/*
 
 $dql = "SELECT * FROM $tabela WHERE 
                           'nome', 
@@ -38,7 +55,7 @@ $dql = "SELECT * FROM $tabela WHERE
 
 $busca = $entityManeger->createQuery($dql);
 
-
+*/
 
 $caminho = 'arquivos/';
 /*
@@ -50,8 +67,8 @@ $caminho = 'arquivos/';
         ]);
     }
 */
-   // var_dump($nome); exit();
-foreach ($busca as $produto): $img = $caminho . $produto->getNome();
+// var_dump($nome); exit();
+foreach ($produtoslist as $produto): $img = $caminho . $produto->getNome();
 
     if ($produto->getDesconto() >= 5) {
         $mostrar_desconto = $produto->getDesconto();
