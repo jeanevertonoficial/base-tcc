@@ -65,7 +65,7 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
 
     public function processaRequisicao(): void
     {
-        header('Location: /excluir-produto');
+        header('Location: \dashboard');
     }
 
 }
