@@ -12,7 +12,7 @@ class Endereco
      * @GeneratedValue
      *@column (type="integer")
      */
-    private int $id;
+    private $Id;
     /**
      * @column (type="string")
      */

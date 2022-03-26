@@ -1,14 +1,11 @@
 <?php
 
-use src\doctrine\Controller\{
-    cad_newsletters,
+use src\doctrine\Controller\{cad_newsletters,
     cad_prod,
-    CadastrarProdutos,
+    cadastrar\CadastrarProdutos,
     Login,
     Loginadm,
-    Loja,
-    NewslettersCadastro
-};
+    NewslettersCadastro};
 
 
 return [

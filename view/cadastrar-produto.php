@@ -194,8 +194,8 @@
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
                             <button class="button-cadastro" id="nav-imagem-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-imagem"
-                                    type="button" role="tab" aria-controls="nav-imagem" aria-selected="false">
+                                    data-bs-target="#nav-destaque"
+                                    type="button" role="tab" aria-controls="nav-destaque" aria-selected="false">
                                 PRÓXIMO
                             </button>
 
@@ -208,6 +208,49 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="tab-pane fade" id="nav-destaque" role="tabpanel" aria-labelledby="nav-destaque-tab">
+            <section class="principal">
+                <div class="cadastrar-formulario">
+                    <section class="section-cadastrar">
+                        <div class="div-nome">
+                            <label for="destaque" class="div-label">Destaque</label>
+                            <select name="posicao_destaque" class="nome-cad">
+                                <option value="0" selected>Selecione se for um produto destaque</option>
+                                <option value="0">Não</option>
+                                <option value="1">Sim</option>
+                            </select>
+                        </div>
+                        <div class="div-nome">
+                            <label for="destaque" class="div-label">Posição do destaque</label>
+                            <select name="posicao_destaque" class="nome-cad">
+                                <option selected>Selecione a posição do produto</option>
+                                <option value="meio">Meio</option>
+                                <option value="esquerdo">Lado Esquerdo</option>
+                                <option value="direito">Lado Direito</option>
+                            </select>
+                        </div>
+                    </section>
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+                            <button class="button-cadastro" id="nav-imagem-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-imagem"
+                                    type="button" role="tab" aria-controls="nav-imagem" aria-selected="false">
+                                PRÓXIMO
+                            </button>
+
+                        </div>
+                    </nav>
+            </section>
+            <div class="progress barra-progresso">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0"
+                     aria-valuemax="100">85%
+                </div>
+            </div>
+        </div>
+
 
         <div class="tab-pane fade" id="nav-imagem" role="tabpanel" aria-labelledby="nav-imagem-tab">
             <section class="principal">
@@ -242,16 +285,17 @@
                     </div>
             </section>
             <div class="progress barra-progresso">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 100%;
-                     aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 99%;
+                     aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">99%
                 </div>
             </div>
-            <p class="div-nome completo">Cadastro completo!</p>
+            <p class="div-nome completo">Ultimo passo!</p>
         </div>
         </form>
         </section>
     </div>
     </div>
+
     <style>
         .titulo-principal {
             margin: inherit;

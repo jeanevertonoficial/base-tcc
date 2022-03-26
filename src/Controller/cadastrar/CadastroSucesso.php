@@ -1,6 +1,8 @@
 <?php
 
-namespace src\doctrine\Controller;
+namespace src\doctrine\Controller\cadastrar;
+
+use src\doctrine\Controller\InterfaceProcessaRequisicao;
 
 class CadastroSucesso implements InterfaceProcessaRequisicao
 {

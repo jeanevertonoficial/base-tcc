@@ -9,6 +9,7 @@ $this->repositorioDeProdutos = $entityManeger
     ->getRepository(Produtos::class);
 
 
+$tabela = Produtos::class;
 
 // filter para limpar e apontar para a variavel sem lixo
 $nome = filter_input(
@@ -20,15 +21,13 @@ $nome = filter_input(
 if ($nome == 'undefined' || $nome == '') {
     $produtoslist = $this->repositorioDeProdutos->findAll();
 } else {
-    $produtoslist = $this->repositorioDeProdutos->findBy([
-        'nome' => $nome
-    ]);
-
+    $produtoslist = $this->repositorioDeProdutos->findByNome($nome);
 }
 
-$caminho = 'arquivos/';
+$caminho = '../img/arquivos/';
+foreach ($produtoslist as $produto):
 
-foreach ($produtoslist as $produto): $img = $caminho.$produto->getNome();
+    $img = $caminho.$produto->getNome();
 
     if ($produto->getDesconto() >= 5) {
         $mostrar_desconto = $produto->getDesconto();
@@ -38,11 +37,9 @@ foreach ($produtoslist as $produto): $img = $caminho.$produto->getNome();
         $mostrar = 'none';
     }
 
-   //  $preco_desc =  $produto->getPreco() * ($produto->getDesconto()  / 100);
-
     ?>
 
-    <div class="card">
+    <div class="cards">
         <div class="over-desconto">
             <span class="span-desconto" style="display: <?= $mostrar ?>">
                 <div class="div-desc"> <?= $mostrar_desconto ?>%</div>

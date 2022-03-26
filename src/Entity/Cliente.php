@@ -8,6 +8,7 @@ namespace src\doctrine\Entity;
  */
 class Cliente extends Pessoa
 {
+
     /**
      * @column(type="integer")
      */

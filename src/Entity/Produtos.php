@@ -49,6 +49,77 @@ class Produtos
      * @column (type="string")
      */
     private $marcas;
+    /**
+     * @column (type="integer")
+     */
+    private $posicao_destaque;
+
+    /**
+     * @column  (type="integer")
+     */
+    private $ehdestaque;
+
+    /**
+     * @column (type="string")
+     */
+    private $create;
+
+
+    /**
+     * @return mixed
+     */
+    public function getPosicaodestaque()
+    {
+        return $this->posicao_destaque;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getColocaodaPosicao()
+    {
+        return $this->ehdestaque;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreate()
+    {
+        return $this->create;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @param mixed $posicao_destaque
+     */
+    public function setPosicaodestaque($posicao_destaque): void
+    {
+        $this->posicao_destaque = $posicao_destaque;
+    }
+
+    /**
+     * @param mixed $ehdestaque
+     */
+    public function setColocaodaPosicao($ehdestaque): void
+    {
+        $this->ehdestaque = $ehdestaque;
+    }
+
+    /**
+     * @param mixed $create
+     */
+    public function setCreate($create): void
+    {
+        $this->create = $create;
+    }
 
 
     public function getNome(): string

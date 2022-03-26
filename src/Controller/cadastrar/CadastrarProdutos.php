@@ -1,8 +1,8 @@
 <?php
 
-namespace src\doctrine\Controller;
+namespace src\doctrine\Controller\cadastrar;
 
-use Aws\Resource\Aws;
+use src\doctrine\Controller\InterfaceProcessaRequisicao;
 use src\doctrine\Entity\Produtos;
 use src\doctrine\infra\EntityManegeFactory;
 
@@ -31,13 +31,18 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
 
             if ($ext == true) {
 
-                $caminho_arquivo = "../arquivos/";
+                $novo = date('d.m.Y.h.s');
 
-                move_uploaded_file($_FILES['imagem_produto']["tmp_name"], $caminho_arquivo . $nome);
+                $nomeAtt = $nome.'_'.$novo;
+
+                $caminho_arquivo = "img/arquivos/";
+
+                move_uploaded_file($_FILES['imagem_produto']["tmp_name"], $caminho_arquivo . $nomeAtt);
 
                 $produto = new Produtos();
 
-                $produto->setNome($nome);
+
+                $produto->setNome($nomeAtt);
                 $produto->setDescricao($descricao);
                 $produto->setPreco($preco);
                 $produto->setTituloProduto($titulo);

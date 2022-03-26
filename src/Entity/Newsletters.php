@@ -8,11 +8,11 @@ namespace src\doctrine\Entity;
 class Newsletters
 {
     /**
-     * @id
+     * @Id
      * @GeneratedValue
-     * @column(type= "integer")
+     * @column (type="integer")
      */
-    private int $id;
+    private $Id;
     /**
      * @column (type= "string")
      */
