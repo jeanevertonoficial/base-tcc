@@ -8,7 +8,7 @@ namespace src\doctrine\Entity;
 class Produtos
 {
     /**
-     * @Id
+     * @id
      * @GeneratedValue
      * @column(type="integer")
      */
@@ -62,7 +62,7 @@ class Produtos
     /**
      * @column (type="string")
      */
-    private $create;
+    private $DataDeCriacao;
 
 
     /**
@@ -76,17 +76,9 @@ class Produtos
     /**
      * @return mixed
      */
-    public function getColocaodaPosicao()
+    public function getDataDeCriacao()
     {
-        return $this->ehdestaque;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreate()
-    {
-        return $this->create;
+        return $this->DataDeCriacao;
     }
 
     /**
@@ -106,19 +98,29 @@ class Produtos
     }
 
     /**
-     * @param mixed $ehdestaque
+     * @return mixed
      */
-    public function setColocaodaPosicao($ehdestaque): void
+    public function getEhdestaque()
     {
-        $this->ehdestaque = $ehdestaque;
+        return $this->ehdestaque;
     }
 
     /**
-     * @param mixed $create
+     * @param mixed $ehdestaque
+     * @return Produtos
      */
-    public function setCreate($create): void
+    public function setEhdestaque($ehdestaque)
     {
-        $this->create = $create;
+        $this->ehdestaque = $ehdestaque;
+        return $this;
+    }
+
+    /**
+     * @param mixed $DataDeCriacao
+     */
+    public function setDataDeCriacao($DataDeCriacao): void
+    {
+        $this->DataDeCriacao = $DataDeCriacao;
     }
 
 

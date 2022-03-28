@@ -2,9 +2,12 @@
 
 namespace src\doctrine\Controller\cadastrar;
 
+use Aws\Api\Validator;
+use GuzzleHttp\Psr7\Response;
 use src\doctrine\Controller\InterfaceProcessaRequisicao;
 use src\doctrine\Entity\Produtos;
 use src\doctrine\infra\EntityManegeFactory;
+use Symfony\Component\HttpKernel\EventListener\ValidateRequestListener;
 
 class CadastrarProdutos implements InterfaceProcessaRequisicao
 {
@@ -22,8 +25,12 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
         $imagem = $_FILES['imagem_produto'];
         $categoria = $_POST['categoria'];
         $subcat = $_POST['subcategoria'];
+        $destaque = $_POST['destaque'];
+        $posisao_destaque = $_POST['posicao_destaque'];
         $desc = $_POST['desconto'];
         $marcas = $_POST['marca'];
+        $create = date('d-m-Y');
+        $dataCreate = $create;
 
         if ($imagem != null) {
 
@@ -33,15 +40,13 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
 
                 $novo = date('d.m.Y.h.s');
 
-                $nomeAtt = $nome.'_'.$novo;
+                $nomeAtt = $nome . '_' . $novo;
 
                 $caminho_arquivo = "img/arquivos/";
 
                 move_uploaded_file($_FILES['imagem_produto']["tmp_name"], $caminho_arquivo . $nomeAtt);
 
                 $produto = new Produtos();
-
-
                 $produto->setNome($nomeAtt);
                 $produto->setDescricao($descricao);
                 $produto->setPreco($preco);
@@ -51,6 +56,9 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
                 $produto->setSubcategoria($subcat);
                 $produto->setDesconto($desc);
                 $produto->setMarcas($marcas);
+                $produto->setPosicaodestaque($posisao_destaque);
+                $produto->setEhdestaque($destaque);
+                $produto->setDataDeCriacao($dataCreate);
 
                 $this->entityManeger->persist($produto);
                 $this->entityManeger->flush();
@@ -63,7 +71,7 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
             }
         } else {
             ?>
-            <script>alert('Falha ao cadastrar Produto!.')</script>
+            <script>alert('Falha ao cadastrar Produto!')</script>
             <?php
         }
     }

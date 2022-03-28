@@ -6,9 +6,8 @@
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
 
-
     <section class="principal">
-        <h2 class="titulo-principal">Cadastrar Produtos</h2>
+        <h2 class="titulo-principal">Cadastrar Banner</h2>
     </section>
 
     <div class="tab-content" id="nav-tabContent">
@@ -17,7 +16,7 @@
                 <div class="cadastrar-formulario">
                     <div class="div-cadastra">
                         <section class="section-cadastrar">
-                            <form action="/realiza-cadastro" method="POST" enctype="multipart/form-data">
+                            <form action="/banner-cadastro" method="POST" enctype="multipart/form-data">
                                 <div class="cad-card">
                                     <div class="cadastro-um" id="cadastro-um">
                                         <div class="div-nome">
@@ -58,38 +57,33 @@
                 <div class="cadastrar-formulario">
                     <section class="section-cadastrar">
                         <div class="div-nome">
-                            <label class="div-label" for="preco">preco</label>
-                            <input type="text" name="preco" class="nome-cad" required>
+                            <label class="div-label" for="titulo_banner">Titulo do banner</label>
+                            <input type="text" name="titulo_banner" class="nome-cad" required>
                         </div>
                         <div class="div-nome">
-                            <label for="preco_desc" class="div-label">Desconto</label>
-                            <select name="desconto" class="nome-cad">
-                                <option value="0">selecione o desconto se houver</option>
-                                <option value="10">10%</option>
-                                <option value="15">15%</option>
-                                <option value="20">20%</option>
-                                <option value="25">25%</option>
-                                <option value="30">30%</option>
-                                <option value="35">35%</option>
-                                <option value="40">40%</option>
-                                <option value="45">45%</option>
-                                <option value="50">50%</option>
-                                <option value="55">55%</option>
-                                <option value="60">60%</option>
-                                <option value="65">65%</option>
-                                <option value="70">70%</option>
-                                <option value="75">75%</option>
-                                <option value="80">80%</option>
-                                <option value="85">85%</option>
+                            <label for="posicao" class="div-label">Posição do Banner</label>
+                            <small>Caso não selecione automáticamente irá para primeira posição*</small>
+                            <select name="posicao" class="nome-cad">
+                                <option value="0">selecione a posição do banner</option>
+                                <option value="1">1 primeiro</option>
+                                <option value="2">2 segundo</option>
+                                <option value="3">3 terceiro</option>
+                                <option value="4">4 quarto</option>
+                                <option value="5">5 Quinto</option>
+                                <option value="6">6 Sexto</option>
+                                <option value="7">7 sétimo</option>
+                                <option value="8">8 Oitavo</option>
+                                <option value="9">9 Nono</option>
+                                <option value="10">10 Décimo</option>
                             </select>
                         </div>
                     </section>
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
-                            <button class="button-cadastro" id="nav-cat-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-cat"
-                                    type="button" role="tab" aria-controls="nav-cat" aria-selected="false">PRÓXIMO
+                            <button class="button-cadastro" id="nav-imagem-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-imagem"
+                                    type="button" role="tab" aria-controls="nav-imagem" aria-selected="false">PRÓXIMO
                             </button>
 
                         </div>
@@ -103,159 +97,10 @@
             </div>
         </div>
 
-        <div class="tab-pane fade" id="nav-cat" role="tabpanel" aria-labelledby="nav-cat-tab">
-            <section class="principal">
-                <div class="cadastrar-formulario">
-                    <section class="section-cadastrar">
-
-                        <div class="div-nome">
-                            <label for="categoria" class="div-label">Categoria</label>
-                            <select name="categoria" class="nome-cad">
-                                <option value="sem/categoria">selecione uma categoria</option>
-                                <option value="acessorio">Acessório</option>
-                                <option value="bicicleta">Bicicleta</option>
-                                <option value="celulares">celulares</option>
-                                <option value="eletronicos">eletronicos</option>
-                                <option value="carinho">Carrinho</option>
-                                <option value="cama">cama</option>
-                                <option value="sofa">sofa</option>
-                                <option value="quarto">quarto</option>
-                                <option value="banheiro">banheiro</option>
-                                <option value="cozinha">cozinha</option>
-                                <option value="vestuario">vestuário</option>
-                            </select>
-                        </div>
-
-                        <div class="div-nome">
-                            <label for="subcategoria" class="div-label">Sub categoria</label>
-                            <select name="subcategoria" class="nome-cad">
-                                <option value="sem/subcategoria">selecione uma sub-categoria</option>
-                                <option value="adulto">adulto</option>
-                                <option value="infantil">infantil</option>
-                                <option value="feminino">feminino</option>
-                                <option value="masculino">masculino</option>
-                                <option value="crianca">criança</option>
-                                <option value="calca-masculina">calça masculina</option>
-                                <option value="calca-feminina">calça feminina</option>
-                                <option value="Jaqueta">Jaqueta</option>
-                                <option value="acessório">acessório</option>
-                            </select>
-                        </div>
-                    </section>
-                    <nav>
-                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-
-                            <button class="button-cadastro" id="nav-titulo-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-titulo"
-                                    type="button" role="tab" aria-controls="nav-titulo" aria-selected="false">PRÓXIMO
-                            </button>
-
-                        </div>
-                    </nav>
-                </div>
-            </section>
-            <div class="progress barra-progresso">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 60%;" aria-valuenow="25" aria-valuemin="0"
-                     aria-valuemax="100">60%
-                </div>
-            </div>
-        </div>
-
-
-        <div class="tab-pane fade" id="nav-titulo" role="tabpanel" aria-labelledby="nav-titulo-tab">
-            <section class="principal">
-                <div class="cadastrar-formulario">
-                    <section class="section-cadastrar">
-                        <div class="div-nome">
-                            <label for='titulo_produto' class="div-label">titulo do produto</label>
-                            <input type="text" name="titulo_produto" class="nome-cad" required>
-                        </div>
-                        <div class="div-nome">
-                            <label for="marca" class="div-label">Marca</label>
-                            <select name="marca" class="nome-cad">
-                                <option value="sem/marca">selecione uma marca</option>
-                                <option>-------- Ferramentas --------</option>
-                                <option value="makita">makita</option>
-                                <option value="broch">broch</option>
-                                <option value="eletrolux">eletrolux</option>
-                                <option>-------- Vestuários --------</option>
-                                <option value="like">like</option>
-                                <option value="adidas">adidas</option>
-                                <option value="reserva">reserva</option>
-                                <option>-------- Celulares --------</option>
-                                <option value="samsung">Samsung</option>
-                                <option value="iphone">Iphone</option>
-                                <option value="motorola">Motorola</option>
-                            </select>
-                        </div>
-
-                    </section>
-                    <nav>
-                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-
-                            <button class="button-cadastro" id="nav-imagem-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-destaque"
-                                    type="button" role="tab" aria-controls="nav-destaque" aria-selected="false">
-                                PRÓXIMO
-                            </button>
-
-                        </div>
-                    </nav>
-            </section>
-            <div class="progress barra-progresso">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0"
-                     aria-valuemax="100">80%
-                </div>
-            </div>
-        </div>
-
-
-        <div class="tab-pane fade" id="nav-destaque" role="tabpanel" aria-labelledby="nav-destaque-tab">
-            <section class="principal">
-                <div class="cadastrar-formulario">
-                    <section class="section-cadastrar">
-                        <div class="div-nome">
-                            <label for="destaque" class="div-label">Destaque</label>
-                            <select name="destaque" class="nome-cad">
-                                <option value="0" selected>Selecione se for um produto destaque</option>
-                                <option value="0">Não</option>
-                                <option value="1">Sim</option>
-                            </select>
-                        </div>
-                        <div class="div-nome">
-                            <label for="destaque" class="div-label">Posição do destaque</label>
-                            <select name="posicao_destaque" class="nome-cad">
-                                <option selected>Selecione a posição do produto</option>
-                                <option value="meio">Meio</option>
-                                <option value="esquerdo">Lado Esquerdo</option>
-                                <option value="direito">Lado Direito</option>
-                            </select>
-                        </div>
-                    </section>
-                    <nav>
-                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-
-                            <button class="button-cadastro" id="nav-imagem-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-imagem"
-                                    type="button" role="tab" aria-controls="nav-imagem" aria-selected="false">
-                                PRÓXIMO
-                            </button>
-
-                        </div>
-                    </nav>
-            </section>
-            <div class="progress barra-progresso">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0"
-                     aria-valuemax="100">85%
-                </div>
-            </div>
-        </div>
-
-
         <div class="tab-pane fade" id="nav-imagem" role="tabpanel" aria-labelledby="nav-imagem-tab">
             <section class="principal">
                 <div class="cadastrar-formulario imagem-cadastro">
-                    <div class="cad-card"><a class="voltar" href="/cadastrar-produtos">
+                    <div class="cad-card"><a class="voltar" href="/banner">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-chevron-left" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -263,11 +108,11 @@
                             </svg>
                         </a>
                         <div class="div-nome">
-                            <label for='imagem' class="div-label">Imagem produto</label>
+                            <label for='imagem_banner' class="div-label">Imagem produto</label>
                         </div>
                         <div id="cadastro-quatro">
                             <div class="div-imagem">
-                                <label for='imagem_produto' class="div-label imagem">
+                                <label for='imagem_banner' class="div-label imagem">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor"
                                          class="bi bi-box-arrow-up" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd"
@@ -275,9 +120,9 @@
                                         <path fill-rule="evenodd"
                                               d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708l3-3z"/>
                                     </svg>
-                                </label>
-                                <input type="file" id="imagem_produto" name="imagem_produto" class="nome-cad imagem"
+                                  <input type="file" id="imagem_banner" name="imagem_banner" class="nome-cad imagem"
                                        required>
+                                </label>
                             </div>
                             <label class="selecione-foto">selecione uma Imagem</label>
                         </div>

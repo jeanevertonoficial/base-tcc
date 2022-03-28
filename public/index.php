@@ -2,8 +2,10 @@
 
 use src\doctrine\Controller\{cad_newsletters,
     cad_prod,
+    cadastrar\BannerCarrossel,
     cadastrar\CadastrarProdutos,
     cadastrar\CadastroSucesso,
+    CadastrarBanner,
     Login,
     Loginadm,
     Loja,
@@ -47,6 +49,14 @@ switch ($_SERVER['PATH_INFO']) {
         break;
     case '/excluir-produto':
         $controlador = new RemoveProduto();
+        $controlador->processaRequisicao();
+        break;
+    case '/banner':
+        $controlador = new CadastrarBanner();
+        $controlador->processaRequisicao();
+        break;
+    case '/banner-cadastro':
+        $controlador = new BannerCarrossel();
         $controlador->processaRequisicao();
         break;
     default:
