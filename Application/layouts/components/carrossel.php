@@ -26,13 +26,15 @@ $totalDeBanner = $dql->getSingleScalarResult();
         $qnt_slide = $totalDeBanner;
         $cont_marc = 0;
         while ($cont_marc < $qnt_slide) {
+
             echo "<button 
                     type='button' 
                     data-bs-target='#carouselExampleIndicators' 
-                    data-bs-slide-to='$cont_marc' class='ative'
+                    data-bs-slide-to='$qnt_slide' class='ative'
                     aria-current='true'>
                 </button>";
             $cont_marc++;
+
         }
         ?>
     </div>

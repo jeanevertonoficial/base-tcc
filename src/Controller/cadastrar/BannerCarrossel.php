@@ -19,7 +19,9 @@ class BannerCarrossel implements InterfaceProcessaRequisicao
         $titulo_banner = filter_input(INPUT_POST, 'titulo_banner', FILTER_SANITIZE_STRING);
         $posicao = filter_input(INPUT_POST, 'posicao', FILTER_SANITIZE_NUMBER_INT);
         $imagem = $_FILES['imagem_banner'];
-        $create = date('d-m-Y');
+
+        date_default_timezone_set('America/Sao_Paulo');
+        $create = date('d-m-Y H:i');
 
         //var_dump($DataDeCriacao); exit();
 

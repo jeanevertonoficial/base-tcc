@@ -3,9 +3,9 @@
 use src\doctrine\Controller\{cad_newsletters,
     cad_prod,
     cadastrar\CadastrarProdutos,
+    cadastrar\NewslettersCadastro,
     Login,
-    Loginadm,
-    NewslettersCadastro};
+    Loginadm};
 
 
 return [

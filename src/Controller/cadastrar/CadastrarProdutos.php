@@ -29,7 +29,11 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
         $posisao_destaque = $_POST['posicao_destaque'];
         $desc = $_POST['desconto'];
         $marcas = $_POST['marca'];
-        $create = date('d-m-Y');
+
+        // manipulação da data
+        date_default_timezone_set('America/Sao_Paulo');
+        $create = date('d-m-Y H:i');
+
         $dataCreate = $create;
 
         if ($imagem != null) {

@@ -5,11 +5,11 @@ use src\doctrine\Controller\{cad_newsletters,
     cadastrar\BannerCarrossel,
     cadastrar\CadastrarProdutos,
     cadastrar\CadastroSucesso,
+    cadastrar\NewslettersCadastro,
     CadastrarBanner,
     Login,
     Loginadm,
     Loja,
-    NewslettersCadastro,
     RemoveProduto};
 
 require_once __DIR__. './../vendor/autoload.php';

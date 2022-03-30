@@ -63,7 +63,9 @@
         color: #363636;
         background-image: linear-gradient(rgb(241, 224, 182), rgb(255, 255, 255));
     }
-
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
     ul, li {
         margin: auto;
         display: flex;
@@ -95,6 +97,7 @@
     }
     .dropdown {
         margin: auto 15px;
+        box-sizing: border-box;
     }
 </style>
 

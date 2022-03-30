@@ -1,42 +1,38 @@
 <?php
 
-namespace src\doctrine\Controller;
+namespace src\doctrine\Controller\cadastrar;
 
 
+use src\doctrine\Controller\InterfaceProcessaRequisicao;
 use src\doctrine\Entity\Newsletters;
 use src\doctrine\infra\EntityManegeFactory;
 
 class NewslettersCadastro implements InterfaceProcessaRequisicao
 {
+
     public function __construct()
     {
         // Entity gerenciador de entidades
         $this->entityManeger = (
         new EntityManegeFactory())
             ->getEntityManege();
-        include_once '../../view/newsletters.php';
 
-        $news = $_POST['newsletters'];
+        $news = filter_input(
+                INPUT_POST,
+                'newsletter',
+                FILTER_SANITIZE_EMAIL
+        );
 
         $newsletters = new Newsletters();
         $newsletters->setEmail($news);
 
-        $this
-            ->entityManeger
-            ->persist($newsletters);
+        $this->entityManeger->persist($newsletters);
+        $this->entityManeger->flush();
 
     }
 
     public function processaRequisicao(): void
     {
-        $this
-            ->entityManeger
-            ->flush();
-        ?>
-        <script> alert('Email cadastrado com sucesso!.')</script>
-        <?php
         header('Location: /dashboard');
-
-
     }
 }

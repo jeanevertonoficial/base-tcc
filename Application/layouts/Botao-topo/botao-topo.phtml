@@ -1,19 +1,46 @@
-<section class="section-botao-topo">
-    <a href="#" class="link-botao">^</a>
-</section>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Topo</button>
+
 
 <style>
-    .link-botao{
-        position: relative;
-        margin-top: 0;
+    #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 999;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0.1);
         color: white;
-        font-size: 1rem;
-        text-decoration: none;
-        padding: 1rem;
-        float: right;
-        background: #444444;
-        z-index: 1500;
-        border: 1px solid rgba(255, 255, 255, 0.45);
-        box-shadow: 10px 10px 15px rgb(0 0 0 / 14%);
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+    }
+    #myBtn:hover {
+        background: #EED9A3;
     }
 </style>
+
+<script>
+    // pegar botão
+    var mybutton = document.getElementById("myBtn");
+
+    // quando rolar a página 20px do topo para baixo, o botão será exibido
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // // quando clicar no botão, a página rola para o topo do documento
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
