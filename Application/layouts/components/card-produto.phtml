@@ -1,8 +1,25 @@
 <section class="card-section">
+    <div class="titulo-lista-produto">
+        <h1>Confira nossa lista de produtos</h1>
+    </div>
     <?php include_once __DIR__.'./../../../view/listar-produtos.php'?>
 </section>
 
 <style>
+
+    .titulo-lista-produto {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        font-size: 40px;
+        text-align: center;
+        margin: auto;
+        justify-content: center;
+        margin: 100px 0;
+
+        color: #444444;
+        object-fit: scale-down !important;
+    }
     .span-desconto {
         opacity: 1;
         background: #e58d04;
@@ -85,11 +102,10 @@
     .imagem-produto {
         width: 220px;
         height: 199px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
 
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+        object-fit: scale-down !important;
+
     }
 
     .titulo-produto {

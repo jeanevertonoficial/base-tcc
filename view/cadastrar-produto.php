@@ -317,6 +317,7 @@
             align-content: center;
         }
 
+
         .section-cadastrar {
             display: flex;
             justify-content: center;
@@ -445,6 +446,7 @@
             width: 70%;
             margin: auto;
             margin-bottom: 25px;
+            object-fit: scale-down !important;
         }
 
         .imagem-cadastro {

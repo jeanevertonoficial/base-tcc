@@ -50,7 +50,7 @@ class Produtos
      */
     private $marcas;
     /**
-     * @column (type="integer")
+     * @column (type="string")
      */
     private $posicao_destaque;
 
