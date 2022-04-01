@@ -60,6 +60,28 @@ class Produtos
     private $ehdestaque;
 
     /**
+     * @return mixed
+     */
+    public function getEhsuperdestaque()
+    {
+        return $this->ehsuperdestaque;
+    }
+
+    /**
+     * @param mixed $ehsuperdestaque
+     * @return Produtos
+     */
+    public function setEhsuperdestaque($ehsuperdestaque)
+    {
+        $this->ehsuperdestaque = $ehsuperdestaque;
+        return $this;
+    }
+    /**
+     * @column  (type="string")
+     */
+    private $ehsuperdestaque;
+
+    /**
      * @column (type="string")
      */
     private $DataDeCriacao;

@@ -2,12 +2,9 @@
 
 namespace src\doctrine\Controller\cadastrar;
 
-use Aws\Api\Validator;
-use GuzzleHttp\Psr7\Response;
 use src\doctrine\Controller\InterfaceProcessaRequisicao;
 use src\doctrine\Entity\Produtos;
 use src\doctrine\infra\EntityManegeFactory;
-use Symfony\Component\HttpKernel\EventListener\ValidateRequestListener;
 
 class CadastrarProdutos implements InterfaceProcessaRequisicao
 {
@@ -18,17 +15,19 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
         $this->entityManeger = (new EntityManegeFactory())
             ->getEntityManege();
 
-        $nome = $_POST['nome'];
-        $descricao = $_POST['descricao'];
-        $preco = $_POST['preco'];
-        $titulo = $_POST['titulo_produto'];
+        $nome = filter_input(INPUT_POST,'nome', FILTER_SANITIZE_STRING);
+        $descricao = filter_input(INPUT_POST,'descricao', FILTER_SANITIZE_STRING);
+        $preco = filter_input(INPUT_POST,'preco', FILTER_SANITIZE_NUMBER_FLOAT);
+        $titulo = filter_input(INPUT_POST,'titulo_produto', FILTER_SANITIZE_STRING);
+        $categoria = filter_input(INPUT_POST,'categoria', FILTER_SANITIZE_STRING);
+        $subcat = filter_input(INPUT_POST,'subcategoria', FILTER_SANITIZE_STRING);
+        $destaque = filter_input(INPUT_POST,'destaque', FILTER_SANITIZE_NUMBER_INT);
+        $posisao_destaque = filter_input(INPUT_POST,'posicao_destaque', FILTER_SANITIZE_STRING);
+        $desc = filter_input(INPUT_POST,'desconto', FILTER_SANITIZE_NUMBER_FLOAT);
+        $marcas = filter_input(INPUT_POST,'marca', FILTER_SANITIZE_STRING);
+        $superdestaque = filter_input(INPUT_POST,'super_destaque', FILTER_SANITIZE_STRING);
         $imagem = $_FILES['imagem_produto'];
-        $categoria = $_POST['categoria'];
-        $subcat = $_POST['subcategoria'];
-        $destaque = $_POST['destaque'];
-        $posisao_destaque = $_POST['posicao_destaque'];
-        $desc = $_POST['desconto'];
-        $marcas = $_POST['marca'];
+
 
         // manipulação da data
         date_default_timezone_set('America/Sao_Paulo');
@@ -63,6 +62,7 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
                 $produto->setPosicaodestaque($posisao_destaque);
                 $produto->setEhdestaque($destaque);
                 $produto->setDataDeCriacao($dataCreate);
+                $produto->setEhsuperdestaque($superdestaque);
 
                 $this->entityManeger->persist($produto);
                 $this->entityManeger->flush();

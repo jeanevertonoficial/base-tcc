@@ -47,7 +47,8 @@
                 </div>
             </section>
             <div class="progress barra-progresso">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 10%;" aria-valuenow="25" aria-valuemin="0"
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                     style="width: 10%;" aria-valuenow="25" aria-valuemin="0"
                      aria-valuemax="100">Inicie o cadastro!
                 </div>
             </div>
@@ -97,7 +98,8 @@
                 </div>
             </section>
             <div class="progress barra-progresso">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0"
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                     style="width: 40%;" aria-valuenow="25" aria-valuemin="0"
                      aria-valuemax="100">40%
                 </div>
             </div>
@@ -155,7 +157,8 @@
                 </div>
             </section>
             <div class="progress barra-progresso">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 60%;" aria-valuenow="25" aria-valuemin="0"
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                     style="width: 60%;" aria-valuenow="25" aria-valuemin="0"
                      aria-valuemax="100">60%
                 </div>
             </div>
@@ -203,7 +206,8 @@
                     </nav>
             </section>
             <div class="progress barra-progresso">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0"
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                     style="width: 80%;" aria-valuenow="25" aria-valuemin="0"
                      aria-valuemax="100">80%
                 </div>
             </div>
@@ -215,17 +219,25 @@
                 <div class="cadastrar-formulario">
                     <section class="section-cadastrar">
                         <div class="div-nome">
-                            <label for="destaque" class="div-label">Destaque</label>
-                            <select name="destaque" class="nome-cad">
-                                <option value="0" selected>Selecione se for um produto destaque</option>
-                                <option value="0">Não</option>
-                                <option value="1">Sim</option>
+                            <label for="destaque" class="div-label">Super Destaque</label>
+                            <select name="super_destaque" class="nome-cad">
+                                <option value="nao" selected>Selecione se for um produto super destaque</option>
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
                             </select>
                         </div>
                         <div class="div-nome">
-                            <label for="destaque" class="div-label">Posição do destaque</label>
+                            <label for="destaque" class="div-label">É Promoção</label>
+                            <select name="destaque" class="nome-cad">
+                                <option value="0" selected>Selecione se for um produto for da super pormoção</option>
+                                <option value="1">Sim</option>
+                                <option value="0">Não</option>
+                            </select>
+                        </div>
+                        <div class="div-nome">
+                            <label for="destaque" class="div-label">Posição do produto</label>
                             <select name="posicao_destaque" class="nome-cad">
-                                <option selected>Selecione a posição do produto</option>
+                                <option value="no" selected>Selecione a posição do produto</option>
                                 <option value="meio">Meio</option>
                                 <option value="esquerdo">Lado Esquerdo</option>
                                 <option value="direito">Lado Direito</option>
@@ -245,7 +257,8 @@
                     </nav>
             </section>
             <div class="progress barra-progresso">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0"
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                     style="width: 80%;" aria-valuenow="25" aria-valuemin="0"
                      aria-valuemax="100">85%
                 </div>
             </div>
@@ -285,14 +298,16 @@
                     </div>
             </section>
             <div class="progress barra-progresso">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 99%;
-                     aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">99%
-                </div>
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar"
+                     style="width: 99%;
+                     aria-valuenow=" 25
+                " aria-valuemin="0" aria-valuemax="100">99%
             </div>
-            <p class="div-nome completo">Ultimo passo!</p>
         </div>
-        </form>
-        </section>
+        <p class="div-nome completo">Ultimo passo!</p>
+    </div>
+    </form>
+    </section>
     </div>
     </div>
 
@@ -307,6 +322,7 @@
             margin-top: -20px;
 
         }
+
         .principal {
             margin: auto;
             margin-top: 3.75rem;

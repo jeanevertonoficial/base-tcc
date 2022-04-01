@@ -46,7 +46,7 @@ foreach ($produtoslist as $produto):
                 <div class="div-desc"> de <br>desconto</div>
             </span>
             <div class="imagem">
-                <img class="imagem-produto" src="<?= $img?>" alt="foto">
+                <img class="imagem-produto" src="<?= $img?>" alt="<?= $produto->getTituloProduto() ?>">
             </div>
         </div>
 

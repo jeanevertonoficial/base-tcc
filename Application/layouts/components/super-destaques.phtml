@@ -1,0 +1,38 @@
+<?php
+
+
+use src\doctrine\infra\MysqlConnect;
+
+$caminho = '../img/arquivos/';
+
+$mysql = (new MysqlConnect())->conect();
+
+?>
+<section class="destaque">
+    <div class="titulo-lista-produto"><h1>Confira nossos destaques</h1></div>
+    <section>
+        <div class="div-produto-destaque">
+          <?php
+        $dql = "SELECT * FROM produtos WHERE `ehsuperdestaque` LIKE '%sim%' limit 1 ";
+        $dql = mysqli_query($mysql, $dql);
+        if (($dql) and ($dql->num_rows != 0)):
+            while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
+                $id = $rows->id;
+                ?>
+            <img src="<?=$img?>" alt="<?= $rows->nome?>">
+            <div class="descricao-destaque">
+                <ul class="ul-destaque">
+                    <li><?= $rows->titulo_produto?></li>
+                    <li><?= $rows->descricao?></li>
+                    <li><?= $rows->preco?></li>
+                </ul>
+            </div>
+                <?php endwhile; endif;?>
+        </div>
+        <div class="div-produto-destaque"></div>
+    </section>
+</section>
+
+<style>
+
+</style>
