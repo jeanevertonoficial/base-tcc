@@ -17,7 +17,7 @@ $mysql = (new MysqlConnect())->conect();
 <section class="super card-produtos">
     <div class="card esquerda">
         <?php
-        $dql = "SELECT * FROM produtos WHERE `posicao_destaque` LIKE '%esquerdo%' limit 1 ";
+        $dql = "SELECT * FROM produtos WHERE `posicao_destaque` LIKE '%esquerdo%' and `categoria` LIKE '%vestuario%' limit 1 ";
         $dql = mysqli_query($mysql, $dql);
         if (($dql) and ($dql->num_rows != 0)):
             while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
@@ -33,35 +33,35 @@ $mysql = (new MysqlConnect())->conect();
     </div>
     <div class="card card-meio ">
         <?php
-        $dql = "SELECT * FROM produtos WHERE `posicao_destaque` LIKE '%meio%' limit 1";
-        $dql = mysqli_query($mysql, $dql);
-        if (($dql) and ($dql->num_rows != 0)):
-        while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
-        $id = $rows->id;
-        ?>
-        <h5 class="card-title desconto"><?= $rows->desconto?>% DESCONTO</h5>
-        <img src="<?= $img ?>" style="object-fit: cover; width: 100%;" class="card-img-top card-foto" alt="<?= $rows->nome ?>">
-        <div class="card-body">
-            <p class="card-text"><?= $rows->titulo_produto ?></p>
-            <button href="#" class="btn btn-comprar">COMPRAR AGORA</button>
-        </div>
-        <?php endwhile; endif; ?>
-    </div>
-    <div class="card direita">
-        <?php
-        $dql = "SELECT * FROM produtos WHERE `posicao_destaque` LIKE '%direito%' limit 1 ";
+        $dql = "SELECT * FROM produtos WHERE `posicao_destaque` LIKE '%meio%' and `categoria` LIKE '%vestuario%' limit 1";
         $dql = mysqli_query($mysql, $dql);
         if (($dql) and ($dql->num_rows != 0)):
             while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
                 $id = $rows->id;
                 ?>
-        <h5 class="card-title desconto des-direto"><?= $rows->desconto?>% DESCONTO</h5>
-        <img src="<?= $img ?>" style=" object-fit:cover; width: 100%" class="card-img-top" alt="<?= $rows->nome ?>">
-        <div class="card-body">
-            <p class="card-text"><?= $rows->titulo_produto ?></p>
-            <button href="#" class="btn btn-comprar btn-direito">COMPRAR AGORA</button>
-        </div>
-        <?php endwhile; endif; ?>
+                <h5 class="card-title desconto"><?= $rows->desconto?>% DESCONTO</h5>
+                <img src="<?= $img ?>" style="object-fit: cover; width: 100%;" class="card-img-top card-foto" alt="<?= $rows->nome ?>">
+                <div class="card-body">
+                    <p class="card-text"><?= $rows->titulo_produto ?></p>
+                    <button href="#" class="btn btn-comprar">COMPRAR AGORA</button>
+                </div>
+            <?php endwhile; endif; ?>
+    </div>
+    <div class="card direita">
+        <?php
+        $dql = "SELECT * FROM produtos WHERE `posicao_destaque` LIKE '%direito%' and `categoria` LIKE '%vestuario%' limit 1 ";
+        $dql = mysqli_query($mysql, $dql);
+        if (($dql) and ($dql->num_rows != 0)):
+            while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
+                $id = $rows->id;
+                ?>
+                <h5 class="card-title desconto des-direto"><?= $rows->desconto?>% DESCONTO</h5>
+                <img src="<?= $img ?>" style=" object-fit:cover; width: 100%" class="card-img-top" alt="<?= $rows->nome ?>">
+                <div class="card-body">
+                    <p class="card-text"><?= $rows->titulo_produto ?></p>
+                    <button href="#" class="btn btn-comprar btn-direito">COMPRAR AGORA</button>
+                </div>
+            <?php endwhile; endif; ?>
     </div>
 </section>
 
@@ -150,12 +150,7 @@ $mysql = (new MysqlConnect())->conect();
         margin: auto;
         font-family: 'Roboto', Arial;
     }
-    /*** parte responsiva ***/
-    @media screen and (max-width: 500px){
-        .super {
-            flex-direction: column;
-        }
-    }
+
     .btn-comprar {
         display: flex;
         justify-content: center;
