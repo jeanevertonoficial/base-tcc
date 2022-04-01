@@ -12,27 +12,145 @@ $mysql = (new MysqlConnect())->conect();
     <div class="titulo-lista-produto"><h1>Confira nossos destaques</h1></div>
     <section>
         <div class="div-produto-destaque">
-          <?php
-        $dql = "SELECT * FROM produtos WHERE `ehsuperdestaque` LIKE '%sim%' limit 1 ";
-        $dql = mysqli_query($mysql, $dql);
-        if (($dql) and ($dql->num_rows != 0)):
-            while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
-                $id = $rows->id;
-                ?>
-            <img src="<?=$img?>" alt="<?= $rows->nome?>">
-            <div class="descricao-destaque">
-                <ul class="ul-destaque">
-                    <li><?= $rows->titulo_produto?></li>
-                    <li><?= $rows->descricao?></li>
-                    <li><?= $rows->preco?></li>
-                </ul>
-            </div>
-                <?php endwhile; endif;?>
+            <?php
+            $dql = "SELECT * FROM produtos WHERE `ehsuperdestaque` LIKE '%simcima%' limit 1 ";
+            $dql = mysqli_query($mysql, $dql);
+            if (($dql) and ($dql->num_rows != 0)):
+                while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
+                    $id = $rows->id;
+                    ?>
+                    <img class="img-destaque-response" src="<?= $img ?>" alt="<?= $rows->nome ?>">
+                    <div class="descricao-destaque">
+                        <ul class="ul-destaque">
+                            <li class="li-destaque titulo"><?= $rows->titulo_produto ?></li>
+                            <li class="li-destaque"><?= $rows->descricao ?></li>
+                            <li class="li-destaque">Preço: $<?= $rows->preco ?> </li>
+                            <li class="li-destaque">
+                                <button type="button" class="btn btn-saibamais" data-bs-toggle="modal"
+                                        data-bs-target="#staticBackdrop">
+                                    Saiba mais
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Saiba mais sobre este produto</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Descrião: <?= $rows->descricao ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile; endif; ?>
         </div>
-        <div class="div-produto-destaque"></div>
+
+        <div class="div-produto-destaque div-baixo">
+            <?php
+            $dql = "SELECT * FROM produtos WHERE `ehsuperdestaque` LIKE '%simbaixo%' limit 1 ";
+            $dql = mysqli_query($mysql, $dql);
+            if (($dql) and ($dql->num_rows != 0)):
+                while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
+                    $id = $rows->id;
+                    ?>
+                    <div class="div-tv">
+                        <img class="img-destaque-response" src="<?= $img ?>" alt="<?= $rows->nome ?>">
+                    </div>
+                    <div class="descricao-destaque">
+                        <ul class="ul-destaque">
+                            <li class="li-destaque titulo"><?= $rows->titulo_produto ?></li>
+                            <li class="li-destaque"><?= $rows->descricao ?></li>
+                            <li class="li-destaque">Preço: $<?= $rows->preco ?> </li>
+                            <li class="li-destaque">
+                                <button type="button" class="btn btn-saibamais" data-bs-toggle="modal"
+                                        data-bs-target="#staticBackdrop">
+                                    Saiba mais
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Saiba mais sobre este produto</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Descrião: <?= $rows->descricao ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile; endif; ?>
+        </div>
     </section>
 </section>
 
 <style>
+
+    img {
+        object-fit: scale-down !important;
+    }
+    .div-produto-destaque {
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        margin: auto;
+        justify-content: space-between;
+        margin-bottom: 100px;
+    }
+
+    .div-baixo {
+        flex-direction: row-reverse !important;
+    }
+
+    .img-destaque-response {
+        width: 250px;
+    }
+
+    .descricao-destaque {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .ul-destaque {
+        text-align: start;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .li-destaque {
+        text-align: start;
+        justify-content: start;
+        margin-bottom: 20px;
+    }
+
+    .titulo {
+        font-weight: 700;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+    }
+
+    .btn-saibamais {
+        background: #FAE09D;
+        border-radius: 50px;
+        padding: 0px 25px !important;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 38px;
+        text-transform: uppercase;
+    }
 
 </style>

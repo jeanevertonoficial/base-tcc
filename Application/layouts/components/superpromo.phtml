@@ -24,7 +24,7 @@ $mysql = (new MysqlConnect())->conect();
                 $id = $rows->id;
                 ?>
                 <h5 class="card-title desconto es-esquerdo"><?= $rows->desconto?>% DESCONTO</h5>
-                <img src="<?= $img ?>" class="card-img-top" alt="<?= $rows->nome ?>">
+                <img src=" <?= $img ?>" class="card-img-top" alt="<?= $rows->nome ?>">
                 <div class="card-body">
                     <p class="card-text"><?= $rows->titulo_produto ?></p>
                     <button href="#" class="btn btn-comprar btn-esquerda">COMPRAR AGORA</button>
@@ -75,7 +75,7 @@ $mysql = (new MysqlConnect())->conect();
 
         color: white;
         padding: 10px 0;
-
+        font-weight: 700;
         margin-bottom: 0;
     }
 
@@ -109,7 +109,7 @@ $mysql = (new MysqlConnect())->conect();
     .card-text {
         margin-top: -7rem;
         text-align: center;
-        font-family: 'Roboto Condensed';
+        font-family: 'Roboto', Arial;
         font-style: normal;
         font-weight: 700;
         font-size: 24px;
@@ -147,17 +147,18 @@ $mysql = (new MysqlConnect())->conect();
         align-items: end;
         width: 80%;
         margin: auto;
+        font-family: 'Roboto', Arial;
     }
 
     img {
-        object-fit:cover !important;
+        object-fit:cover;
         width: 100%;
     }
 
     .btn-comprar {
         display: flex;
         justify-content: center;
-        font-family: 'Roboto Condensed';
+        font-family: 'Roboto', Arial;
         font-style: normal;
         font-weight: 700;
         font-size: 24px;

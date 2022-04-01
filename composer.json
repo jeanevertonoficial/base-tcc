@@ -2,13 +2,14 @@
     "name": "src/caminho",
     "description": "Desenvolvimento web ecommerce em casa",
     "require": {
-        "doctrine/orm": "^2.11.0",
+        "doctrine/orm": "^2.11",
         "doctrine/dbal": "^3.2",
-        "doctrine/annotations": "1.13.2",
-        "symfony/cache": "^5.4",
+        "doctrine/annotations": "^1.13",
+        "symfony/cache": "^6.0",
         "slim/psr7": "^1.5",
         "aws/aws-sdk-php-resources": "^0.3.0",
-        "symfony/orm-pack": "^2.2"
+        "symfony/orm-pack": "^2.2",
+      "ext-mysqli": "*"
     },
     "extra": {
         "psr17_server_request_factory": "Slim\\Psr7\\Factory\\ServerRequestFactory",

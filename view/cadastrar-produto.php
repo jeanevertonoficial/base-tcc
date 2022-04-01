@@ -221,9 +221,9 @@
                         <div class="div-nome">
                             <label for="destaque" class="div-label">Super Destaque</label>
                             <select name="super_destaque" class="nome-cad">
-                                <option value="nao" selected>Selecione se for um produto super destaque</option>
-                                <option value="sim">Sim</option>
-                                <option value="nao">Não</option>
+                                <option value="nao" selected>Selecione o super destaque</option>
+                                <option value="simcima">1 parte de cima</option>
+                                <option value="simbaixo">2 parte de baixo</option>
                             </select>
                         </div>
                         <div class="div-nome">

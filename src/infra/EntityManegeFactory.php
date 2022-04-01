@@ -21,9 +21,9 @@ class EntityManegeFactory
         $connection = [
             'driver' => 'pdo_mysql',
             'rost' => 'localhost',
-            'dbname' => 'lojaBase',
+            'dbname' => 'lojabase',
             'user' => 'root',
-            'password' => ''
+            'password' => 'Jean9882'
         ];
         return EntityManager::create($connection, $config);
     }
