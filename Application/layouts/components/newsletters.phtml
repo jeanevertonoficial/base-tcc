@@ -1,13 +1,20 @@
 <section class="contato-newsletter">
     <form method="post" action="/salvar-newsletters" class="footer-contato-newsletters" enctype="multipart/form-data">
         <h2 class="footer-sub-contato-news">receber newsletter</h2>
-        <input type="email" class="input-newsletter" name="newsletter" placeholder="Digíte seu email aqui">
-        <button class="newsletter-btn">Enviar</button>
+        <div class="input-enviar">
+            <input type="email" class="input-newsletter" name="newsletter" placeholder="Digíte seu email aqui">
+            <button class="newsletter-btn">Enviar</button>
+        </div>
     </form>
 </section>
 
 <style>
 
+    .input-enviar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
 
     .contato-newsletter {
         width: 100%;
@@ -33,14 +40,16 @@
         padding: 0 1.7rem;
         margin-left: -5px;
     }
+
     .newsletter-btn:hover {
         transition: 0.8s;
         border-radius: 3px;
         color: rgb(68, 68, 68);
         background: #ffffff;
     }
+
     .input-newsletter {
-        width: 75% !important;
+        width: 60% !important;
         padding: 20px;
 
         border: none;

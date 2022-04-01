@@ -24,7 +24,7 @@ $mysql = (new MysqlConnect())->conect();
                 $id = $rows->id;
                 ?>
                 <h5 class="card-title desconto es-esquerdo"><?= $rows->desconto?>% DESCONTO</h5>
-                <img src=" <?= $img ?>" class="card-img-top" alt="<?= $rows->nome ?>">
+                <img src=" <?= $img ?>" style="width: 100%; object-fit: cover" class="card-img-top" alt="<?= $rows->nome ?>">
                 <div class="card-body">
                     <p class="card-text"><?= $rows->titulo_produto ?></p>
                     <button href="#" class="btn btn-comprar btn-esquerda">COMPRAR AGORA</button>
@@ -40,7 +40,7 @@ $mysql = (new MysqlConnect())->conect();
         $id = $rows->id;
         ?>
         <h5 class="card-title desconto"><?= $rows->desconto?>% DESCONTO</h5>
-        <img src="<?= $img ?>" class="card-img-top card-foto" alt="<?= $rows->nome ?>">
+        <img src="<?= $img ?>" style="object-fit: cover; width: 100%;" class="card-img-top card-foto" alt="<?= $rows->nome ?>">
         <div class="card-body">
             <p class="card-text"><?= $rows->titulo_produto ?></p>
             <button href="#" class="btn btn-comprar">COMPRAR AGORA</button>
@@ -56,7 +56,7 @@ $mysql = (new MysqlConnect())->conect();
                 $id = $rows->id;
                 ?>
         <h5 class="card-title desconto des-direto"><?= $rows->desconto?>% DESCONTO</h5>
-        <img src="<?= $img ?>" class="card-img-top" alt="<?= $rows->nome ?>">
+        <img src="<?= $img ?>" style=" object-fit:cover; width: 100%" class="card-img-top" alt="<?= $rows->nome ?>">
         <div class="card-body">
             <p class="card-text"><?= $rows->titulo_produto ?></p>
             <button href="#" class="btn btn-comprar btn-direito">COMPRAR AGORA</button>
@@ -129,13 +129,14 @@ $mysql = (new MysqlConnect())->conect();
 
     .card-img-top {
         object-position: top;
+        object-fit: scale-down;
         height: 355px;
     }
 
     .card {
         width: 230px;
         box-sizing: border-box;
-        box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.25);
+        box-shadow: -20px -6px 20px 0px rgb(0 0 0 / 25%);
         border-radius: 25px 25px 0px 0px;
         overflow: hidden;
         margin-bottom: 3.75rem;
@@ -145,14 +146,9 @@ $mysql = (new MysqlConnect())->conect();
         display: flex;
         justify-content: space-around;
         align-items: end;
-        width: 80%;
+        width: 60%;
         margin: auto;
         font-family: 'Roboto', Arial;
-    }
-
-    img {
-        object-fit:cover;
-        width: 100%;
     }
 
     .btn-comprar {
@@ -175,24 +171,24 @@ $mysql = (new MysqlConnect())->conect();
     .super-div {
 
         color: #FFFFFF;
-        margin: 7rem 0;
+        margin: 10rem 0;
         width: 60%;
+        padding: 25px 0;
         text-align: center;
 
         background: #FAE09D;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: -20px 11px 20px 0px rgb(0 0 0 / 25%);
         border-radius: 2px 155.5px 0px;
 
         font-style: normal;
         font-weight: 700;
-        font-size: 50px;
-        line-height: 84px;
     }
 
     h1 {
         line-height: inherit !important;
         font-size: inherit;
-    !important;
     }
-
+    .super-h1 {
+        font-size: 2.5rem;
+    }
 </style>
