@@ -1,0 +1,145 @@
+/** header principal**/
+html,
+body {
+
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+.pesquisa-avancada {
+    display: flex;
+}
+
+.pesquisa-menu {
+    display: flex;
+    margin-top: 15px;
+}
+
+.pesquisa-avancada > select {
+    border: none !important;
+    height: 40px;
+    border-left: 1px solid #d0d0d0 !important;
+}
+
+.pesquisa-avancada > select:after {
+    box-shadow: inherit;
+}
+
+.link-home {
+    text-decoration: none;
+    color: inherit;
+}
+
+.dropdown-item, li {
+    margin-left: inherit !important;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+    width: 100%;
+    height: 190px;
+
+    background: #FAE09D;
+/ / background-image: linear-gradient(#EED9A3, rgba(255, 255, 255, 0.45));
+    color: #444444;
+}
+
+.header-div {
+    display: flex;
+    align-items: center;
+    width: 33%;
+    justify-content: center;
+    margin: auto;
+
+}
+
+.ul-cadastre {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.ul-submenu {
+    display: flex;
+    margin-left: 60px;
+    width: 250px;
+    justify-content: space-between;;
+}
+
+li {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+input {
+    width: 300px;
+    border: none;
+    padding: 5px;
+
+    text-align: center;
+
+    height: 40px;
+    border-radius: 15px 0px 0px 15px;
+    background: white;
+
+}
+
+.form-select {
+    width: inherit !important;
+}
+
+.button-header {
+    color: white;
+
+    background: #FAE09D !important;
+
+    border: none;
+
+    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.29);
+
+    width: 15% !important;
+
+    margin-left: 10px;
+}
+
+.header-input, .button-header {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 30px;
+
+    background: white;
+}
+
+li > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li > a:hover {
+    color: burlywood;
+}
+
+.menu-section {
+    position: relative;
+    padding-top: 15px;
+    font-weight: normal;
+    font-family: Arial;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: -79px;
+    margin-top: 5px;
+}

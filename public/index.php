@@ -1,8 +1,10 @@
 <?php
 
-use src\doctrine\Controller\{cad_newsletters,
+use src\doctrine\Controller\{cad_adm,
+    cad_newsletters,
     cad_prod,
     cadastrar\BannerCarrossel,
+    cadastrar\CadastrarAdm,
     cadastrar\CadastrarProdutos,
     cadastrar\CadastroSucesso,
     cadastrar\NewslettersCadastro,
@@ -17,6 +19,14 @@ require_once __DIR__. './../vendor/autoload.php';
 switch ($_SERVER['PATH_INFO']) {
     case '/realiza-cadastro':
         $controlador = new CadastrarProdutos();
+        $controlador->processaRequisicao();
+        break;
+    case '/realiza-cadastro-administrador':
+        $controlador = new CadastrarAdm();
+        $controlador->processaRequisicao();
+        break;
+    case '/cadastrar-novo-administrador':
+        $controlador = new cad_adm();
         $controlador->processaRequisicao();
         break;
     case '/cadastrar-produtos':

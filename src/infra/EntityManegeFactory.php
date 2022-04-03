@@ -23,7 +23,7 @@ class EntityManegeFactory
             'rost' => 'localhost',
             'dbname' => 'lojabase',
             'user' => 'root',
-            'password' => 'Jean9882'
+            'password' => ''
         ];
         return EntityManager::create($connection, $config);
     }
