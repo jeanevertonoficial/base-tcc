@@ -39,6 +39,9 @@ if ((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == 
                     <li class="nav-item active">
                         <a class="nav-link" href="/dashboard-administrativo"><span class="material-icons-outlined">home</span></a>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/newsletters">Newsletters</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Cadastros
@@ -70,6 +73,17 @@ if ((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == 
                             <a class="dropdown-item" href="/editar-usuario">Editar usuario</a>
                             <a class="dropdown-item" href="/editar-adm">Editar adm</a>
                             <a class="dropdown-item" href="/editar-banner">Editar banner</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Relatórios
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/super-promocao">Relatório dos Clientes</a>
+                            <a class="dropdown-item" href="/produtos">Relatório dos produtos</a>
+                            <a class="dropdown-item" href="/editar-usuario">Relarórios das vendas</a>
+                            <a class="dropdown-item" href="/editar-usuario">Relarórios de Newsletters</a>
                         </div>
                     </li>
                 </ul>
@@ -121,7 +135,7 @@ if ((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == 
 }
 
 .logado a:hover {
-    color: #FFFFFF;
+    color: #e58d04;
 }
 
     @media screen and (max-width: 1125px) {
