@@ -3,6 +3,8 @@
 namespace src\doctrine\Controller;
 
 use src\doctrine\infra\EntityManegeFactory;
+use src\doctrine\infra\MysqlConnect;
+
 
 class Loginadm implements InterfaceProcessaRequisicao
 {
@@ -10,7 +12,7 @@ class Loginadm implements InterfaceProcessaRequisicao
     public function __construct()
     {
         session_start(); // start da sessão
-        $this->entitymaneger = (new EntityManegeFactory())->getEntityManege();
+        $this->entitymaneger = (new MysqlConnect())->conect();
 
         // recebe o click do botão do formulario login de acesso do administrador
         $btnLogin = filter_input(INPUT_POST, 'btnLogin', FILTER_SANITIZE_STRING);
@@ -24,9 +26,9 @@ class Loginadm implements InterfaceProcessaRequisicao
                 $senha = mysqli_real_escape_string($this->entitymaneger, $_POST['senha']);
 
                 // recebendo e passando para a vareavel resultados os dados do banco de dados
-                $resultado = "SELECT * FROM adm WHERE usuario='$usuario' LIMIT 3;";
+                $resultado = "SELECT * FROM adm WHERE usuario='$usuario';";
                 $result = mysqli_query($this->entitymaneger, $resultado);
-                 // var_dump($result); exit();
+                //var_dump($result); exit();
 
                 if (mysqli_num_rows($result)) {
                     //	var_dump($result);
@@ -56,12 +58,11 @@ class Loginadm implements InterfaceProcessaRequisicao
             header("Location: /logar");
             header("Refresh:0");
         }
-        mysqli_close($this->entitymaneger);
+       // mysqli_close($this->entitymaneger);
     }
 
     public function processaRequisicao(): void
     {
-
-        include_once __DIR__. './../../view/login.php';
+        include_once __DIR__. './../../view/cadastrar-produto.php';
     }
 }

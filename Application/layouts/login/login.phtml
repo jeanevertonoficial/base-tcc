@@ -5,10 +5,10 @@
 // alto reload refrex
 
 $page = $_SERVER['PHP_SELF'];
-$sec = "700";
+$sec = "15";
 ?>
 
-
+<meta http-equiv="refresh" content="<?php echo $sec?>;URL='<?php echo $page?>'">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@ $sec = "700";
 
 <section class="section-login">
     <section class="cadastro-login">
-        <form action="/realizar-login"  method="post" class="formularioLogin">
+        <form action="/realizar-login" method="post" class="formularioLogin">
         <?php // definindo a vareavel global
         if (isset($_SESSION['msg'])) {
             echo $_SESSION['msg'];
@@ -32,7 +32,7 @@ $sec = "700";
                 <input type="text" class="input-login" name="usuario" placeholder="Insira o usuário">
             <label for="senha" class="label-login">Senha </label>
                 <input type="password" class="input-login" name="senha" placeholder="digite sua senha">
-            <button class="button-login" name="btnLogin">Entrar</button>
+            <input type="submit" value="Entrar" class="button-login" name="btnLogin">
         <a href="/dashboard" class="icon-login"><span class="material-icons">home</span></a>
         </form>
     </section>

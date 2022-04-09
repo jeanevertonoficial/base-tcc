@@ -12,7 +12,8 @@ use src\doctrine\Controller\{cad_adm,
     Login,
     Loginadm,
     Loja,
-    RemoveProduto};
+    RemoveProduto,
+    Sair};
 
 require_once __DIR__. './../vendor/autoload.php';
 
@@ -68,6 +69,9 @@ switch ($_SERVER['PATH_INFO']) {
     case '/banner-cadastro':
         $controlador = new BannerCarrossel();
         $controlador->processaRequisicao();
+        break;
+    case '/sair':
+        $controlador = new Sair();
         break;
     default:
         $controlador = new Loja();
