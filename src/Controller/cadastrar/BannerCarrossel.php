@@ -17,6 +17,7 @@ class BannerCarrossel implements InterfaceProcessaRequisicao
         $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
         $descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_STRING);
         $titulo_banner = filter_input(INPUT_POST, 'titulo_banner', FILTER_SANITIZE_STRING);
+        $link_banner = filter_input(INPUT_POST, 'link_banner', FILTER_SANITIZE_STRING);
         $posicao = filter_input(INPUT_POST, 'posicao', FILTER_SANITIZE_NUMBER_INT);
         $imagem = $_FILES['imagem_banner'];
 
@@ -45,6 +46,7 @@ class BannerCarrossel implements InterfaceProcessaRequisicao
                 $banner->setDescricao($descricao);
                 $banner->setTituloBanner($titulo_banner);
                 $banner->setImagemBanner($imagem);
+                $banner->setLinksbanner($link_banner);
                 $banner->setPosicao($posicao);
                 $banner->setDataDeCriacao($create);
 

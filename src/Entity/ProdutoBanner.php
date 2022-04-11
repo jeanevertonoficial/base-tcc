@@ -38,6 +38,28 @@ class ProdutoBanner
     /**
      * @column(type="string")
      */
+    private  $linksbanner;
+
+    /**
+     * @return mixed
+     */
+    public function getLinksbanner()
+    {
+        return $this->linksbanner;
+    }
+
+    /**
+     * @param mixed $linksbanner
+     * @return ProdutoBanner
+     */
+    public function setLinksbanner($linksbanner)
+    {
+        $this->linksbanner = $linksbanner;
+        return $this;
+    }
+    /**
+     * @column(type="string")
+     */
     private  $DataDeCriacao;
 
     /**

@@ -24,17 +24,20 @@ $totalDeBanner = $dql->getSingleScalarResult();
     <div class="carousel-indicators">
         <?php
         $qnt_slide = $totalDeBanner;
+            $active = "";
         $cont_marc = 0;
         while ($cont_marc < $qnt_slide) {
+            if ($cont_marc != 0) {
+                $active = "active";
+            }
+            echo '<button 
+                    type="button" 
+                    data-bs-target="#carouselExampleIndicators"  class="active"
+                    data-bs-slide-to="$qnt_slide" 
+                    aria-current="true">
+                </button>';
 
-            echo "<button 
-                    type='button' 
-                    data-bs-target='#carouselExampleIndicators' 
-                    data-bs-slide-to='$qnt_slide' class='ative'
-                    aria-current='true'>
-                </button>";
             $cont_marc++;
-
         }
         ?>
     </div>
@@ -50,10 +53,12 @@ $totalDeBanner = $dql->getSingleScalarResult();
             }
             ?>
             <div class="carousel-item <?= $active ?>">
-                <img src="<?= $img ?>" class="d-block w-100" alt="<?= $produto->getNome() ?>">
+                <a href="<?= $produto->getLinksBanner() ?>">
+                    <img src="<?= $img ?>" class="d-block w-100" alt="<?= $produto->getNome() ?>">
+                </a>
             </div>
-        <?php
-        $cont_slide++;
+            <?php
+            $cont_slide++;
         endforeach;
         ?>
 

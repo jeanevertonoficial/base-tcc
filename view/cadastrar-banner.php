@@ -61,6 +61,10 @@
                             <input type="text" name="titulo_banner" class="nome-cad" required>
                         </div>
                         <div class="div-nome">
+                            <label class="div-label" for="titulo_banner">Links do banner</label>
+                            <input type="text" name="link_banner" class="nome-cad">
+                        </div>
+                        <div class="div-nome">
                             <label for="posicao" class="div-label">Posição do Banner</label>
                             <small>Caso não selecione automáticamente irá para primeira posição*</small>
                             <select name="posicao" class="nome-cad">
