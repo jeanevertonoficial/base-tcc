@@ -9,9 +9,12 @@ use src\doctrine\Controller\{cad_adm,
     cadastrar\CadastroSucesso,
     cadastrar\NewslettersCadastro,
     CadastrarBanner,
+    DashboardAdm,
     Login,
     Loginadm,
     Loja,
+    NewslettersList,
+    RelatorioProdutos,
     RemoveProduto,
     Sair};
 
@@ -72,6 +75,18 @@ switch ($_SERVER['PATH_INFO']) {
         break;
     case '/sair':
         $controlador = new Sair();
+        break;
+    case '/dashboard-administrativo':
+        $controlador = new DashboardAdm();
+        $controlador->processaRequisicao();
+        break;
+    case '/lista-newsletters':
+        $controlador = new NewslettersList();
+        $controlador->processaRequisicao();
+        break;
+    case '/relatorio-produtos':
+        $controlador = new RelatorioProdutos();
+        $controlador->processaRequisicao();
         break;
     default:
         $controlador = new Loja();

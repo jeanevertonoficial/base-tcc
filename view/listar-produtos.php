@@ -30,6 +30,8 @@ $valor_a_buscar = filter_input(
     FILTER_SANITIZE_STRING
 );
 
+
+
 $result_produtos = "SELECT * FROM `produtos`
 WHERE 'nome' LIKE '%$valor_a_buscar%'
 OR 'categoria' LIKE '%$valor_a_buscar%'
@@ -42,24 +44,13 @@ OR 'titulo_produto' LIKE '%$valor_a_buscar%'";;
 
 $resultado = mysqli_query($this->entityManeger, $result_produtos);
 $produtos = mysqli_num_rows($resultado);
-//var_dump($produtos); exit();
-/*
-if ($resultado = !true) {
-} else {
-    echo 'Nenhum produto encontrado!';
-     header("Location: /dashboard");
-
-    //  die();
-}*/
 
 
 $caminho = '../img/arquivos/';
 
 
 if (($produtos) and ($resultado = !true)):
-
-
-    while ($rows = mysqli_fetch_object($produtos)) : $img = $caminho . $rows['nome'];
+    while ($rows = mysqli_fetch_object($resultado)) : $img = $caminho . $rows['nome'];
         $id = $rows['id'];
 
         $img = $caminho . $rows['nome'];

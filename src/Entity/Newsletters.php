@@ -27,4 +27,20 @@ class Newsletters
     {
         $this->email = $email;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->Id;
+    }
+
+    /**
+     * @param mixed $Id
+     */
+    public function setId($Id): void
+    {
+        $this->Id = $Id;
+    }
 }

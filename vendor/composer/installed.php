@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'ba53738d3cf8241de119ca6ae44e78991e31ac42',
+        'reference' => 'c4f7beb52f554ab68476bc93afb04d0a1a9397b8',
         'name' => 'src/caminho',
         'dev' => true,
     ),
@@ -370,6 +370,15 @@
             'reference' => '120b605dfeb996808c31b6477290a714d356e822',
             'dev_requirement' => false,
         ),
+        'sensio/framework-extra-bundle' => array(
+            'pretty_version' => 'v6.2.6',
+            'version' => '6.2.6.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../sensio/framework-extra-bundle',
+            'aliases' => array(),
+            'reference' => '6bd976c99ef3f78e31c9490a10ba6dd8901076eb',
+            'dev_requirement' => false,
+        ),
         'slim/psr7' => array(
             'pretty_version' => '1.5',
             'version' => '1.5.0.0',
@@ -385,7 +394,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'ba53738d3cf8241de119ca6ae44e78991e31ac42',
+            'reference' => 'c4f7beb52f554ab68476bc93afb04d0a1a9397b8',
             'dev_requirement' => false,
         ),
         'symfony/cache' => array(

@@ -9,7 +9,8 @@
         "slim/psr7": "^1.5",
         "aws/aws-sdk-php-resources": "^0.3.0",
         "symfony/orm-pack": "^2.2",
-      "ext-mysqli": "*"
+      "ext-mysqli": "*",
+        "sensio/framework-extra-bundle": "^6.2"
     },
     "extra": {
         "psr17_server_request_factory": "Slim\\Psr7\\Factory\\ServerRequestFactory",

@@ -1,6 +1,6 @@
 <?php
-
 namespace src\doctrine\Controller;
+session_start();
 
 use src\doctrine\infra\EntityManegeFactory;
 use src\doctrine\infra\MysqlConnect;
@@ -39,7 +39,8 @@ class Loginadm implements InterfaceProcessaRequisicao
                             $_SESSION['nome'] = $row['nome'];
                             $_SESSION['usuario'] = $row['usuario'];
                             $_SESSION['email'] = $row['email'];
-                            header('Location: /cadastrar-produtos');
+                            $_SESSION['msgcad'] = "Seja bem vindo novamente";
+                            header('Location: /dashboard-administrativo');
 
                         }} else {
                         $_SESSION['msgcad'] = "Login ou/ senha incorreta, tente nomamente primeiro!";

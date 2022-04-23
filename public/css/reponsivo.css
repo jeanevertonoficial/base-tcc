@@ -1,0 +1,31 @@
+/*** parte responsiva titulo super promoção ***/
+@media screen and (max-width: 500px){
+    .super {flex-direction: column; align-items: center !important; width: 75% !important;}
+    .super-h1 {font-size: 20px !important;}
+    .super-div {width: 100% !important; padding: 10px 0px !important;}
+    .cadastrar-formulario { width: 330px !important; }
+    .titulo-principal { font-size: large}
+    .cadastrar-formulario {margin: 0px !important;}
+    .titulo-lista-produto { margin: inherit !important; margin-top: 80px !important; margin-bottom: 50px !important;  }
+    .titulo-lista-produto > h1{ font-size: 16px !important;}
+    .card-title { margin-bottom: inherit !important;}
+    .card-meio, .esquerda { height: inherit !important;}
+    .btn-comprar {background: #FAE09D !important; width: 100%; border-radius: 10px !important}
+    .div-produto-destaque { width: 90% !important; align-items: center; flex-direction: column;  flex-wrap: wrap; justify-content: flex-end;}
+    .div-produto-destaque > .div-baixo { flex-wrap: wrap; justify-content: flex-end;}
+    .descricao-destaque { width: 75% !important;}
+    .tudo-sobre-modas-descricao p { margin-top: -50px !important; font-size: 16px !important;}
+    .navbar {padding:8px 0px}
+    .cadastro-login {width: 80%; height: 60%;}
+}
+@media screen and (max-width: 980px){
+    .super-h1 {font-size: 28px;}
+    .super-div, .super {width: 90%; padding: 10px 0px; align-items: center;}
+    .btn-saibamais { font-size: inherit !important;}
+    .carousel-inner {height: auto !important;}
+}
+
+@media screen and (max-width: 1125px) {
+    .adm > ul { display: flex;flex-direction: column;}
+    .dropdown-item {display: flex;}
+}

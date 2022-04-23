@@ -1,0 +1,6 @@
+.carousel-inner {height: 350px;}
+.carousel-item {position: relative;}
+.carousel-control-prev {justify-content: start !important;opacity: 0 !important;}
+.carousel-control-next {justify-content: end !important;opacity: 0 !important;}
+.carousel-control-prev:hover, .carousel-control-next:hover {opacity: 1 !important;}
+.carousel-control-prev-icon, .carousel-control-next-icon {padding: 35px 15px; color: #444444;box-shadow: 5px 10px 25px rgba(19, 19, 19, 0.36);}

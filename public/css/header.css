@@ -1,4 +1,3 @@
-/** header principal**/
 html,
 body {
 
@@ -39,10 +38,9 @@ body {
 }
 
 .header-section {
-    display: flex;
     justify-content: space-around;
     flex-direction: column;
-
+    padding: 0px 20px;
     width: 100%;
     height: 190px;
 
@@ -50,7 +48,16 @@ body {
 / / background-image: linear-gradient(#EED9A3, rgba(255, 255, 255, 0.45));
     color: #444444;
 }
+.navbar-nav {
+    width: 300px;
 
+}
+.navbar {
+    padding: 8px 52px;
+}
+.navbar-expand-lg .navbar-collapse {
+    justify-content: flex-end !important;
+}
 .header-div {
     display: flex;
     align-items: center;

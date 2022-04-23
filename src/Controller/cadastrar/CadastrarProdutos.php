@@ -65,6 +65,7 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
                 $produto->setEhsuperdestaque($superdestaque);
 
                 $this->entityManeger->persist($produto);
+                $_SESSION['msgcad'] = "Produto cadastrado com Sucesso";
                 $this->entityManeger->flush();
 
             } else {
@@ -82,7 +83,8 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
 
     public function processaRequisicao(): void
     {
-        header('Location: \dashboard');
+        $_SESSION['msgcad'] = "Produto cadastrado com Sucesso";
+        header('Location: \cadastrar-produtos');
     }
 
 }

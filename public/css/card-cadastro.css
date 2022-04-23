@@ -1,0 +1,268 @@
+.cadastro-cliente {
+    text-align: center;
+}
+.cadastro-cliente {
+    width: auto;
+    transition: 0.5s ;
+    font-family: 'Roboto', sans-serif;
+
+    color: white;
+
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 5px 10px black;
+
+    cursor: pointer;
+}
+.cadastro-cliente:hover, .cadastro-cliente:hover{
+    cursor: pointer;
+    color: rgb(227, 206, 103);
+    transition: 1s ;
+    text-shadow: 20px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.button-cadastro {
+    display: inline;
+    justify-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: bisque;
+    border: none;
+    margin: auto;
+
+    width: 85%;
+
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+
+    border-radius: 12px;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.25);
+}
+
+.button-cadastro:hover {
+    background: #363636;
+}
+
+input, textarea, select {
+    font-size: 14px !important;
+
+    text-transform: capitalize;
+    margin-top: 15px !important;
+    padding: 15px !important;
+
+    border: none !important;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+
+}
+
+
+textarea {
+    padding: 15px !important;
+    height: 190px !important;
+}
+
+.titulo-principal {
+    margin: inherit;
+    text-transform: uppercase;
+
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin-bottom: -80px;
+    margin-top: -20px;
+
+}
+
+.principal {
+    margin: auto;
+    margin-top: 3.75rem;
+    display: flex;
+
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+.voltar {
+    color: #444444;
+}
+
+.nav-tabs { justify-content: center; border: none !important;}
+input, textarea, select { font-size: 14px; text-transform: capitalize;margin-top: 15px !important;padding: 15px !important;border: none !important;background: #FFFFFF;box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.1);border-radius: 20px;}
+
+textarea {padding: 15px !important;height: 190px !important;}
+
+.div-imagem {
+    height: 236px !important;
+    border: 2px dashed #6c757d !important;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 25px;
+    object-fit: scale-down !important;
+}
+
+.imagem-cadastro {
+    justify-content: inherit !important;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.imagem {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    height: 100% !important;
+    flex-direction: column;
+    align-items: center;
+
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.imagem:hover {
+    opacity: 1;
+    color: #EED9A3;
+}
+
+.div-nome {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 25px;
+
+    text-transform: capitalize;
+
+    font-weight: 700;
+
+    font-size: 24px;
+    color: #6a6a6a;
+
+    text-align: center;
+}
+
+.barra-progresso {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 10rem;
+    width: 80%;
+}
+
+.completo {
+    margin-top: 25px;
+    margin-bottom: 5px !important;
+}
+
+
+.nome-cad, .button-cadastro {
+    display: flex;
+    justify-items: center;
+
+}
+
+textarea {
+    height: 70px !important;
+}
+
+.section-cadastrar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.voltar {
+    color: #444444;
+}
+
+.cadastrar-formulario {
+    overflow: hidden;
+    background: white;
+    margin-top: 4.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.25);
+    border: none;
+
+    border-radius: 12px;
+    width: 400px;
+    height: 554px !important;
+}
+
+.cad-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+
+}
+
+
+.div-cadastra {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.nome-cad {
+    border: 0.5px solid rgba(0, 0, 0, 0.25);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.nav-tabs {
+    justify-content: center;
+    border: none !important;
+}
+
+input, textarea, select {
+
+    font-size: 14px;
+
+    text-transform: capitalize;
+    margin-top: 15px !important;
+    padding: 15px !important;
+
+    border: none !important;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+
+}
+
+textarea {
+    padding: 15px !important;
+    height: 190px !important;
+}
+
+.selecione-foto {
+    display: flex;
+    justify-content: center;
+
+    font-family: 'Roboto', sans-serif;
+
+    border-radius: 5px;
+    background: #FFFFFF;
+    width: 200px;
+    text-align: center;
+    margin: auto;
+
+    padding: 3px;
+
+    box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.1);
+
+    margin-bottom: 35px;
+}
+
+input[type="file"] {
+    display: none;
+}
