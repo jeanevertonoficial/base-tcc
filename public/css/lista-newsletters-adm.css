@@ -1,0 +1,19 @@
+boby {
+    background: #FFFFFF;
+}
+
+.h1-titulos {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.lista {
+    width: 60%;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+.td-email-excluir {
+    display: flex;
+    justify-content: end;
+}

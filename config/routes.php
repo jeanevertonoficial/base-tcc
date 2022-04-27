@@ -2,8 +2,8 @@
 
 use src\doctrine\Controller\{cad_newsletters,
     cad_prod,
-    cadastrar\CadastrarProdutos,
-    cadastrar\NewslettersCadastro,
+    resource\CadastrarProdutos,
+    resource\NewslettersCadastro,
     Login,
     Loginadm};
 

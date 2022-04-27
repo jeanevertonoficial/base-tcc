@@ -1,8 +1,0 @@
-DataDeCriacao table newsletters
-(
-    id    int auto_increment
-        primary key,
-    email varchar(255) not null
-)
-    collate = utf8_unicode_ci;
-

@@ -1,0 +1,99 @@
+<?php use src\doctrine\Entity\Produtos;
+use src\doctrine\infra\EntityManegeFactory;
+
+require_once __DIR__ . './../header/header-adm.phtml'; ?>
+<section class="lista-produtos">
+    <h1 class="h1-titulos"><?php echo $titulo ?></h1>
+    <div class="lista">
+        <table class="table">
+            <div class="btn-pesquisa">
+                <a href="/cadastrar-produtos">
+                    <button class="btn-editar btn-mais">novo produto +</button>
+                </a>
+                <div class="header-div">
+                    <form method="GET" class="header-input">
+                        <input name="pesquisa" id="pesquisa" type="search" placeholder="pesquisar">
+                        <div class="pesquisa-avancada">
+                            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                <option selected>categorias</option>
+                                <option value="acessorio">Acessório</option>
+                                <option value="bicicleta">Bicicleta</option>
+                                <option value="celulares">celulares</option>
+                                <option value="eletronicos">eletronicos</option>
+                                <option value="carinho">Carrinho</option>
+                                <option value="cama">cama</option>
+                                <option value="sofa">sofa</option>
+                                <option value="quarto">quarto</option>
+                                <option value="banheiro">banheiro</option>
+                                <option value="cozinha">cozinha</option>
+                                <option value="vestuario">vestuário</option>
+                            </select>
+                        </div>
+                        <button class="button-header"><span class="material-icons">search</span></button>
+                    </form>
+                </div>
+
+            </div>
+            <thead>
+            <tr>
+                <th id="id_prod" scope="col">id</th>
+                <th id="nome_prod" scope="col">nome</th>
+                <th id="descricao_prod" scope="col">descrição</th>
+                <th id="preco_prod" scope="col">preço</th>
+                <th id="categoria_prod" scope="col">Categoria</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+
+            $entityManegerFactory = new EntityManegeFactory();
+            $entityManeger = $entityManegerFactory->getEntityManege();
+
+
+            $valor_a_buscar = filter_input(
+                INPUT_GET,
+                'pesquisa',
+                FILTER_SANITIZE_STRING
+            );
+
+            $result_produtos = "SELECT * FROM `produtos`
+            WHERE 'nome' LIKE '%$valor_a_buscar%'
+            OR 'categoria' LIKE '%$valor_a_buscar%'
+            OR 'subcategoria' LIKE '%$valor_a_buscar%'
+            OR 'marcas' LIKE '%$valor_a_buscar%'
+            OR 'preco' LIKE '%$valor_a_buscar%'
+            OR 'decricao' LIKE '%$valor_a_buscar%'
+            OR 'desconto' LIKE '%$valor_a_buscar%'
+            OR 'titulo_produto' LIKE '%$valor_a_buscar%'";;
+
+
+
+
+            // Buscando o repositorio de alunos pelo Entity
+            $produtosRepository = $entityManeger->getRepository(Produtos::class);
+
+
+            /** @var Produtos[] $alunos */
+            $produtos = $produtosRepository->findAll();
+
+            foreach ($produtos as $produto):?>
+                <tr>
+                    <th scope="row"><?= $produto->getId() ?></th>
+                    <td id="nome_prod" ><?= $produto->getNome() ?></td>
+                    <td id="descricao_prod" ><?= $produto->getDescricao() ?></td>
+                    <td id="preco_prod" >R$<?= $produto->getPreco() ?></td>
+                    <td id="categoria_prod" ><?= $produto->getCategoria() ?></td>
+                    <div class="btn-ed-exc">
+                        <td id="btn-editar-prod" ><a href="/exluir-produtos?id=<?= $produto->getId() ?>">
+                                <button class="btn-editar">Editar</button>
+                            </a></td>
+                        <td id="btn-excluir-prod" ><a href="/editar-produtos?id=<?= $produto->getId() ?>">
+                                <button class="btn-excluir">Excluir</button>
+                            </a></td>
+                    </div>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</section>

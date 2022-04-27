@@ -1,0 +1,64 @@
+.input-enviar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contato-newsletter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 300px;
+
+    background: #444444;
+
+    margin: 5rem 0;
+}
+
+.newsletter-btn {
+    transition: 0.5s;
+    background: #EED9A3;
+    color: white;
+    font-weight: 700;
+    height: 40px;
+    border: none;
+    border-radius: 0 12px 12px 0;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.26);
+    padding: 7px;
+    padding: 0 1.7rem;
+    margin-left: -5px;
+}
+
+.newsletter-btn:hover {
+    transition: 0.8s;
+    border-radius: 3px;
+    color: rgb(68, 68, 68);
+    background: #ffffff;
+}
+
+.input-newsletter {
+    width: 60% !important;
+    padding: 20px;
+
+    border: none;
+    height: 40px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px 0 0 12px;
+}
+
+.footer-contato-newsletters {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    padding: 52px 15px;
+}
+
+.footer-sub-contato-news {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}

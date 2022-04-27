@@ -1,5 +1,5 @@
 /*** parte responsiva titulo super promoção ***/
-@media screen and (max-width: 500px){
+@media screen and (max-width: 551px){
     .super {flex-direction: column; align-items: center !important; width: 75% !important;}
     .super-h1 {font-size: 20px !important;}
     .super-div {width: 100% !important; padding: 10px 0px !important;}
@@ -17,6 +17,21 @@
     .tudo-sobre-modas-descricao p { margin-top: -50px !important; font-size: 16px !important;}
     .navbar {padding:8px 0px}
     .cadastro-login {width: 80%; height: 60%;}
+    .navbar-nav { flex-direction: column !important; width: 250px !important;}
+    .navbar-toggler {margin-right: -50px !important; padding: 5px !important; border-radius: 50px !important;}
+    .navbar-brand { margin-left: -50px !important}
+    .adm-img, .navbar-light .navbar-toggler { margin-left: initial !important; margin-right: initial !important;}
+     #categoria_prod, #descricao_prod, #preco_prod{ display: none }
+    .lista { width: initial !important; padding: 0px 5px !important;}
+    .btn-editar, .btn-excluir { padding: 5px !important; border-radius: 5px !important}
+    .header-div { justify-items: center !important; justify-content: center!important; align-items: flex-end !important; margin-bottom: 25px}
+    .btn-pesquisa { justify-content: space-between !important; flex-direction: column-reverse !important;}
+    .header-div button { height: 45px !important;}
+    .header-div input, .header-div select { background: #999999; color: white}
+     button.navbar-toggler.burger-principal  { margin-right: -50px !important;}
+     section.super.card-produtos{padding-bottom: 5rem}
+    .card-section { width: 85% !important}
+    .card-section-scroll { flex-direction: row; flex-wrap: nowrap !important; width: auto !important;background: scroll;margin: auto;overflow: overlay;display: flex;width: 70%;height: auto;flex-wrap: nowrap;}
 }
 @media screen and (max-width: 980px){
     .super-h1 {font-size: 28px;}
@@ -25,7 +40,22 @@
     .carousel-inner {height: auto !important;}
 }
 
+@media screen and (max-width: 980px) and (min-width: 551px){ .navbar-nav { flex-direction: row !important;} }
+
 @media screen and (max-width: 1125px) {
     .adm > ul { display: flex;flex-direction: column;}
     .dropdown-item {display: flex;}
 }
+
+/*** parte responsiva newsletters ***/
+@media screen and (max-width: 551px) {
+    .footer-contato-newsletters {
+        text-align: center !important;
+        padding: 52px 15px !important;
+        width: inherit !important;
+    }
+    .footer-sub-contato-news{
+        font-size: 24px !important;
+    }
+}
+

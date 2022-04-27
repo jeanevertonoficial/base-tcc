@@ -1,0 +1,74 @@
+body{ background: #FFFFFF;}
+.header-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.header-div input {
+    border-radius: 12px 0 0 12px;
+    border: 1px solid rgba(126, 126, 126, 0.48);
+    padding: 0 15px;
+}
+
+.header-div button {
+    background: #444444;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 0 12px 12px 0;
+}
+
+.material-icons {
+    padding: 0;
+}
+
+.btn-pesquisa {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-div select {
+    padding: 5px 15px;
+    border-radius: inherit;
+}
+
+.h1-titulos {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.lista {
+    width: 80%;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+.btn-ed-exc {
+    width: 250px !important;
+}
+
+.btn-editar, .btn-excluir {
+    border-radius: 12px;
+    border: none;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: 3px 25px;
+    text-transform: uppercase;
+}
+
+.btn-editar {
+    background: #999;
+}
+
+.btn-excluir {
+    background: #444444;
+}
+
+.btn-mais {
+    font-size: 12px;
+    padding: 6px 15px;
+}
+
+td {
+    font-size: 12px;
+}

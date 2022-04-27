@@ -7,6 +7,6 @@ class cad_adm implements InterfaceProcessaRequisicao
 
     public function processaRequisicao(): void
     {
-        require __DIR__. './../../view/cadastrar-adm.php';
+        require __DIR__ . './../view/cadastrar-adm.php';
     }
 }

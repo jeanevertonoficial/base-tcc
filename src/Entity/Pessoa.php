@@ -2,6 +2,9 @@
 
 namespace src\doctrine\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+
 /**
  * @Entity
  */
@@ -32,10 +35,17 @@ abstract class  Pessoa
     private string $cpf;
     /**
      * @var Endereco
+     * @OneToMany(targetEntity="Endereco", mappedBy="Pessoa")
      */
     private Endereco $endereco;
+    /**
+     * @var Contato
+     *
+     * @ManyToMany(targetEntity="Contato", mappedBy="Pessoa", cascade={"remove", "persist"}, fetch="EAGER")
+     */
+    private Contato $contato;
 
-    public function __construct($nome, $sobrenome, $cpf, $rg, Endereco $endereco)
+    public function __construct($nome, $sobrenome, $cpf, $rg, Endereco $endereco, Contato $contato)
     {
         $this->nome = $nome;
         $this->sobrenome = $sobrenome;
@@ -62,6 +72,44 @@ abstract class  Pessoa
     {
         // TODO: Implement __destruct() method.
         self::$numeroDePessoas--;
+        $this->contato = new ArrayCollection();
+        $this->endereco = new ArrayCollection();
+    }
+
+    public function addContato(Contato $contato)
+    {
+        $this->contato->add($contato);
+        $contato->setPessoa($this);
+
+        return $this;
+    }
+
+    /**
+     * @return Contato[]
+     */
+    public function getConato(): Collection
+    {
+        return $this->contato;
+    }
+
+    public function addEndereco(Endereco $endereco): self
+    {
+        if ($this->endereco->contains($endereco)) {
+            return $this;
+        }
+
+        $this->endereco->add($endereco);
+        $endereco->addPessoa($this);
+
+        return $this;
+    }
+
+    /**
+     * @return Endereco[]
+     */
+    public function getEndereco(): Collection
+    {
+        return $this->endereco;
     }
 
     /**

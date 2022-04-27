@@ -1,37 +1,17 @@
-.navbar navbar-expand-lg navbar-light {
-    background: #EED9A3 !important;
-}
+.navbar navbar-expand-lg navbar-light {background: #EED9A3 !important;}
+.navbar {width: 90% !important;margin: auto !important;}
+.navbar-expand-lg .navbar-collapse {justify-content: flex-end !important;}
 
-.navbar {
-    width: 90% !important;
-    margin: auto !important;
-}
+.container-adm {background: #EED9A3;}
 
-.container-adm {
-    background: #EED9A3;
-}
+.logado {text-align: center;display: flex;justify-content: space-around;width: 150px;font-size: small;align-items: center;justify-items: center;margin: auto;color: white;}
+.logado a {text-decoration: none;color: white;}
+.logado a:hover {color: #e58d04;}
 
-.navbar-expand-lg .navbar-collapse {
-    justify-content: flex-end !important;
-}
+.btn-pesquisa {align-items: center}
 
-.logado {
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    width: 150px;
-    font-size: small;
-    align-items: center;
-    justify-items: center;
-    margin: auto;
-    color: white;
-}
+.header-div {align-items: flex-end}
+.header-div input, .header-div select, .header-div button { height: 45px}
+.header-div input, .header-div select { background: #999999; color:white}
 
-.logado a {
-    text-decoration: none;
-    color: white;
-}
-
-.logado a:hover {
-    color: #e58d04;
-}
+.material-icons { line-height: inherit !important;}

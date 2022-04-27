@@ -2,7 +2,6 @@
 namespace src\doctrine\Controller;
 session_start();
 
-use src\doctrine\infra\EntityManegeFactory;
 use src\doctrine\infra\MysqlConnect;
 
 
@@ -64,6 +63,6 @@ class Loginadm implements InterfaceProcessaRequisicao
 
     public function processaRequisicao(): void
     {
-        include_once __DIR__. './../../view/cadastrar-produto.php';
+        include_once __DIR__ . './../view/cadastrar-produto.php';
     }
 }

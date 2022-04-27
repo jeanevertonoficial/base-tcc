@@ -1,0 +1,46 @@
+<?php use src\doctrine\Entity\Newsletters;
+use src\doctrine\infra\EntityManegeFactory;
+
+require_once __DIR__ . './../header/header-adm.phtml'; ?>
+<section class="lista-produtos">
+    <h1 class="h1-titulos"><?php echo $titulo ?></h1>
+    <div class="lista">
+
+        <table class="table">
+            <thead>
+            <a href="/cadastrar-produtos">
+                <button class="btn-editar btn-mais">novo produto +</button>
+            </a>
+
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+
+            $entityManegerFactory = new EntityManegeFactory();
+            $entityManeger = $entityManegerFactory->getEntityManege();
+
+            // Buscando o repositorio de alunos pelo Entity
+            $newsRepository = $entityManeger->getRepository(Newsletters::class);
+
+
+            /** @var Newsletters[] $alunos */
+            $newsletters = $newsRepository->findAll();
+
+            foreach ($newsletters as $news):?>
+            <tr>
+                <th scope="row"><?= $news->getId()?></th>
+                <td><?= $news->getEmail()?></td>
+                    <td class="td-email-excluir"><a href="/editar-produtos?id=<?= $news->getId()?>">
+                            <button class="btn-excluir">Excluir</button>
+                        </a></td>
+
+            </tr>
+            <?php endforeach;?>
+            </tbody>
+        </table>
+    </div>
+</section>

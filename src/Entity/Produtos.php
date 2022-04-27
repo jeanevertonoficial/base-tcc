@@ -60,6 +60,11 @@ class Produtos
     private $ehdestaque;
 
     /**
+     * @column  (type="integer")
+     */
+    private $QtdEstoque;
+
+    /**
      * @return mixed
      */
     public function getEhsuperdestaque()
@@ -243,5 +248,21 @@ class Produtos
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getQtdEstoque()
+    {
+        return $this->QtdEstoque;
+    }
+
+    /**
+     * @param mixed $QtdEstoque
+     */
+    public function setQtdEstoque($QtdEstoque): void
+    {
+        $this->QtdEstoque = $QtdEstoque;
     }
 }

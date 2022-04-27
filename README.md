@@ -17,3 +17,8 @@ composer install
 * carrossel = 450x1980
 * card-produto = 200x220
 * logo = 60x60
+
+### Comandos para atualizações e criações pelo Doctrine
+
+Quando modificar a classe Entity e atualizar o banco
+> vendor/bin/doctrine  orm:schema-tool:update --force 

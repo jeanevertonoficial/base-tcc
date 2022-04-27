@@ -1,0 +1,19 @@
+<section class="contato-newsletter">
+    <?php // definindo a vareavel global
+    if (isset($_SESSION['msg'])) {
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    }
+    if (isset($_SESSION['msgcad'])) {
+        echo $_SESSION['msgcad'];
+        unset($_SESSION['msgcad']);
+    }
+    ?>
+    <form method="post" action="/salvar-newsletters" class="footer-contato-newsletters" enctype="multipart/form-data">
+        <h2 class="footer-sub-contato-news">receber newsletter</h2>
+        <div class="input-enviar">
+            <input type="email" class="input-newsletter" name="newsletter" placeholder="Digíte seu email aqui">
+            <button class="newsletter-btn">Enviar</button>
+        </div>
+    </form>
+</section>
