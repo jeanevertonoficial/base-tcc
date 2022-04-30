@@ -23,8 +23,11 @@ $mysql = (new MysqlConnect())->conect();
             while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
                 $id = $rows->id;
                 ?>
-                <h5 class="card-title desconto es-esquerdo"><?= $rows->desconto?>% DESCONTO</h5>
-                <img src=" <?= $img ?>" style="width: 100%; object-fit: cover" class="card-img-top" alt="<?= $rows->nome ?>">
+                <h5 class="card-title desconto es-esquerdo"><?= $rows->desconto ?>% DESCONTO</h5>
+                <div class="zoom">
+                    <img src=" <?= $img ?>" style="width: 100%; object-fit: cover" class="card-img-top"
+                         alt="<?= $rows->nome ?>">
+                </div>
                 <div class="card-body">
                     <p class="card-text"><?= $rows->titulo_produto ?></p>
                     <button href="#" class="btn btn-comprar btn-esquerda">COMPRAR AGORA</button>
@@ -39,8 +42,11 @@ $mysql = (new MysqlConnect())->conect();
             while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
                 $id = $rows->id;
                 ?>
-                <h5 class="card-title desconto"><?= $rows->desconto?>% DESCONTO</h5>
-                <img src="<?= $img ?>" style="object-fit: cover; width: 100%;" class="card-img-top card-foto" alt="<?= $rows->nome ?>">
+                <h5 class="card-title desconto"><?= $rows->desconto ?>% DESCONTO</h5>
+                <div class="zoom">
+                    <img src="<?= $img ?>" style="object-fit: cover; width: 100%;" class="card-img-top card-foto"
+                         alt="<?= $rows->nome ?>">
+                </div>
                 <div class="card-body">
                     <p class="card-text"><?= $rows->titulo_produto ?></p>
                     <button href="#" class="btn btn-comprar">COMPRAR AGORA</button>
@@ -55,11 +61,14 @@ $mysql = (new MysqlConnect())->conect();
             while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
                 $id = $rows->id;
                 ?>
-                <h5 class="card-title desconto des-direto"><?= $rows->desconto?>% DESCONTO</h5>
-                <img src="<?= $img ?>" style=" object-fit:cover; width: 100%" class="card-img-top" alt="<?= $rows->nome ?>">
+                <h5 class="card-title desconto des-direto"><?= $rows->desconto ?>% DESCONTO</h5>
+                <div class="zoom">
+                    <img src="<?= $img ?>" style=" object-fit:cover; width: 100%" class="card-img-top"
+                         alt="<?= $rows->nome ?>">
                 <div class="card-body">
                     <p class="card-text"><?= $rows->titulo_produto ?></p>
                     <button href="#" class="btn btn-comprar btn-direito">COMPRAR AGORA</button>
+                </div>
                 </div>
             <?php endwhile; endif; ?>
     </div>

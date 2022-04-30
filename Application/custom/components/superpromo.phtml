@@ -23,29 +23,35 @@ $mysql = (new MysqlConnect())->conect();
             while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
                 $id = $rows->id;
                 ?>
-                <h5 class="card-title desconto es-esquerdo"><?= $rows->desconto?>% DESCONTO</h5>
-                <img src=" <?= $img ?>" style="width: 100%; object-fit: cover" class="card-img-top" alt="<?= $rows->nome ?>">
+                <h5 class="card-title desconto es-esquerdo"><?= $rows->desconto ?>% DESCONTO</h5>
+                <div class="zoom">
+                    <img src=" <?= $img ?>" style="width: 100%; object-fit: cover" class="card-img-top"
+                         alt="<?= $rows->nome ?>">
+                </div>
                 <div class="card-body">
                     <p class="card-text"><?= $rows->titulo_produto ?></p>
                     <button href="#" class="btn btn-comprar btn-esquerda">COMPRAR AGORA</button>
                 </div>
             <?php endwhile; endif; ?>
     </div>
-    <div class="cardi card-meio ">
+    <div class="cardi card-meio">
         <?php
         $dql = "SELECT * FROM produtos WHERE `posicao_destaque` LIKE '%meio%' limit 1";
         $dql = mysqli_query($mysql, $dql);
         if (($dql) and ($dql->num_rows != 0)):
-        while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
-        $id = $rows->id;
-        ?>
-        <h5 class="card-title desconto"><?= $rows->desconto?>% DESCONTO</h5>
-        <img src="<?= $img ?>" style="object-fit: cover; width: 100%;" class="card-img-top card-foto" alt="<?= $rows->nome ?>">
-        <div class="card-body">
-            <p class="card-text"><?= $rows->titulo_produto ?></p>
-            <button href="#" class="btn btn-comprar">COMPRAR AGORA</button>
-        </div>
-        <?php endwhile; endif; ?>
+            while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
+                $id = $rows->id;
+                ?>
+                <h5 class="card-title desconto"><?= $rows->desconto ?>% DESCONTO</h5>
+                <div class="zoom">
+                    <img src="<?= $img ?>" style="object-fit: cover; width: 100%;" class="card-img-top card-foto"
+                         alt="<?= $rows->nome ?>">
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><?= $rows->titulo_produto ?></p>
+                    <button href="#" class="btn btn-comprar">COMPRAR AGORA</button>
+                </div>
+            <?php endwhile; endif; ?>
     </div>
     <div class="cardi direita">
         <?php
@@ -55,12 +61,15 @@ $mysql = (new MysqlConnect())->conect();
             while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
                 $id = $rows->id;
                 ?>
-        <h5 class="card-title desconto des-direto"><?= $rows->desconto?>% DESCONTO</h5>
-        <img src="<?= $img ?>" style=" object-fit:cover; width: 100%" class="card-img-top" alt="<?= $rows->nome ?>">
-        <div class="card-body">
-            <p class="card-text"><?= $rows->titulo_produto ?></p>
-            <button href="#" class="btn btn-comprar btn-direito">COMPRAR AGORA</button>
-        </div>
-        <?php endwhile; endif; ?>
+                <h5 class="card-title desconto des-direto"><?= $rows->desconto ?>% DESCONTO</h5>
+                <div class="zoom">
+                    <img src="<?= $img ?>" style=" object-fit:cover; width: 100%" class="card-img-top"
+                         alt="<?= $rows->nome ?>">
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><?= $rows->titulo_produto ?></p>
+                    <button href="#" class="btn btn-comprar btn-direito">COMPRAR AGORA</button>
+                </div>
+            <?php endwhile; endif; ?>
     </div>
 </section>

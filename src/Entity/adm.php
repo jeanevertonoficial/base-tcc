@@ -33,6 +33,18 @@ class adm
     /**
      * @column (type="string")
      */
+    private string $permissao;
+    /**
+     * @column (type="string")
+     */
+    private string $tipoPermissao;
+    /**
+     * @column (type="string")
+     */
+    private string $fotoPerfil;
+    /**
+     * @column (type="string")
+     */
     private string $horaCadastro;
 
     /**
@@ -139,6 +151,49 @@ class adm
     public function setHoraCadastro(string $horaCadastro): void
     {
         $this->horaCadastro = $horaCadastro;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPermissao(): string
+    {
+        return $this->permissao;
+    }
+
+    /**
+     * @param string $permissao
+     */
+    public function setPermissao(string $permissao): void
+    {
+        $this->permissao = $permissao;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTipoPermissao(): string
+    {
+        return $this->tipoPermissao;
+    }
+
+    /**
+     * @param string $tipoPermissao
+     */
+    public function setTipoPermissao(string $tipoPermissao): void
+    {
+        $this->tipoPermissao = $tipoPermissao;
+    }
+
+
+    public function getFotoPerfil(): string
+    {
+        return $this->fotoPerfil;
+    }
+
+    public function setFotoPerfil(string $fotoPerfil): void
+    {
+        $this->fotoPerfil = $fotoPerfil;
     }
 
 

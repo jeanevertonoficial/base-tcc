@@ -45,7 +45,7 @@ foreach ($produtoslist as $produto):
                 <div class="div-desc"> <?= $mostrar_desconto ?>%</div>
                 <div class="div-desc"> de <br>desconto</div>
             </span>
-            <div class="imagem">
+            <div class="imagem zoom">
                 <img class="imagem-produto" src="<?= $img?>" alt="foto">
             </div>
         </div>

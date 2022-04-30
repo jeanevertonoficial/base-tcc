@@ -26,14 +26,14 @@ $mysql = (new MysqlConnect())->conect();
                             <li class="li-destaque"><?= $rows->descricao ?></li>
                             <li class="li-destaque">Preço: $<?= $rows->preco ?> </li>
                             <li class="li-destaque">
-                                <button type="button" class="btn btn-saibamais" data-bs-toggle="modal"
-                                        data-bs-target="#staticBackdrop">
+                                <button type="button" class="btn btn-saibamais thar-four" data-bs-toggle="modal"
+                                        data-bs-target="#saibamais-cima">
                                     Saiba mais
                                 </button>
                             </li>
                         </ul>
                     </div>
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    <div class="modal fade" id="saibamais-cima" data-bs-backdrop="static" data-bs-keyboard="false"
                          tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -43,7 +43,13 @@ $mysql = (new MysqlConnect())->conect();
                                             aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    Descrião: <?= $rows->descricao ?>
+                                    <div class="imagem-modal">
+                                        <img class="img-destaque-response" src="<?= $img ?>" alt="<?= $rows->nome ?>">
+                                    </div>
+                                    <div class="conteudo-modal">
+                                        Descrião: <?= $rows->descricao ?><br>
+                                        Preço: $<?= $rows->preco ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -68,14 +74,14 @@ $mysql = (new MysqlConnect())->conect();
                             <li class="li-destaque"><?= $rows->descricao ?></li>
                             <li class="li-destaque">Preço: $<?= $rows->preco ?> </li>
                             <li class="li-destaque">
-                                <button type="button" class="btn btn-saibamais" data-bs-toggle="modal"
-                                        data-bs-target="#staticBackdrop">
+                                <button type="button" class="btn btn-saibamais thar-four" data-bs-toggle="modal"
+                                        data-bs-target="#saibamais-baixo">
                                     Saiba mais
                                 </button>
                             </li>
                         </ul>
                     </div>
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    <div class="modal fade" id="saibamais-baixo" data-bs-backdrop="static" data-bs-keyboard="false"
                          tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -85,7 +91,16 @@ $mysql = (new MysqlConnect())->conect();
                                             aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    Descrião: <?= $rows->descricao ?>
+                                    <div class="imagem-modal">
+                                        <img class="img-destaque-response" src="<?= $img ?>" alt="<?= $rows->nome ?>">
+                                    </div>
+                                    <div class="conteudo-modal">
+                                        <ul class="ul-destaque">
+                                            <li class="li-destaque titulo"><?= $rows->titulo_produto ?></li>
+                                            <li class="li-destaque"><b>Descrião: </b>  <?= $rows->descricao ?></li>
+                                            <li class="li-destaque"><b>Preço: </b> $<?= $rows->preco ?></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>

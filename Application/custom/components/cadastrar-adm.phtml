@@ -27,9 +27,9 @@
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
-                        <button class="button-cadastro" id="nav-preco-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-preco"
-                                type="button" role="tab" aria-controls="nav-preco" aria-selected="false">PRÓXIMO
+                        <button class="button-cadastro" id="nav-permissao-tab" data-bs-toggle="tab"
+                                data-bs-target="#permissao"
+                                type="button" role="tab" aria-controls="permissao" aria-selected="false">PRÓXIMO
                         </button>
 
                     </div>
@@ -40,28 +40,36 @@
         <div class="progress barra-progresso">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
                  style="width: 10%;" aria-valuenow="25" aria-valuemin="0"
-                 aria-valuemax="100">Inicie o cadastro!
+                 aria-valuemax="100">Inicio
             </div>
         </div>
     </div>
 
-    <div class="tab-pane fade" id="nav-preco" role="tabpanel" aria-labelledby="nav-preco-tab">
+
+    <div class="tab-pane fade" id="permissao" role="tabpanel" aria-labelledby="nav-permissao-tab">
         <section class="principal">
             <div class="cadastrar-formulario">
                 <section class="section-cadastrar">
                     <div class="div-nome">
-                        <label class="div-label" for="preco">Email</label>
-                        <input type="email" name="email" class="nome-cad" placeholder="seuemail@gmail.com" required>
+                        <label class="div-label" for="permissao">Permissão</label>
+                        <select name="permissao" id="">
+                            <option value="administrador">Administrador</option>
+                            <option value="super_administrador">Super Administrador</option>
+                        </select>
                     </div>
                     <div class="div-nome">
-                        <label class="div-label" for="preco">Senha</label>
-                        <input type="password" name="senha" class="nome-cad" placeholder="*******" required>
+                        <label class="div-label" for="tipo_permissao">Tipo de usuário</label>
+                        <select name="tipo_permissao" id="">
+                            <option value="cliente">cliente</option>
+                            <option value="colaborador">Funcionário</option>
+                        </select>
                     </div>
                 </section>
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-
-                        <button class="button-cadastro" >Concluir
+                        <button class="button-cadastro" id="nav-preco-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-preco"
+                                type="button" role="tab" aria-controls="nav-preco" aria-selected="false">PRÓXIMO
                         </button>
 
                     </div>
@@ -70,11 +78,82 @@
         </section>
         <div class="progress barra-progresso">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                 style="width: 40%;" aria-valuenow="25" aria-valuemin="0"
-                 aria-valuemax="100">80
+                 style="width: 50%;" aria-valuenow="25" aria-valuemin="0"
+                 aria-valuemax="50">50%
             </div>
         </div>
     </div>
+
+        <div class="tab-pane fade" id="nav-preco" role="tabpanel" aria-labelledby="nav-preco-tab">
+            <section class="principal">
+                <div class="cadastrar-formulario">
+                    <section class="section-cadastrar">
+                        <div class="div-nome">
+                            <label class="div-label" for="preco">Email</label>
+                            <input type="email" name="email" class="nome-cad" placeholder="seuemail@gmail.com" required>
+                        </div>
+                        <div class="div-nome">
+                            <label class="div-label" for="preco">Senha</label>
+                            <input type="password" name="senha" class="nome-cad" placeholder="*******" required>
+                        </div>
+                    </section>
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+                            <button class="button-cadastro" id="nav-imagem-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-imagem"
+                                    type="button" role="tab" aria-controls="nav-imagem" aria-selected="false">PRÓXIMO
+                            </button>
+
+                        </div>
+                    </nav>
+                </div>
+            </section>
+            <div class="progress barra-progresso">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                     style="width: 70%;" aria-valuenow="25" aria-valuemin="0"
+                     aria-valuemax="70">70%
+                </div>
+            </div>
+        </div>
+            <div class="tab-pane fade" id="nav-imagem" role="tabpanel" aria-labelledby="nav-imagem-tab">
+                <section class="principal">
+                    <div class="cadastrar-formulario imagem-cadastro">
+                        <div class="cad-card"><a class="voltar" href="/cadastrar-novo-administrador">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                     class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                                </svg>
+                            </a>
+                            <div class="div-nome">
+                                <label for='foto_perfil' class="div-label">Imagem de Perfil</label>
+                            </div>
+                            <div id="cadastro-quatro">
+                                <div class="div-imagem">
+                                    <label for='foto_perfil' class="div-label imagem">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor"
+                                             class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                  d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
+                                            <path fill-rule="evenodd"
+                                                  d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                                        </svg>
+                                        <input type="file" id="foto_perfil" name="foto_perfil" class="nome-cad imagem"
+                                               required>
+                                    </label>
+                                </div>
+                                <label class="selecione-foto">selecione uma Imagem</label>
+                            </div>
+                            <button class="button-cadastro">CONCLUIR</button>
+                        </div>
+                </section>
+                <div class="progress barra-progresso">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 99%;
+                     aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">99%
+                </div>
+            </div>
+            <p class="div-nome completo">Ultimo passo!</p>
 
     </form>
     </section>

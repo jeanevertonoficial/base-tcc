@@ -1,0 +1,57 @@
+.button-produto {
+    width: 146px !important;
+    height: 29px !important;
+
+    border-radius: 12px !important;
+
+    margin-top: 20px;
+
+    color: white !important;
+    background: #6a6a6a !important;
+
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+
+    border: none;
+}
+
+.button-produto:hover {
+    transition: 0.8s;
+    background: bisque !important;
+}
+
+button.btn-saibamais {
+    text-transform: uppercase;
+    padding: 5px 25px;
+    color: rgb(19, 19, 19);
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    border: 2px solid bisque;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+button.btn-saibamais:hover {
+    color: #363636 !important;
+    background-color: transparent;
+    text-shadow: navajowhite;
+}
+button.btn-saibamais:hover:before {
+    left: 0%;
+    right: auto;
+    width: 100%;
+}
+button.btn-saibamais:before {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 0px;
+    z-index: -1;
+    content: '';
+    color: #000 !important;
+    background: bisque;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}

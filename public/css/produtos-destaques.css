@@ -42,14 +42,3 @@ img {
     font-size: 1.3rem;
     text-transform: uppercase;
 }
-
-.btn-saibamais {
-    background: #FAE09D !important;
-    border-radius: 50px !important;
-    padding: 0px 25px !important;
-    font-style: normal !important;
-    font-weight: 500 !important;
-    font-size: 20px;
-    line-height: 38px;
-    text-transform: uppercase;
-}

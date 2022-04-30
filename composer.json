@@ -10,7 +10,8 @@
         "aws/aws-sdk-php-resources": "^0.3.0",
         "symfony/orm-pack": "^2.2",
       "ext-mysqli": "*",
-        "sensio/framework-extra-bundle": "^6.2"
+        "sensio/framework-extra-bundle": "^6.2",
+      "ext-http": "*"
     },
     "extra": {
         "psr17_server_request_factory": "Slim\\Psr7\\Factory\\ServerRequestFactory",

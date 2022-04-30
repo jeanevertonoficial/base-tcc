@@ -15,16 +15,18 @@
 
 }
 .span-desconto {
-    opacity: 1;
+    font-weight: bold;
+
     background: #e58d04;
     padding: 4px;
     margin-bottom: -65px;
     margin-right: 10px;
     float: right;
+    line-height: 10px;
 
     font-size: 10px;
 
-    font-weight: 400;
+    font-weight: bold;
 
     color: white;
 
@@ -52,7 +54,6 @@
     height: auto;
 
     transition: 0.8s;
-    opacity: 1;
 
     color: white;
 
@@ -100,7 +101,6 @@
 
     box-shadow: -10px 7px 16px 0px rgb(0 0 0 / 25%);
     object-fit: scale-down !important;
-
 }
 
 .titulo-produto {
@@ -132,29 +132,6 @@
     color: #6a6a6a;
 }
 
-.button-produto {
-    width: 146px !important;
-    height: 29px !important;
-
-    border-radius: 12px !important;
-
-    margin-top: 20px;
-
-    color: white !important;
-    background: #6a6a6a !important;
-
-    font-size: 18px;
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-
-    border: none;
-}
-
-.button-produto:hover {
-    transition: 0.8s;
-    background: bisque !important;
-}
-
 .link-compra {
     color: inherit;
     text-decoration: inherit;
@@ -163,5 +140,23 @@
     color: #6a6a6a;
     font-size: 8px;
 }
+
+.zoom {
+    overflow: hidden;
+}
+
+.zoom img {
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.zoom:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.imagem { opacity: initial !important;}
 
 section.card-section-scroll { margin:auto; display: flex; flex-direction: row; flex-wrap: wrap;}

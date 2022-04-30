@@ -84,10 +84,10 @@ require_once __DIR__ . './../header/header-adm.phtml'; ?>
                     <td id="preco_prod" >R$<?= $produto->getPreco() ?></td>
                     <td id="categoria_prod" ><?= $produto->getCategoria() ?></td>
                     <div class="btn-ed-exc">
-                        <td id="btn-editar-prod" ><a href="/exluir-produtos?id=<?= $produto->getId() ?>">
+                        <td id="btn-editar-prod" ><a href="/editar-produto?id=<?= $produto->getId() ?>">
                                 <button class="btn-editar">Editar</button>
                             </a></td>
-                        <td id="btn-excluir-prod" ><a href="/editar-produtos?id=<?= $produto->getId() ?>">
+                        <td id="btn-excluir-prod" ><a href="/exluir-produto?id=<?= $produto->getId() ?>">
                                 <button class="btn-excluir">Excluir</button>
                             </a></td>
                     </div>

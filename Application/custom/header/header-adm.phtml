@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/card-cadastro.css">
     <link rel="stylesheet" href="../css/lista-produtos-administrativo.css">
     <link rel="stylesheet" href="../css/lista-newsletters-adm.css">
+    <link rel="stylesheet" href="../css/perfil-adm.css">
 
     <!-- Fontes externas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -123,7 +124,7 @@ if ((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == 
     <div class="logado">
         <?php
         if (assert($_SESSION['id'])) {
-            echo " Olá, " . "<b>" . $_SESSION['usuario'] . "</b>" . "<br>";
+            echo " Olá, " . "<b><a href='/perfil'>" . $_SESSION['usuario'] . "</a></b>" . "<br>";
             echo "<br><a class='sair' href='/sair'>Sair</a>";
         } else {
             $_SESSION['msg'] = "Somente administradores";

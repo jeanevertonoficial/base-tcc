@@ -8,6 +8,8 @@
     padding: 10px 0;
     font-weight: 700;
     margin-bottom: 0;
+
+    z-index: 50;
 }
 
 .es-esquerdo {
@@ -33,8 +35,9 @@
     height: 350px !important;
 }
 
-.btn-esquerda, .btn-direito {
+.btn-esquerda, .btn-direito, .btn-comprar {
     background: #FAE09D !important;
+    position: absolute;
 }
 
 .card-text {
@@ -43,11 +46,11 @@
     font-family: 'Roboto', Arial;
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
-    line-height: 28px;
-    margin-bottom: 5px;
-    color: #888;
-    text-shadow: 1px 5px 10px rgba(112, 112, 112, 0.47);
+    font-size: 20px;
+    color: #fae09d;
+    text-transform: uppercase;
+    text-shadow: -2px -2px 3px #212529;
+    position: absolute;
 }
 
 .btn {
@@ -55,8 +58,12 @@
 }
 
 .card-body {
-    padding: inherit ;
+    flex: 1 1 auto;
+    justify-content: center;
+    padding: 1rem 1rem;
+    display: flex;
 }
+
 
 .card-img-top {
     object-position: top;
@@ -71,6 +78,7 @@
     border-radius: 25px 25px 0px 0px;
     overflow: hidden;
     margin-bottom: 3.75rem;
+    border: 1px solid #dbdbdb !important;
 }
 
 .super {
@@ -96,6 +104,7 @@
     border-radius: 25px;
     margin: auto;
     padding: 0 10px !important;
+    margin-top: -70px !important;
 }
 
 .super-div {
@@ -121,4 +130,8 @@ h1 {
 .super-h1 {
     font-size: 2.5rem;
     width: auto;
+}
+
+.card-title {
+    margin-bottom: inherit !important;
 }

@@ -10,7 +10,7 @@
     .titulo-lista-produto > h1{ font-size: 16px !important;}
     .card-title { margin-bottom: inherit !important;}
     .card-meio, .esquerda { height: inherit !important;}
-    .btn-comprar {background: #FAE09D !important; width: 100%; border-radius: 10px !important}
+    .btn-comprar {background: #FAE09D !important; border-radius: 10px !important}
     .div-produto-destaque { width: 90% !important; align-items: center; flex-direction: column;  flex-wrap: wrap; justify-content: flex-end;}
     .div-produto-destaque > .div-baixo { flex-wrap: wrap; justify-content: flex-end;}
     .descricao-destaque { width: 75% !important;}
@@ -31,6 +31,10 @@
      button.navbar-toggler.burger-principal  { margin-right: -50px !important;}
      section.super.card-produtos{padding-bottom: 5rem}
     .card-section { width: 85% !important}
+    .arraste-lado { display: initial !important; color: #999999 !important;}
+    .ul-destaque { width: 100% !important; padding: initial !important;}
+    .titulo { justify-content: center !important}
+    .titulo-produto { font-size: 15px !important;}
     .card-section-scroll { flex-direction: row; flex-wrap: nowrap !important; width: auto !important;background: scroll;margin: auto;overflow: overlay;display: flex;width: 70%;height: auto;flex-wrap: nowrap;}
 }
 @media screen and (max-width: 980px){

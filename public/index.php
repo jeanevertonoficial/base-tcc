@@ -9,6 +9,7 @@ use src\doctrine\Controller\{cad_adm,
     Loginadm,
     Loja,
     NewslettersList,
+    PerfilAdm,
     resource\BannerCarrossel,
     resource\CadastrarAdm,
     resource\CadastrarProdutos,
@@ -61,9 +62,9 @@ switch ($_SERVER['PATH_INFO']) {
         $controlador = new CadastroSucesso();
         $controlador->processaRequisicao();
         break;
-    case '/excluir-produto':
+    case '/exluir-produto':
         $controlador = new RemoveProduto();
-        $controlador->processaRequisicao();
+
         break;
     case '/banner':
         $controlador = new CadastrarBanner();
@@ -88,19 +89,12 @@ switch ($_SERVER['PATH_INFO']) {
         $controlador = new RelatorioProdutos();
         $controlador->processaRequisicao();
         break;
+    case '/perfil':
+        $controlador = new PerfilAdm();
+        $controlador->processaRequisicao();
+        break;
     default:
         $controlador = new Loja();
         $controlador->processaRequisicao();
         break;
 }
-/*
-session_start();
-
-$ehRotaDeLogin = stripos($caminho, 'login');
-if (!isset($_SESSION['logado']) && $ehRotaDeLogin === false) {
-    header('Location: /login');
-    exit();
-}
-
-
-*/
