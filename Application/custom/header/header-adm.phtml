@@ -124,7 +124,7 @@ if ((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == 
     <div class="logado">
         <?php
         if (assert($_SESSION['id'])) {
-            echo " Olá, " . "<b><a href='/perfil'>" . $_SESSION['usuario'] . "</a></b>" . "<br>";
+            echo " Olá, " . "<b><a href='/perfil?id=".$_SESSION['id']."'>" . $_SESSION['usuario'] . "</a></b>" . "<br>";
             echo "<br><a class='sair' href='/sair'>Sair</a>";
         } else {
             $_SESSION['msg'] = "Somente administradores";

@@ -2,6 +2,7 @@
 
 namespace src\doctrine\Controller\resource;
 
+use mysql_xdevapi\Exception;
 use src\doctrine\Controller\InterfaceProcessaRequisicao;
 use src\doctrine\Entity\adm;
 use src\doctrine\infra\EntityManegeFactory;
@@ -24,43 +25,43 @@ class CadastrarAdm implements InterfaceProcessaRequisicao
 
         $dataCreate = $create;
 
-        if ($imagem != null) {
+        try {
 
-            preg_match("/\.(jpg|png|jpeg|jfif){1}$/i", $imagem['name'], $ext);
-
-            if ($ext == true) {
-
+            if ($imagem != null) {
                 $caminho_arquivo = "img/fotoPerfilAdm/";
 
-                move_uploaded_file($_FILES['foto_perfil']["tmp_name"], $caminho_arquivo. $imagem['name']);
+                preg_match("/\.(jpg|png|jpeg){1}$/i", $imagem['name'], $ext);
 
-                $adm = new adm();
-                $adm->setNome($dados['nome']);
-                $adm->setUsuario($dados['usuario']);
-                $adm->setEmail($dados['email']);
-                $adm->setSenha($dados['senha']);
-                $adm->setPermissao($dados['permissao']);
-                $adm->setTipoPermissao($dados['tipo_permissao']);
-                $adm->setFotoPerfil($imagem);
-                $adm->setHoraCadastro($dataCreate);
+                if ($ext == true) {
+                    $imagem['name'] = rand(1, 1000) .'_'. $imagem['name'];
+                    move_uploaded_file($_FILES['foto_perfil']["tmp_name"], $caminho_arquivo . $imagem['name']);
 
-                $this->entitymeneger->persist($adm);
-                $this->entitymeneger->flush();
-            }else {
-                ?>
-                <script>
-                    alert("Extensão inválida.");
-                </script> <?php
+                    $adm = new adm();
+                    $adm->setNome($dados['nome']);
+                    $adm->setUsuario($dados['usuario']);
+                    $adm->setEmail($dados['email']);
+                    $adm->setSenha($dados['senha']);
+                    $adm->setPermissao($dados['permissao']);
+                    $adm->setTipoPermissao($dados['tipo_permissao']);
+                    $adm->setFotoPerfil($imagem['name']);
+                    $adm->setHoraCadastro($dataCreate);
+
+                    $this->entitymeneger->persist($adm);
+                    $this->entitymeneger->flush();
+
+                }
             }
-        } else {
+        } catch (Exception $exception) {
             ?>
-            <script>alert('Falha ao cadastrar Produto!')</script>
-            <?php
+            <script>
+                alert("Extensão inválida.");
+            </script> <?php
         }
 
     }
 
-    public function processaRequisicao(): void
+    public
+    function processaRequisicao(): void
     {
         if ((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == true) and (!isset ($_SESSION['id']) == true)) {
             $_SESSION['msgcad'] = "Olá bem vindo, acesse sua conta!";

@@ -4,8 +4,8 @@
 
 .container-adm {background: #EED9A3;}
 
-.logado {text-align: center;display: flex;justify-content: space-around;width: 150px;font-size: small;align-items: center;justify-items: center;margin: auto;color: white;}
-.logado a {text-decoration: none;color: white;}
+.logado {text-align: center;display: flex;justify-content: space-around;width: 150px;font-size: small;align-items: center;justify-items: center;margin: auto;color: #363636;}
+.logado a {text-decoration: none;color: rgba(54, 54, 54, 0.81);}
 .logado a:hover {color: #e58d04;}
 
 .btn-pesquisa {align-items: center}

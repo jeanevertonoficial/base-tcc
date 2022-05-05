@@ -186,12 +186,15 @@ class adm
     }
 
 
-    public function getFotoPerfil(): string
+    public function getFotoPerfil()
     {
         return $this->fotoPerfil;
     }
 
-    public function setFotoPerfil(string $fotoPerfil): void
+    /**
+     * @param string $fotoPerfil
+     */
+    public function setFotoPerfil( string $fotoPerfil): void
     {
         $this->fotoPerfil = $fotoPerfil;
     }

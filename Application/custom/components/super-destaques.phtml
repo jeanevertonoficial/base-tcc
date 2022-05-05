@@ -47,8 +47,11 @@ $mysql = (new MysqlConnect())->conect();
                                         <img class="img-destaque-response" src="<?= $img ?>" alt="<?= $rows->nome ?>">
                                     </div>
                                     <div class="conteudo-modal">
-                                        Descrião: <?= $rows->descricao ?><br>
-                                        Preço: $<?= $rows->preco ?>
+                                        <ul class="ul-destaque">
+                                            <li class="li-destaque titulo"><?= $rows->titulo_produto ?></li>
+                                            <li class="li-destaque"><b>Descrião: </b>  <?= $rows->descricao ?></li>
+                                            <li class="li-destaque"><b>Preço: </b> $<?= $rows->preco ?></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>

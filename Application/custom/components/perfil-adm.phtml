@@ -1,33 +1,106 @@
 <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
+        <?php
+
+        use src\doctrine\Entity\adm;
+        use src\doctrine\infra\EntityManegeFactory;
+
+        $entityManegerFactory = new EntityManegeFactory();
+        $entityManeger = $entityManegerFactory->getEntityManege();
+
+        // Buscando o repositorio de alunos pelo Entity
+        $perfilRepository = $entityManeger->getRepository(adm::class);
+
+        $id = $_SESSION['id'];
+        $caminho = 'img/fotoPerfiladm/';
+
+        /** @var Adm[] */
+        $perfil = $perfilRepository->find($id);
+        ?>
         <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                <div class="foto_editer">
+                    <img id="foto" class="rounded-circle mt-5""
+                    src="<?= $caminho . $perfil->getFotoPerfil() ?>">
+                    <input type="file" name="foto_perfil" value="">
+
+                </div>
+                <span class="font-weight-bold"><?= isset($perfil) ? $perfil->getNome() : ''; ?></span>
+                <span class="text-black-50"><?= isset($perfil) ? $perfil->getEmail() : ''; ?></span><span> </span></div>
         </div>
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">PERFIL ADMINISTRATIVO</h4>
                 </div>
-                <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Nome</label><input type="text" class="form-control" placeholder="primeiro nome" value=""></div>
-                    <div class="col-md-6"><label class="labels">Sobrenome</label><input type="text" class="form-control" value="" placeholder="sobrenome"></div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label class="labels">Nome</label>
+                        <input type="text" class="form-control"
+                               placeholder="primeiro nome"
+                               value="<?= isset($perfil) ? $perfil->getNome() : ''; ?>">
+                    </div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Usuário</label><input type="text" class="form-control" placeholder="meu usuário" value=""></div>
-                    <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="Meu email" value=""></div>
-                    <div class="col-md-12"><label class="labels">Senha</label><input type="text" class="form-control" placeholder="********" value=""></div>
+                    <div class="col-md-12">
+                        <label class="labels">Usuário</label>
+                        <input type="text" class="form-control"
+                               placeholder="meu usuário"
+                               value="<?= isset($perfil) ? $perfil->getUsuario() : ''; ?>">
+                    </div>
+                    <div class="col-md-12">
+                        <label class="labels">Email</label>
+                        <input type="text" class="form-control"
+                               placeholder="Meu email"
+                               value="<?= isset($perfil) ? $perfil->getEmail() : ''; ?>">
+                    </div>
+                    <div class="col-md-12">
+                        <label class="labels">Senha</label>
+                        <input type="text" class="form-control"
+                               placeholder="********" value="">
+                    </div>
                 </div>
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Salvar Cadastro</button></div>
+                <div class="mt-5 text-center">
+                    <button class="btn btn-primary profile-button" type="button">Salvar Cadastro</button>
+                </div>
             </div>
         </div>
-            <div class="col-md-4">
-                <div class="p-3 py-5">
-                    <div class="d-flex justify-content-between align-items-center experience"><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Tipo de permissão</span></div><br>
-                    <div class="col-md-12"><label class="labels">Grau de liberação</label><input type="text" class="form-control" placeholder="perimissão" value=""></div> <br>
-                    <div class="col-md-12"><label class="labels">Permissão</label><input type="text" class="form-control" placeholder="detalhes da permissão" value=""></div>
+        <div class="col-md-4">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center experience">
+                    <span class="border px-3 p-1 add-experience">
+                        <i class="fa fa-plus"></i>&nbsp;Tipo de permissão</span></div>
+                <br>
+                <div class="col-md-12">
+                    <label class="labels">Grau de liberação</label>
+                    <input type="text"
+                           class="form-control"
+                           disabled
+                           placeholder="perimissão"
+                           value="<?= isset($perfil) ? $perfil->getPermissao() : ''; ?>">
+                </div>
+                <br>
+                <div class="col-md-12">
+                    <label class="labels">Permissão</label>
+                    <input type="text" class="form-control"
+                           disabled
+                           placeholder="detalhes da permissão"
+                           value="<?= isset($perfil) ? $perfil->getTipoPermissao() : ''; ?>">
                 </div>
             </div>
+        </div>
     </div>
 </div>
 </div>
 </div>
+
+<style>
+    #foto {
+        transition: 0.5s;
+    }
+    #foto:hover {
+        transition: 0.8s;
+        transform: scale(1.5);
+        object-fit: contain;
+    }
+</style>
