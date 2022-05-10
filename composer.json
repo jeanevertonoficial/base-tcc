@@ -11,7 +11,8 @@
         "symfony/orm-pack": "^2.2",
       "ext-mysqli": "*",
         "sensio/framework-extra-bundle": "^6.2",
-      "ext-http": "*"
+      "ext-http": "*",
+      "ext-pdo": "*"
     },
     "extra": {
         "psr17_server_request_factory": "Slim\\Psr7\\Factory\\ServerRequestFactory",

@@ -1,11 +1,11 @@
 <?php
 
-
+use src\doctrine\Controller\models\SuperPromo;
+use src\doctrine\Controller\Tools;
 use src\doctrine\infra\MysqlConnect;
 
-$caminho = '../img/arquivos/';
-
 $mysql = (new MysqlConnect())->conect();
+$caminho = (new Tools())->rotaImagemArquivo();
 
 ?>
 
@@ -17,8 +17,7 @@ $mysql = (new MysqlConnect())->conect();
 <section class="super card-produtos">
     <div class="cardi esquerda">
         <?php
-        $dql = "SELECT * FROM produtos WHERE `posicao_destaque` LIKE '%esquerdo%' limit 1 ";
-        $dql = mysqli_query($mysql, $dql);
+        $dql = (new SuperPromo())->chamaSuperPromocaoEsquerdo();
         if (($dql) and ($dql->num_rows != 0)):
             while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
                 $id = $rows->id;
@@ -36,8 +35,7 @@ $mysql = (new MysqlConnect())->conect();
     </div>
     <div class="cardi card-meio">
         <?php
-        $dql = "SELECT * FROM produtos WHERE `posicao_destaque` LIKE '%meio%' limit 1";
-        $dql = mysqli_query($mysql, $dql);
+        $dql = (new SuperPromo())->chamaSuperPromocaoMeio();
         if (($dql) and ($dql->num_rows != 0)):
             while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
                 $id = $rows->id;
@@ -55,8 +53,7 @@ $mysql = (new MysqlConnect())->conect();
     </div>
     <div class="cardi direita">
         <?php
-        $dql = "SELECT * FROM produtos WHERE `posicao_destaque` LIKE '%direito%' limit 1 ";
-        $dql = mysqli_query($mysql, $dql);
+        $dql = (new SuperPromo())->chamaSuperPromocaoDireito();
         if (($dql) and ($dql->num_rows != 0)):
             while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
                 $id = $rows->id;

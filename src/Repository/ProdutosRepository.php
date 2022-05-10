@@ -3,6 +3,7 @@
 namespace src\doctrine\Repository;
 
 
+use Doctrine\ORM\EntityRepository;
 use src\doctrine\Entity\Produtos;
 
 class ProdutosRepository
@@ -25,7 +26,7 @@ class ProdutosRepository
     {
         $query = $this->createQueryBuilder('a')
             ->join('a.produtos', 'p')
-            ->addSelect('t')
+            ->addSelect('a.nome')
             ->getQuery();
 
         return $query->getResult();

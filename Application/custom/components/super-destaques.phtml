@@ -1,11 +1,11 @@
 <?php
 
-
+use src\doctrine\Controller\models\SuperDestaque;
+use src\doctrine\Controller\Tools;
 use src\doctrine\infra\MysqlConnect;
 
-$caminho = '../img/arquivos/';
-
 $mysql = (new MysqlConnect())->conect();
+$caminho = (new Tools())->rotaImagemArquivo();
 
 ?>
 <section class="destaque">
@@ -13,8 +13,7 @@ $mysql = (new MysqlConnect())->conect();
     <section>
         <div class="div-produto-destaque">
             <?php
-            $dql = "SELECT * FROM produtos WHERE `ehsuperdestaque` LIKE '%simcima%' limit 1 ";
-            $dql = mysqli_query($mysql, $dql);
+            $dql = (new SuperDestaque())->chamaSelectCima();
             if (($dql) and ($dql->num_rows != 0)):
                 while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
                     $id = $rows->id;
@@ -49,7 +48,7 @@ $mysql = (new MysqlConnect())->conect();
                                     <div class="conteudo-modal">
                                         <ul class="ul-destaque">
                                             <li class="li-destaque titulo"><?= $rows->titulo_produto ?></li>
-                                            <li class="li-destaque"><b>Descrião: </b>  <?= $rows->descricao ?></li>
+                                            <li class="li-destaque"><b>Descrião: </b> <?= $rows->descricao ?></li>
                                             <li class="li-destaque"><b>Preço: </b> $<?= $rows->preco ?></li>
                                         </ul>
                                     </div>
@@ -62,8 +61,7 @@ $mysql = (new MysqlConnect())->conect();
 
         <div class="div-produto-destaque div-baixo">
             <?php
-            $dql = "SELECT * FROM produtos WHERE `ehsuperdestaque` LIKE '%simbaixo%' limit 1 ";
-            $dql = mysqli_query($mysql, $dql);
+            $dql = (new SuperDestaque())->chamaSelectBaixo();
             if (($dql) and ($dql->num_rows != 0)):
                 while ($rows = mysqli_fetch_object($dql)) : $img = $caminho . $rows->nome;
                     $id = $rows->id;
@@ -100,7 +98,7 @@ $mysql = (new MysqlConnect())->conect();
                                     <div class="conteudo-modal">
                                         <ul class="ul-destaque">
                                             <li class="li-destaque titulo"><?= $rows->titulo_produto ?></li>
-                                            <li class="li-destaque"><b>Descrião: </b>  <?= $rows->descricao ?></li>
+                                            <li class="li-destaque"><b>Descrião: </b> <?= $rows->descricao ?></li>
                                             <li class="li-destaque"><b>Preço: </b> $<?= $rows->preco ?></li>
                                         </ul>
                                     </div>
