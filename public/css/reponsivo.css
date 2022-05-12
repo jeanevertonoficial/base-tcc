@@ -20,7 +20,7 @@
     .navbar-nav { flex-direction: column !important; width: 250px !important;}
     .navbar-toggler {margin-right: -50px !important; padding: 5px !important; border-radius: 50px !important;}
     .navbar-brand { margin-left: -50px !important}
-    .adm-img, .navbar-light .navbar-toggler { margin-left: initial !important; margin-right: initial !important;}
+    .adm-img, .navbar-light .navbar-toggler { border-color: transparent !important; margin-left: initial !important; margin-right: initial !important;}
      #categoria_prod, #descricao_prod, #preco_prod{ display: none }
     .lista { width: initial !important; padding: 0px 5px !important;}
     .btn-editar, .btn-excluir { padding: 5px !important; border-radius: 5px !important}
@@ -28,6 +28,8 @@
     .btn-pesquisa { justify-content: space-between !important; flex-direction: column-reverse !important;}
     .header-div button { height: 45px !important;}
     .header-div input, .header-div select { background: #999999; color: white}
+    .header-input { width: 100%;margin-top: 2rem;}
+    .navbar-toggler-icon { margin-top: -9rem}
      button.navbar-toggler.burger-principal  { margin-right: -50px !important;}
      section.super.card-produtos{padding-bottom: 5rem}
     .card-section { width: 85% !important}
@@ -35,6 +37,8 @@
     .ul-destaque { width: 100% !important; padding: initial !important;}
     .titulo { justify-content: center !important}
     .titulo-produto { font-size: 15px !important;}
+    .contato { flex-direction: column}
+    .section-cima, .section-meio{ align-items: center !important;}
     .card-section-scroll { flex-direction: row; flex-wrap: nowrap !important; width: auto !important;background: scroll;margin: auto;overflow: overlay;display: flex;width: 70%;height: auto;flex-wrap: nowrap;}
 }
 @media screen and (max-width: 980px){

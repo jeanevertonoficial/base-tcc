@@ -32,31 +32,27 @@
                 <hr class="linha-categoria" style="margin: 0">
             </div>
         </section>
-        <section class="section-meio">
-            <div class="contato">
-                <section class="contato-contato">
-                    <div class="footer-contato">
-                        <h2 class="footer-sub-contato">Contato</h2>
-                        <ul class="ul-contato">
-                            <li class="li-contato">(00) 0000-0000</li>
-                        </ul>
-                    </div>
-                    <div class="footer-contato">
-                        <h2 class="footer-sub-contato">Email</h2>
-                        <ul class="ul-contato">
-                            <li class="li-contato">jeanbassone39@gmail.com</li>
-                        </ul>
-                    </div>
-                </section>
+        <div class="contato">
+            <div class="conteudo-links">
+                <h2 class="footer-sub-contato">Contato</h2>
+                <ul class="ul-contato">
+                    <li class="li-contato">(00) 0000-0000</li>
+                </ul>
             </div>
-        </section>
+            <div class="conteudo-links">
+                <h2 class="footer-sub-contato">Email</h2>
+                <ul class="ul-contato">
+                    <li class="li-contato">jeanbassone39@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
 </div>
 <div class="parte-baixo">
 
 </div>
 </section>
-
 
 
 <style>
@@ -108,13 +104,16 @@
         background-image: linear-gradient(to right, transparent, #151515, transparent);
         margin: 22px 0;
     }
+
     .section-cima {
         width: 100%;
     }
+
     .section-meio {
         margin-top: 7rem;
         margin-bottom: 3rem;
     }
+
     .section-cima, .section-meio {
         display: flex;
         justify-content: center;
@@ -125,18 +124,22 @@
         display: flex;
 
     }
+
     .ul-contato, .li-contato {
         width: auto;
         padding: 0;
         margin: 0 auto;
     }
+
     .li-contato {
         font-size: 0.85rem;
     }
+
     .footer-sub-contato, .footer-sub-titulo {
         text-align: center;
         font-weight: 100;
     }
+
     .footer-contato {
         margin-left: 50px;
     }
@@ -146,29 +149,35 @@
         display: flex;
         justify-content: flex-end;
     }
+
     /*** parte responsiva ***/
-    @media screen and (max-width: 500px){
-        .section-cima{
+    @media screen and (max-width: 500px) {
+        .section-cima {
             flex-direction: column;
             justify-content: center;
             padding: 20px;
         }
+
         .conteudo-links {
             width: auto;
             margin-bottom: 20px;
         }
-        .parte-cima{
+
+        .parte-cima {
             height: auto;
         }
-        .footer-li , .li-contato {
+
+        .footer-li, .li-contato {
             font-size: 1.2rem;
             margin: auto;
             margin-bottom: 15px;
             font-weight: 300;
         }
+
         .footer-sub-contato, .footer-sub-titulo {
             font-weight: 400;
         }
+
         .contato-contato {
             display: inherit;
 
