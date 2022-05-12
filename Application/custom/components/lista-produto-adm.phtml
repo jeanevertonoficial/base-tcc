@@ -1,9 +1,10 @@
-<?php use src\doctrine\Entity\Produtos;
-use src\doctrine\infra\EntityManegeFactory;
+<?php
+
+use src\doctrine\infra\MysqlConnect;
 
 require_once __DIR__ . './../header/header-adm.phtml'; ?>
 <section class="lista-produtos">
-    <h1 class="h1-titulos"><?php echo $titulo ?></h1>
+    <h1 class="h1-titulos">Painel Administrativo</h1>
     <div class="lista">
         <table class="table">
             <div class="btn-pesquisa">
@@ -14,7 +15,7 @@ require_once __DIR__ . './../header/header-adm.phtml'; ?>
                     <form method="GET" class="header-input">
                         <input name="pesquisa" id="pesquisa" type="search" placeholder="pesquisar">
                         <div class="pesquisa-avancada">
-                            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <select class="form-select form-select-sm" name="categoria" aria-label=".form-select-sm example">
                                 <option selected>categorias</option>
                                 <option value="acessorio">Acessório</option>
                                 <option value="bicicleta">Bicicleta</option>
@@ -46,53 +47,62 @@ require_once __DIR__ . './../header/header-adm.phtml'; ?>
             <tbody>
             <?php
 
-            $entityManegerFactory = new EntityManegeFactory();
-            $entityManeger = $entityManegerFactory->getEntityManege();
+            $this->mysql = (new MysqlConnect())->conect();
 
 
-            $valor_a_buscar = filter_input(
+            $buscar = filter_input(
                 INPUT_GET,
                 'pesquisa',
                 FILTER_SANITIZE_STRING
             );
 
-            $result_produtos = "SELECT * FROM `produtos`
-            WHERE 'nome' LIKE '%$valor_a_buscar%'
-            OR 'categoria' LIKE '%$valor_a_buscar%'
-            OR 'subcategoria' LIKE '%$valor_a_buscar%'
-            OR 'marcas' LIKE '%$valor_a_buscar%'
-            OR 'preco' LIKE '%$valor_a_buscar%'
-            OR 'decricao' LIKE '%$valor_a_buscar%'
-            OR 'desconto' LIKE '%$valor_a_buscar%'
-            OR 'titulo_produto' LIKE '%$valor_a_buscar%'";;
+            $nomecategoria = filter_input(
+                INPUT_GET,
+                'categoria',
+                FILTER_SANITIZE_STRING
+            );
+
+            $dqlpadrao = "SELECT * FROM produtos";
+
+            $mysql = "SELECT * FROM produtos 
+            where `nome` LIKE '%$buscar%' 
+            or `descricao` LIKE '%$buscar%'
+            or `titulo_produto` LIKE '%$buscar%'
+            or `categoria` LIKE '%$nomecategoria%'
+            or `subcategoria` LIKE '%$nomecategoria%'";
 
 
+            if ($buscar == 'undefined'
+                || $buscar == ''
+                || $nomecategoria == 'undefined'
+                || $nomecategoria == ''
+            ) {
+                $produto = mysqli_query($this->mysql, $dqlpadrao);
+            } else {
+                $produto = mysqli_query($this->mysql, $mysql);
+            }
 
+            if (($produto) and ($produto->num_rows != 0)):
 
-            // Buscando o repositorio de alunos pelo Entity
-            $produtosRepository = $entityManeger->getRepository(Produtos::class);
+                while ($rows = mysqli_fetch_object($produto)): ?>
 
-
-            /** @var Produtos[] $alunos */
-            $produtos = $produtosRepository->findAll();
-
-            foreach ($produtos as $produto):?>
-                <tr>
-                    <th scope="row"><?= $produto->getId() ?></th>
-                    <td id="nome_prod" ><?= $produto->getNome() ?></td>
-                    <td id="descricao_prod" ><?= $produto->getDescricao() ?></td>
-                    <td id="preco_prod" >R$<?= $produto->getPreco() ?></td>
-                    <td id="categoria_prod" ><?= $produto->getCategoria() ?></td>
-                    <div class="btn-ed-exc">
-                        <td id="btn-editar-prod" ><a href="/editar-produto?id=<?= $produto->getId() ?>">
-                                <button class="btn-editar">Editar</button>
-                            </a></td>
-                        <td id="btn-excluir-prod" ><a href="/exluir-produto?id=<?= $produto->getId() ?>">
-                                <button class="btn-excluir">Excluir</button>
-                            </a></td>
-                    </div>
-                </tr>
-            <?php endforeach; ?>
+                    <tr>
+                        <th scope="row"><?= $rows->id ?></th>
+                        <td id="nome_prod"><?= $rows->nome ?></td>
+                        <td id="descricao_prod"><?= $rows->descricao ?></td>
+                        <td id="preco_prod">R$<?= $rows->preco ?></td>
+                        <td id="categoria_prod"><?= $rows->categoria ?></td>
+                        <div class="btn-ed-exc">
+                            <td id="btn-editar-prod"><a href="/editar-produto?id=<?= $rows->id ?>">
+                                    <button class="btn-editar">Editar</button>
+                                </a></td>
+                            <td id="btn-excluir-prod"><a href="/exluir-produto?id=<?= $rows->id ?>">
+                                    <button class="btn-excluir">Excluir</button>
+                                </a></td>
+                        </div>
+                    </tr>
+                <?php endwhile; ?>
+            <?php endif; ?>
             </tbody>
         </table>
     </div>

@@ -52,14 +52,32 @@
 <header>
     <section class="header-section">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="/home">
-                <img src="../img/logo.jpg" alt="lgo" width="60"
-                     style="border-radius: 50px" height="60"></a>
-            <div class="busca">
-                <form action="" method="get">
-                    <input type="search" name="busca">
+            <div class="divi-header">
+                <a class="navbar-brand" href="/home">
+                    <img src="../img/logo.jpg" alt="lgo" width="60"
+                         style="border-radius: 50px" height="60"></a>
+            </div>
+            <div class="divi-header">
+                <form method="" class="header-input">
+                    <input name="pesquisa" id="pesquisa" type="search" placeholder="pesquisar">
+                    <div class="pesquisa-avancada">
+                        <select class="form-select form-select-sm" name="categoria" aria-label=".form-select-sm example">
+                            <option selected>categorias</option>
+                            <option value="acessorio">Acessório</option>
+                            <option value="bicicleta">Bicicleta</option>
+                            <option value="celulares">celulares</option>
+                            <option value="eletronicos">eletronicos</option>
+                            <option value="carinho">Carrinho</option>
+                            <option value="cama">cama</option>
+                            <option value="sofa">sofa</option>
+                            <option value="quarto">quarto</option>
+                            <option value="banheiro">banheiro</option>
+                            <option value="cozinha">cozinha</option>
+                            <option value="vestuario">vestuário</option>
+                        </select>
+                    </div>
                     <a href="#produto-scroll">
-                        <button class="btn"><span class="material-symbols-outlined">search</span></button>
+                        <button class="btn-busca"><span class="material-symbols-outlined">search</span></button>
                     </a>
                 </form>
             </div>
@@ -68,15 +86,17 @@
                     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/dashboard-administrativo"><span
-                                    class="material-icons-outlined">home</span></a>
-                    </li>
-                    <li><a href="/logar">Login</a></li>
-                    <li><a href="/cadastrar-produtos">Cadastre-se</a></li>
-                </ul>
+            <div class="divi-header">
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/dashboard-administrativo"><span
+                                        class="material-icons-outlined">home</span></a>
+                        </li>
+                        <li><a href="/logar">Login</a></li>
+                        <li><a href="/cadastrar-produtos">Cadastre-se</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </section>

@@ -101,23 +101,23 @@ input {
     background: white;
 
 }
+#pesquisa, select.form-select.form-select-sm {
+    margin-top: initial !important;
+}
 
 .form-select {
     width: inherit !important;
 }
 
-.button-header {
-    color: white;
-
-    background: #FAE09D !important;
-
+.btn-busca {
+    color: #d2d2d2;
+    background: #000000 !important;
     border: none;
-
-    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.29);
-
-    width: 15% !important;
-
-    margin-left: 10px;
+    box-shadow: -5px 5px 20px rgb(0 0 0 / 29%);
+    border-radius:0px 12px 12px 0;
+    padding: 2px 15px 8px;
+    margin: auto;
+    margin-left: -5px;
 }
 
 .header-input, .button-header {
@@ -149,4 +149,13 @@ li > a:hover {
     align-items: flex-end;
     margin-bottom: -79px;
     margin-top: 5px;
+}
+
+.divi-header {
+    display: flex;
+    width: 100%;
+}
+
+.input-busca {
+    width: 225px;
 }

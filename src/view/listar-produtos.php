@@ -1,44 +1,52 @@
 <?php
 
 use src\doctrine\Controller\Tools;
-use src\doctrine\Entity\Produtos;
-use src\doctrine\infra\EntityManegeFactory;
 use src\doctrine\infra\MysqlConnect;
-use src\doctrine\Repository\ProdutosRepository;
 
-;
 $this->caminho = (new Tools())->rotaImagemArquivo();
-$this->entityManeger = (new EntityManegeFactory())->getEntityManege();
-$mysql = (new MysqlConnect())->conect();
-$this->repositorioDeProdutos = $this->entityManeger->getRepository(Produtos::class);
+$this->mysql = (new MysqlConnect())->conect();
 
 
 // filter para limpar e apontar para a variavel sem lixo
 $nomeBusca = filter_input(
     INPUT_GET,
-    'busca',
+    'pesquisa',
     FILTER_SANITIZE_STRING
 );
+
+$nomecategoria = filter_input(
+    INPUT_GET,
+    'categoria',
+    FILTER_SANITIZE_STRING
+);
+
 
 $dqlpadrao = "SELECT * FROM produtos";
 
 $dql = "SELECT * FROM produtos 
          where `nome` LIKE '%$nomeBusca%' 
             or `descricao` LIKE '%$nomeBusca%'
-            or `titulo_produto` LIKE '%$nomeBusca%'";
+            or `titulo_produto` LIKE '%$nomeBusca%'
+            or `categoria` LIKE '%$nomecategoria%'
+            or `subcategoria` LIKE '%$nomecategoria%'
+            ";
 
 
-//var_dump($produtoslist); exit();
-
-if ($nomeBusca == 'undefined' || $nomeBusca == '') {
-    $produto = mysqli_query($mysql, $dqlpadrao);
+if ($nomeBusca == 'undefined'
+    || $nomeBusca == ''
+    || $nomecategoria == 'undefined'
+    || $nomecategoria == ''
+) {
+    $produto = mysqli_query($this->mysql, $dqlpadrao);
 } else {
-    // header('Location: /dashbord');
-    $produto = mysqli_query($mysql, $dql);
+    $produto = mysqli_query($this->mysql, $dql);
 }
+
+
 if (($produto) and ($produto->num_rows != 0)):
 
-    while ($rows = mysqli_fetch_object($produto)) : $img = $this->caminho . $rows->nome;
+    while ($rows = mysqli_fetch_object($produto)):
+        $img = $this->caminho . $rows->nome;
 
     if ($rows->desconto >= 5) {
         $mostrar_desconto = $rows->desconto;

@@ -112,7 +112,6 @@ input, textarea, select {
     border: 1px solid #3c3c3c7a !important;
     background: #FFFFFF;
     box-shadow: -10px 8px 8px 0px rgb(0 0 0 / 10%);
-    border-radius: 20px;
 }
 
 .imagem-cadastro {

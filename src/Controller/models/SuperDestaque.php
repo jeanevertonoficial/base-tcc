@@ -24,7 +24,7 @@ class SuperDestaque
 
     public function chamaSelectBaixo()
     {
-        $dql =  $dql = $this->mysql->query("SELECT * FROM produtos WHERE `ehsuperdestaque` LIKE '%simbaixo%' limit 1");
+        $dql = $this->mysql->query("SELECT * FROM produtos WHERE `ehsuperdestaque` LIKE '%simbaixo%' limit 1");
         return $dql;
     }
 }
