@@ -1,7 +1,5 @@
 html {
-    background-image: url("../img/fundo.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #212529;
 }
 .cadastro-login{
     width: 350px;

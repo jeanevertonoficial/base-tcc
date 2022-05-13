@@ -2,3 +2,7 @@
     display: flex;
     justify-content: center;
 }
+section.destaque {
+    width: 70%;
+    margin: auto;
+}

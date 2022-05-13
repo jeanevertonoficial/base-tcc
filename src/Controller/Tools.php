@@ -9,4 +9,9 @@ class Tools
         return '../img/arquivos/';
     }
 
+    public function rotaBanner()
+    {
+        return '../img/banner/';
+    }
+
 }

@@ -1,5 +1,8 @@
-.carousel-inner {height: 350px;}
+.carousel-inner {max-height: 350px;}
 .carousel-item {position: relative;}
+.carousel-indicators { margin-top: -1rem; z-index: 6000}
+img.d-block{ width: 100%}
+.row { --bs-gutter-x: 0rem !important;}
 .carousel-control-prev {justify-content: start !important;opacity: 0 !important;}
 .carousel-control-next {justify-content: end !important;opacity: 0 !important;}
 .carousel-control-prev:hover, .carousel-control-next:hover {opacity: 1 !important;}
