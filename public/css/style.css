@@ -1,2 +1,6 @@
 /* estilo geral do site **/
 .input-enviar { align-items: flex-end}
+
+.carousel {
+    z-index: 1500;
+}

@@ -11,6 +11,7 @@ body {
 
 .pesquisa-avancada {
     display: flex;
+    width: 120px;
 }
 
 .pesquisa-menu {
@@ -113,7 +114,7 @@ input {
     color: #d2d2d2;
     background: #000000 !important;
     border: none;
-    box-shadow: -5px 5px 20px rgb(0 0 0 / 29%);
+    box-shadow: 6px 5px 20px rgb(0 0 0 / 29%);
     border-radius:0px 12px 12px 0;
     padding:10px 15px 0px;
     margin: auto;
@@ -153,9 +154,16 @@ li > a:hover {
 
 .divi-header {
     display: flex;
+    justify-content: center;
     width: 100%;
+    margin: auto;
 }
 
 .input-busca {
     width: 225px;
+}
+#pesquisa{
+    width: 310px;
+    z-index: 215;
+    border: none !important;
 }

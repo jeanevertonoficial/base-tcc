@@ -28,8 +28,7 @@
     .btn-pesquisa { justify-content: space-between !important; flex-direction: column-reverse !important;}
     .header-div button { height: 45px !important;}
     .header-div input, .header-div select { background: #999999; color: white}
-    .header-input { width: 100%;margin-top: 2rem;}
-    .navbar-toggler-icon { margin-top: -9rem}
+    .header-input { width: 100%; margin-top: 2rem;}
      button.navbar-toggler.burger-principal  { margin-right: -50px !important;}
      section.super.card-produtos{padding-bottom: 5rem}
     .card-section { width: 85% !important}
@@ -38,6 +37,9 @@
     .titulo { justify-content: center !important}
     .titulo-produto { font-size: 15px !important;}
     .contato { flex-direction: column}
+    .divi-header { width: 90%}
+    .h1-adm { margin: 2rem 0rem  -4rem !important;}
+    .pesquisa-avancada { width: initial}
     .section-cima, .section-meio{ align-items: center !important;}
     .card-section-scroll { flex-direction: row; flex-wrap: nowrap !important; width: auto !important;background: scroll;margin: auto;overflow: overlay;display: flex;width: 70%;height: auto;flex-wrap: nowrap;}
 }

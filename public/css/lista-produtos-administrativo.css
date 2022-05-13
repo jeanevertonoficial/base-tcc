@@ -3,6 +3,7 @@ body{ background: #FFFFFF;}
     display: flex;
     flex-direction: row;
     justify-content: end;
+    flex-wrap: wrap;
 }
 
 .header-div input {

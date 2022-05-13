@@ -64,7 +64,6 @@ switch ($_SERVER['PATH_INFO']) {
         break;
     case '/exluir-produto':
         $controlador = new RemoveProduto();
-
         break;
     case '/banner':
         $controlador = new CadastrarBanner();
