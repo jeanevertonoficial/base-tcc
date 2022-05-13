@@ -65,7 +65,7 @@ if (($produto) and ($produto->num_rows != 0)):
                 <div class="div-desc"> de <br>desconto</div>
             </span>
             <div class="imagem zoom">
-                <img class="imagem-produto" src="<?= $img ?>" alt="foto">
+                <img class="imagem-produto" src="<?= $img ?>" alt="<?= $rows->nome?>">
             </div>
         </div>
 

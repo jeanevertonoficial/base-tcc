@@ -42,12 +42,14 @@ class CadastrarProdutos implements InterfaceProcessaRequisicao
 
             if ($ext == true) {
 
+                $novo =  rand(1, 1000) .'-'. $imagem['name'];
+
                 $caminho_arquivo = "img/arquivos/";
 
-                move_uploaded_file($_FILES['imagem_produto']["tmp_name"], $caminho_arquivo . $imagem['name']);
+                move_uploaded_file($_FILES['imagem_produto']["tmp_name"], $caminho_arquivo . $novo);
 
                 $produto = new Produtos();
-                $produto->setNome($nome);
+                $produto->setNome($novo);
                 $produto->setDescricao($descricao);
                 $produto->setPreco($preco);
                 $produto->setTituloProduto($titulo);
