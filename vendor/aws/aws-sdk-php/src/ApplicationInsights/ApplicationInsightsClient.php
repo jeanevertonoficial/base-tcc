@@ -4,7 +4,7 @@ namespace Aws\ApplicationInsights;
 use Aws\AwsClient;
 
 /**
- * This client is used to interact with the **Amazon CloudWatch Application Insights** service.
+ * This client is used to interact with the **Amazon CloudWatch application Insights** service.
  * @method \Aws\Result createApplication(array $args = [])
  * @method \GuzzleHttp\Promise\Promise createApplicationAsync(array $args = [])
  * @method \Aws\Result createComponent(array $args = [])
