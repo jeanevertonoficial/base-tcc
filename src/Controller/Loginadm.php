@@ -38,8 +38,8 @@ class Loginadm implements InterfaceProcessaRequisicao
                             $_SESSION['nome'] = $row['nome'];
                             $_SESSION['usuario'] = $row['usuario'];
                             $_SESSION['email'] = $row['email'];
-                            $_SESSION['msgcad'] = "Seja bem vindo novamente";
                             header('Location: /dashboard-administrativo');
+                            $_SESSION['msgcad'] = "Seja bem vindo novamente";
 
                         }} else {
                         $_SESSION['msgcad'] = "Login ou/ senha incorreta, tente nomamente primeiro!";
@@ -63,6 +63,6 @@ class Loginadm implements InterfaceProcessaRequisicao
 
     public function processaRequisicao(): void
     {
-        include_once __DIR__ . './../view/cadastrar-produto.php';
+        include_once __DIR__ . './../../view/cadastrar-produto.php';
     }
 }

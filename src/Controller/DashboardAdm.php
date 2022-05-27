@@ -26,6 +26,6 @@ class DashboardAdm implements InterfaceProcessaRequisicao
     {
 
         $titulo = "Lista de produtos";
-        require_once __DIR__ . './../../Application/custom/components/lista-produto-adm.phtml';
+        require_once __DIR__ . './../../application/custom/components/lista-produto-adm.phtml';
     }
 }

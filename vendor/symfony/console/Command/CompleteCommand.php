@@ -99,14 +99,14 @@ final class CompleteCommand extends Command
 
             $command = $this->findCommand($completionInput, $output);
             if (null === $command) {
-                $this->log('  No command found, completing using the Application class.');
+                $this->log('  No command found, completing using the application class.');
 
                 $this->getApplication()->complete($completionInput, $suggestions);
             } elseif (
                 $completionInput->mustSuggestArgumentValuesFor('command')
                 && $command->getName() !== $completionInput->getCompletionValue()
             ) {
-                $this->log('  No command found, completing using the Application class.');
+                $this->log('  No command found, completing using the application class.');
 
                 // expand shortcut names ("cache:cl<TAB>") into their full name ("cache:clear")
                 $suggestions->suggestValue($command->getName());

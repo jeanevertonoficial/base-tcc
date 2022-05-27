@@ -4,7 +4,7 @@ namespace Aws\mgn;
 use Aws\AwsClient;
 
 /**
- * This client is used to interact with the **Application Migration Service** service.
+ * This client is used to interact with the **application Migration Service** service.
  * @method \Aws\Result changeServerLifeCycleState(array $args = [])
  * @method \GuzzleHttp\Promise\Promise changeServerLifeCycleStateAsync(array $args = [])
  * @method \Aws\Result createReplicationConfigurationTemplate(array $args = [])

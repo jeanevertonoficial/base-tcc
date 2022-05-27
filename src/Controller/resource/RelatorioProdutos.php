@@ -9,6 +9,6 @@ class RelatorioProdutos implements InterfaceProcessaRequisicao
 
     public function processaRequisicao(): void
     {
-        require_once __DIR__ . './../../Application/custom/components/relatorio-produtos.phtml';
+        require_once __DIR__ . './../../../application/custom/components/relatorio-produtos.phtml';
     }
 }

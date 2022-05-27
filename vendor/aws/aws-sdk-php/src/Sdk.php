@@ -78,6 +78,8 @@ namespace Aws;
  * @method \Aws\MultiRegionClient createMultiRegionChime(array $args = [])
  * @method \Aws\ChimeSDKIdentity\ChimeSDKIdentityClient createChimeSDKIdentity(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionChimeSDKIdentity(array $args = [])
+ * @method \Aws\ChimeSDKMediaPipelines\ChimeSDKMediaPipelinesClient createChimeSDKMediaPipelines(array $args = [])
+ * @method \Aws\MultiRegionClient createMultiRegionChimeSDKMediaPipelines(array $args = [])
  * @method \Aws\ChimeSDKMeetings\ChimeSDKMeetingsClient createChimeSDKMeetings(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionChimeSDKMeetings(array $args = [])
  * @method \Aws\ChimeSDKMessaging\ChimeSDKMessagingClient createChimeSDKMessaging(array $args = [])
@@ -198,6 +200,8 @@ namespace Aws;
  * @method \Aws\MultiRegionClient createMultiRegionEKS(array $args = [])
  * @method \Aws\EMRContainers\EMRContainersClient createEMRContainers(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionEMRContainers(array $args = [])
+ * @method \Aws\EMRServerlessWebService\EMRServerlessWebServiceClient createEMRServerlessWebService(array $args = [])
+ * @method \Aws\MultiRegionClient createMultiRegionEMRServerlessWebService(array $args = [])
  * @method \Aws\Ec2\Ec2Client createEc2(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionEc2(array $args = [])
  * @method \Aws\Ecr\EcrClient createEcr(array $args = [])
@@ -602,6 +606,8 @@ namespace Aws;
  * @method \Aws\MultiRegionClient createMultiRegionfinspace(array $args = [])
  * @method \Aws\imagebuilder\imagebuilderClient createimagebuilder(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionimagebuilder(array $args = [])
+ * @method \Aws\ivschat\ivschatClient createivschat(array $args = [])
+ * @method \Aws\MultiRegionClient createMultiRegionivschat(array $args = [])
  * @method \Aws\kendra\kendraClient createkendra(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionkendra(array $args = [])
  * @method \Aws\mgn\mgnClient createmgn(array $args = [])
@@ -611,7 +617,7 @@ namespace Aws;
  */
 class Sdk
 {
-    const VERSION = '3.218.0';
+    const VERSION = '3.223.0';
 
     /** @var array Arguments for creating clients */
     private $args;

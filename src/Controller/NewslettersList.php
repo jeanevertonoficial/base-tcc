@@ -10,6 +10,6 @@ class NewslettersList
     {
 
         $titulo = "Lista de Newsletters";
-        require_once __DIR__ . './../../Application/custom/components/lista-newsletters.phtml';
+        require_once __DIR__ . './../../application/custom/components/lista-newsletters.phtml';
     }
 }

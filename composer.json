@@ -1,34 +1,34 @@
 {
-    "name": "src/caminho",
-    "description": "Desenvolvimento web ecommerce em casa",
-    "require": {
-        "doctrine/orm": "^2.11",
-        "doctrine/dbal": "^3.2",
-        "doctrine/annotations": "^1.13",
-        "symfony/cache": "^6.0",
-        "slim/psr7": "^1.5",
-        "aws/aws-sdk-php-resources": "^0.3.0",
-        "symfony/orm-pack": "^2.2",
-      "ext-mysqli": "*",
-        "sensio/framework-extra-bundle": "^6.2",
-      "ext-http": "*",
-      "ext-pdo": "*"
-    },
-    "extra": {
-        "psr17_server_request_factory": "Slim\\Psr7\\Factory\\ServerRequestFactory",
-        "psr17_uri_factory": "Slim\\Psr7\\Factory\\UriFactory",
-        "psr17_uploaded_file_factory": "Slim\\Psr7\\Factory\\UploadedFileFactory",
-        "psr17_stream_factory": "Slim\\Psr7\\Factory\\StreamFactory"
-    },
-    "autoload": {
-        "psr-4": {
-            "src\\doctrine\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Jean Everton",
-            "email": "jeanever39@gmail.com"
-        }
-    ]
+  "name": "src/caminho",
+  "description": "Desenvolvimento web ecommerce em casa",
+  "require": {
+    "doctrine/orm": "*",
+    "doctrine/dbal": "^3.2",
+    "doctrine/annotations": "^1.13",
+    "symfony/cache": "^6.0",
+    "slim/psr7": "^1.5",
+    "aws/aws-sdk-php-resources": "^0.3.0",
+    "symfony/orm-pack": "^2.2",
+    "ext-mysqli": "*",
+    "ext-pdo_mysql": "*",
+    "ext-pdo": "*",
+    "sensio/framework-extra-bundle": "^6.2"
+  },
+  "extra": {
+    "psr17_server_request_factory": "Slim\\Psr7\\Factory\\ServerRequestFactory",
+    "psr17_uri_factory": "Slim\\Psr7\\Factory\\UriFactory",
+    "psr17_uploaded_file_factory": "Slim\\Psr7\\Factory\\UploadedFileFactory",
+    "psr17_stream_factory": "Slim\\Psr7\\Factory\\StreamFactory"
+  },
+  "autoload": {
+    "psr-4": {
+      "src\\doctrine\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Jean Everton",
+      "email": "jeanever39@gmail.com"
+    }
+  ]
 }

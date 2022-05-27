@@ -347,7 +347,7 @@ class Command
      *
      * This method is not part of public API and should not be used directly.
      *
-     * @param bool $mergeArgs Whether to merge or not the Application definition arguments to Command definition arguments
+     * @param bool $mergeArgs Whether to merge or not the application definition arguments to Command definition arguments
      *
      * @internal
      */

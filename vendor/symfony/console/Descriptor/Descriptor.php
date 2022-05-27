@@ -88,7 +88,7 @@ abstract class Descriptor implements DescriptorInterface
     abstract protected function describeCommand(Command $command, array $options = []);
 
     /**
-     * Describes an Application instance.
+     * Describes an application instance.
      */
     abstract protected function describeApplication(Application $application, array $options = []);
 }
