@@ -54,7 +54,7 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 use Symfony\Contracts\Service\ResetInterface;
 
 /**
- * An Application is the container for a collection of commands.
+ * An application is the container for a collection of commands.
  *
  * It is the main entry point of a Console application.
  *
@@ -62,7 +62,7 @@ use Symfony\Contracts\Service\ResetInterface;
  *
  * Usage:
  *
- *     $app = new Application('myapp', '1.0 (stable)');
+ *     $app = new application('myapp', '1.0 (stable)');
  *     $app->add(new SimpleCommand());
  *     $app->run();
  *
@@ -179,7 +179,7 @@ class Application implements ResetInterface
             $exitCode = $e->getCode();
             if (is_numeric($exitCode)) {
                 $exitCode = (int) $exitCode;
-                if (0 === $exitCode) {
+                if ($exitCode <= 0) {
                     $exitCode = 1;
                 }
             } else {
@@ -328,7 +328,7 @@ class Application implements ResetInterface
     }
 
     /**
-     * Gets the InputDefinition related to this Application.
+     * Gets the InputDefinition related to this application.
      */
     public function getDefinition(): InputDefinition
     {

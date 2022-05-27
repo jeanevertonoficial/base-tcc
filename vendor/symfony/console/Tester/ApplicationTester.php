@@ -19,7 +19,7 @@ use Symfony\Component\Console\Input\ArrayInput;
  *
  * When testing an application, don't forget to disable the auto exit flag:
  *
- *     $application = new Application();
+ *     $application = new application();
  *     $application->setAutoExit(false);
  *
  * @author Fabien Potencier <fabien@symfony.com>

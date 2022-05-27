@@ -4,7 +4,7 @@ namespace Aws\ApplicationCostProfiler;
 use Aws\AwsClient;
 
 /**
- * This client is used to interact with the **AWS Application Cost Profiler** service.
+ * This client is used to interact with the **AWS application Cost Profiler** service.
  * @method \Aws\Result deleteReportDefinition(array $args = [])
  * @method \GuzzleHttp\Promise\Promise deleteReportDefinitionAsync(array $args = [])
  * @method \Aws\Result getReportDefinition(array $args = [])

@@ -4,7 +4,7 @@ namespace Aws\ApplicationDiscoveryService;
 use Aws\AwsClient;
 
 /**
- * This client is used to interact with the **AWS Application Discovery Service** service.
+ * This client is used to interact with the **AWS application Discovery Service** service.
  * @method \Aws\Result associateConfigurationItemsToApplication(array $args = [])
  * @method \GuzzleHttp\Promise\Promise associateConfigurationItemsToApplicationAsync(array $args = [])
  * @method \Aws\Result batchDeleteImportData(array $args = [])

@@ -4,7 +4,7 @@ namespace Aws\ApplicationAutoScaling;
 use Aws\AwsClient;
 
 /**
- * This client is used to interact with the **Application Auto Scaling** service.
+ * This client is used to interact with the **application Auto Scaling** service.
  * @method \Aws\Result deleteScalingPolicy(array $args = [])
  * @method \GuzzleHttp\Promise\Promise deleteScalingPolicyAsync(array $args = [])
  * @method \Aws\Result deleteScheduledAction(array $args = [])
