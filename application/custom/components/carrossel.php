@@ -18,7 +18,7 @@ if (($produto) and ($produto->num_rows != 0)):
                             <?php
                             $qnt_slide = $quant;
                             $cont_marc = 0;
-                            while ($cont_marc < $qnt_slide) {
+                            while (is_int($cont_marc) < is_int($qnt_slide)) {
                                 echo "<li id='valor-car' data-target='#myCarousel' data-slide-to='$cont_marc'></li>";
                                 $cont_marc++;
                             }

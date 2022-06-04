@@ -47,8 +47,7 @@ switch ($_SERVER['PATH_INFO']) {
         $controlador->processaRequisicao();
         break;
     case '/dashboard':
-        $controlador = new Loja();
-        $controlador->processaRequisicao();
+        $controlador = (new Loja())->processaRequisicao();
         break;
     case '/logar':
         $controlador = new Login();

@@ -60,8 +60,7 @@ class CadastrarAdm implements InterfaceProcessaRequisicao
 
     }
 
-    public
-    function processaRequisicao(): void
+    public function processaRequisicao(): void
     {
         if ((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == true) and (!isset ($_SESSION['id']) == true)) {
             $_SESSION['msgcad'] = "Olá bem vindo, acesse sua conta!";

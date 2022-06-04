@@ -22,7 +22,6 @@ class Carrossel
 
     public function chamaContadorCarrossel()
     {
-        $contador = $this->mysql->query('SELECT COUNT(a) FROM produtobanner');
-        return $contador;
+        return $contador = $this->mysql->query('SELECT COUNT(id) FROM produtobanner');
     }
 }

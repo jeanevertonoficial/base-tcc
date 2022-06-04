@@ -65,6 +65,6 @@ class BannerCarrossel implements InterfaceProcessaRequisicao
 
     public function processaRequisicao(): void
     {
-        header('Location: \dashboard');
+        header('Location: \banner');
     }
 }

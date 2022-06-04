@@ -2,15 +2,15 @@
 
 namespace src\doctrine\Controller\models;
 
-use src\doctrine\infra\MysqlConnect;
 
+use src\doctrine\infra\MysqlConnect;
 
 class SuperPromo
 {
     public function __construct()
     {
         $this->mysql = (
-            new MysqlConnect())
+        new MysqlConnect())
             ->conect();
 
         return $this->mysql;
