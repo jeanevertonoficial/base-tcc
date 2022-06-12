@@ -10,6 +10,7 @@ use src\doctrine\Controller\{cad_adm,
     Loja,
     NewslettersList,
     PerfilAdm,
+    realizarCompra,
     resource\BannerCarrossel,
     resource\CadastrarAdm,
     resource\CadastrarProdutos,
@@ -40,14 +41,14 @@ switch ($_SERVER['PATH_INFO']) {
         break;
     case '/salvar-newsletters':
         $controlador = new NewslettersCadastro();
-        $controlador->processaRequisicao();
         break;
     case '/cadastrar-newsletters':
         $controlador = new cad_newsletters();
         $controlador->processaRequisicao();
         break;
     case '/dashboard':
-        $controlador = (new Loja())->processaRequisicao();
+        $controlador = new Loja();
+        $controlador->processaRequisicao();
         break;
     case '/logar':
         $controlador = new Login();
@@ -66,6 +67,10 @@ switch ($_SERVER['PATH_INFO']) {
         break;
     case '/banner':
         $controlador = new CadastrarBanner();
+        $controlador->processaRequisicao();
+        break;
+    case '/realizar-compra':
+        $controlador = new realizarCompra();
         $controlador->processaRequisicao();
         break;
     case '/banner-cadastro':

@@ -14,6 +14,6 @@ function scrollFunction() {
 
 // // quando clicar no botão, a página rola para o topo do documento
 function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 10;
+    document.documentElement.scrollTop = 10;
 }

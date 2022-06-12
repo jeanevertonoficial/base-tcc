@@ -76,7 +76,7 @@ if (($produto) and ($produto->num_rows != 0)):
             <div class="valor"><?= $rows->preco ?></div>
         </div>
 
-        <a class="link-compra" href="/loja-compra?id=<?= $rows->id ?>">
+        <a class="link-compra" href="/realizar-compra?id=<?= $rows->id ?>">
             <button class="button-produto">
                 Comprar
             </button>

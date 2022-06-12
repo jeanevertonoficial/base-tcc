@@ -24,6 +24,25 @@ npm install
 ````
 composer install
 ````
+````
+composer require psr/http-server-handler 
+````
+````
+composer require guzzlehttp/guzzle 
+````
+````
+composer require psr/http-client  
+````
+````
+composer require guzzlehttp/psr7  
+````
+````
+composer require nyholm/psr7-server  
+````
+````
+composer require nyholm/psr7  
+````
+
 
 ### Ferramentas ###
 ````

@@ -19,7 +19,7 @@ use Symfony\Component\Console\Input\ArrayInput;
  *
  * When testing an application, don't forget to disable the auto exit flag:
  *
- *     $application = new application();
+ *     $application = new Application();
  *     $application->setAutoExit(false);
  *
  * @author Fabien Potencier <fabien@symfony.com>
@@ -28,7 +28,7 @@ class ApplicationTester
 {
     use TesterTrait;
 
-    private $application;
+    private Application $application;
 
     public function __construct(Application $application)
     {

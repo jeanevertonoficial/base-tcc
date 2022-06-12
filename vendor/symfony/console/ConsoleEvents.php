@@ -17,7 +17,7 @@ use Symfony\Component\Console\Event\ConsoleSignalEvent;
 use Symfony\Component\Console\Event\ConsoleTerminateEvent;
 
 /**
- * Contains all events dispatched by an application.
+ * Contains all events dispatched by an Application.
  *
  * @author Francesco Levorato <git@flevour.net>
  */

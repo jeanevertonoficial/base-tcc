@@ -7,7 +7,7 @@ use src\doctrine\Controller\InterfaceProcessaRequisicao;
 use src\doctrine\Entity\Newsletters;
 use src\doctrine\infra\EntityManegeFactory;
 
-class NewslettersCadastro implements InterfaceProcessaRequisicao
+class NewslettersCadastro
 {
 
     public function __construct()
@@ -29,10 +29,5 @@ class NewslettersCadastro implements InterfaceProcessaRequisicao
         $this->entityManeger->persist($newsletters);
         $this->entityManeger->flush();
 
-    }
-
-    public function processaRequisicao(): void
-    {
-        header('Location: /dashboard');
     }
 }
