@@ -2,26 +2,40 @@
 
 namespace src\doctrine\Controller\models;
 
-use src\doctrine\infra\MysqlConnect;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Mapping as ORM;
+use src\doctrine\Entity\ProdutoBanner;
+use src\doctrine\infra\EntityManegeFactory;
 
 class Carrossel
 {
+    /**
+     * @ORM\Column(type="string")
+     */
+    private EntityManagerInterface $entityManager;
+
     public function __construct()
     {
-        $this->mysql = (
-        new MysqlConnect())
-            ->conect();
+        $this->entityManager = (
+        new EntityManegeFactory())
+            ->getEntityManege();
 
-        return $this->mysql;
+        return $this->entityManager;
     }
-    public function chamaCarrossel()
+
+    public function repositorioBanner(): EntityRepository
     {
-        $dql = $this->mysql->query('SELECT * FROM produtobanner');
+        $dql = $this->entityManager
+            ->getRepository(ProdutoBanner::class);
         return $dql;
     }
 
-    public function chamaContadorCarrossel()
+    public function chamaContadorCarrossel(): array
     {
-        return $contador = $this->mysql->query('SELECT COUNT(id) FROM produtobanner');
+        $banner = $this->repositorioBanner()
+            ->findAll();
+       // dd($banner);
+        return $banner;
     }
 }

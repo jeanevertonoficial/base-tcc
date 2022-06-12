@@ -4,7 +4,7 @@ use src\doctrine\Controller\models\Carrossel;
 use src\doctrine\Controller\Tools;
 
 $caminho = (new Tools())->rotaBanner();
-$produto = (new Carrossel())->chamaCarrossel();
+$produto = (new Carrossel())->repositorioBanner();
 $quant = (new Carrossel())->chamaContadorCarrossel();
 
 if (($produto) and ($produto->num_rows != 0)):
